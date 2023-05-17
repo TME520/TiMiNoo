@@ -1,3 +1,7 @@
+# 2023-05-17
+- Converted spritesheet to 1bit
+- Extracted cat sitting and cat licking sprites from spritesheet
+
 # 2023-05-08
 - Found 1 bit cat sprites that seems to meet my needs
 - Created that repository
