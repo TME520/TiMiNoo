@@ -1,3 +1,6 @@
+# 2023-05-21
+- Finished extracting, converting and upscaling all cat sprites
+
 # 2023-05-20
 - Assembled the 1st soldered TiMiNoo prototype (visible inside README)
 - Humble achievement, but I'm very happy about it as it's a step towards something real
