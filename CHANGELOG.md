@@ -1,5 +1,6 @@
 # 2023-05-21
 - Finished extracting, converting and upscaling all cat sprites
+- Basic idle mode animation complete (8 frames)
 
 # 2023-05-20
 - Assembled the 1st soldered TiMiNoo prototype (visible inside README)
