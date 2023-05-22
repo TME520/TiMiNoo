@@ -1,3 +1,6 @@
+# 2023-05-22
+- Added frame for future 32px icons showing what the cat needs / wants
+
 # 2023-05-21
 - Finished extracting, converting and upscaling all cat sprites
 - Basic idle mode animation complete (8 frames)
