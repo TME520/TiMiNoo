@@ -20,12 +20,16 @@ SIG = 2
 */
 
 int gameMode = 0;
-int currentFrame = 1;
 const char* textToDisplay = "";
 const int buttonPin = 2;
 int buttonState = 0;
-int counter = 0;
+int frameCounter = 0;
+char generalCounter[4];
 char counterText[4];
+long randomNumber;
+int catX = 0;
+int catY = 0;
+int idlingStep = 1;
 
 #define comframev1_width 128
 #define comframev1_height 64
@@ -341,41 +345,6 @@ static unsigned char cat_sitting_upscaled4x_008_bits[] U8G_PROGMEM = {
    0x00, 0xff, 0xff, 0xff, 0xff, 0xff, 0x00, 0xff, 0xff, 0xff, 0xff, 0xff,
    0x00, 0xff, 0xff, 0xff, 0xff, 0xff, 0x00, 0xff, 0xff, 0xff, 0xff, 0xff };
 
-void draw(int frameId, const char* text, int posx, int posy) {
-  // graphic commands to redraw the complete screen should be placed here
-  /*
-  u8g.setFont(u8g_font_unifont);
-  u8g.drawStr(posx, posy, text);
-  */
-  u8g.drawXBMP(0, 0, comframev1_width, comframev1_height, comframev1_bits);
-  switch (frameId) {
-    case 1:
-      u8g.drawXBMP(8, 8, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
-      break;
-    case 2:
-      u8g.drawXBMP(8, 8, cat_sitting_upscaled4x_002_width, cat_sitting_upscaled4x_002_height, cat_sitting_upscaled4x_002_bits);
-      break;
-    case 3:
-      u8g.drawXBMP(8, 8, cat_sitting_upscaled4x_003_width, cat_sitting_upscaled4x_003_height, cat_sitting_upscaled4x_003_bits);
-      break;
-    case 4:
-      u8g.drawXBMP(8, 8, cat_sitting_upscaled4x_004_width, cat_sitting_upscaled4x_004_height, cat_sitting_upscaled4x_004_bits);
-      break;
-    case 5:
-      u8g.drawXBMP(8, 8, cat_sitting_upscaled4x_005_width, cat_sitting_upscaled4x_005_height, cat_sitting_upscaled4x_005_bits);
-      break;
-    case 6:
-      u8g.drawXBMP(8, 8, cat_sitting_upscaled4x_006_width, cat_sitting_upscaled4x_006_height, cat_sitting_upscaled4x_006_bits);
-      break;
-    case 7:
-      u8g.drawXBMP(8, 8, cat_sitting_upscaled4x_007_width, cat_sitting_upscaled4x_007_height, cat_sitting_upscaled4x_007_bits);
-      break;
-    case 8:
-      u8g.drawXBMP(8, 8, cat_sitting_upscaled4x_008_width, cat_sitting_upscaled4x_008_height, cat_sitting_upscaled4x_008_bits);
-      break;
-  }
-}
-
 void setup(void) {
   // initialize the pushbutton pin as an input:
   pinMode(buttonPin, INPUT);
@@ -384,29 +353,91 @@ void setup(void) {
 }
 
 void loop(void) {
-  switch (gameMode) {
-    case 0:
-      // Idling
-      // read the state of the pushbutton value:
-      buttonState = digitalRead(buttonPin);
-      if (buttonState == HIGH) {
-        // Button pressed
-        currentFrame = 1;
-        counter = 0;
-      }
-      // picture loop
-      counter += 1;
-      itoa(counter, counterText, 10);
-      u8g.firstPage();  
-      do {
-        draw(currentFrame, counterText, 0, 62);
-      } while( u8g.nextPage() );
-      
-      // rebuild the picture after some delay
-      delay(100);
-      currentFrame += 1;
-      if ( currentFrame > 8 ) {
-        currentFrame = 1;
-      }
+  randomNumber = random(1, 10);
+  // read the state of the pushbutton value:
+  buttonState = digitalRead(buttonPin);
+  if (buttonState == HIGH) {
+    // Button pressed
+    frameCounter = 1;
+    idlingStep = 1;
   }
+  frameCounter += 1;
+  itoa(frameCounter, counterText, 10);
+
+  idlingStep += 1;
+  if (idlingStep>4) {
+    idlingStep = 1;
+  }
+  itoa(idlingStep, generalCounter, 10);
+  
+  u8g.firstPage();
+  do {
+    switch (gameMode) {
+      case 0:
+        // Idling
+        // Icon frame
+        u8g.drawXBMP(0, 0, comframev1_width, comframev1_height, comframev1_bits);
+        switch (idlingStep) {
+          case 1:
+            catX = 8;
+            catY = 8;
+            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+            break;
+          case 2:
+            catX = 8;
+            catY = 8;
+            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_002_width, cat_sitting_upscaled4x_002_height, cat_sitting_upscaled4x_002_bits);
+            break;
+          case 3:
+            catX = 8;
+            catY = 8;
+            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_003_width, cat_sitting_upscaled4x_003_height, cat_sitting_upscaled4x_003_bits);
+            break;
+          case 4:
+            catX = 8;
+            catY = 8;
+            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_004_width, cat_sitting_upscaled4x_004_height, cat_sitting_upscaled4x_004_bits);
+            if (randomNumber>7) {
+              gameMode = 1;
+            }
+            break;
+        }
+        break;
+      case 1:
+        // Idle - looking left
+        // Icon frame
+        u8g.drawXBMP(0, 0, comframev1_width, comframev1_height, comframev1_bits);
+        switch (idlingStep) {
+          case 1:
+            catX = 8;
+            catY = 8;
+            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_005_width, cat_sitting_upscaled4x_005_height, cat_sitting_upscaled4x_005_bits);
+            break;
+          case 2:
+            catX = 8;
+            catY = 8;
+            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_006_width, cat_sitting_upscaled4x_006_height, cat_sitting_upscaled4x_006_bits);
+            break;
+          case 3:
+            catX = 8;
+            catY = 8;
+            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_007_width, cat_sitting_upscaled4x_007_height, cat_sitting_upscaled4x_007_bits);
+            break;
+          case 4:
+            catX = 8;
+            catY = 8;
+            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_008_width, cat_sitting_upscaled4x_008_height, cat_sitting_upscaled4x_008_bits);
+            gameMode = 0;
+            break;
+        }
+        break;
+    }
+    // Frame counter
+    u8g.setFont(u8g_font_unifont);
+    // u8g.drawStr(0, 62, counterText);
+    // Idling counter
+    // u8g.drawStr(30, 62, generalCounter);
+  } while( u8g.nextPage() );
+
+  delay(50);
 }

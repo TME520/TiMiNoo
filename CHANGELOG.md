@@ -1,5 +1,7 @@
 # 2023-05-22
 - Added frame for future 32px icons showing what the cat needs / wants
+- Randomised change in idling posture
+- Reorganised game code
 
 # 2023-05-21
 - Finished extracting, converting and upscaling all cat sprites
