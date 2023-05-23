@@ -1,3 +1,6 @@
+# 2023-05-23
+- Found beautiful 1bit icons and frames on itch.io
+
 # 2023-05-22
 - Added frame for future 32px icons showing what the cat needs / wants
 - Randomised change in idling posture
