@@ -26,7 +26,7 @@ int buttonState = 0;
 int buttonCount = 0;
 int frameCounter = 0;
 char generalCounter[4];
-char counterText[4];
+char counterText[6];
 long randomNumber;
 int catX = 0;
 int catY = 0;
@@ -691,7 +691,7 @@ void loop(void) {
         break;
     }
     // Frame counter
-    u8g.drawStr(64, 62, counterText);
+    // u8g.drawStr(64, 62, counterText);
     // Idling counter
     // u8g.drawStr(30, 62, generalCounter);
   } while( u8g.nextPage() );
