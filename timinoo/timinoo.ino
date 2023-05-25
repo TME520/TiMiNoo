@@ -485,6 +485,7 @@ void setup(void) {
   pinMode(buttonPin, INPUT);
   // flip screen, if required
   u8g.setRot180();
+  u8g.setFont(u8g_font_unifont);
 }
 
 void loop(void) {
@@ -620,12 +621,9 @@ void loop(void) {
         break;
     }
     // Frame counter
-    /*
-    u8g.setFont(u8g_font_unifont);
-    u8g.drawStr(0, 62, counterText);
+    u8g.drawStr(64, 62, counterText);
     // Idling counter
-    u8g.drawStr(30, 62, generalCounter);
-    */
+    // u8g.drawStr(30, 62, generalCounter);
   } while( u8g.nextPage() );
 
   // delay(50);
