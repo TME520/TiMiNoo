@@ -37,6 +37,30 @@ boolean ButtonWasPressed = false;
 unsigned long ButtonStateChangeTime = 0; // Debounce timer
 int currentIcon = 0;
 
+// Cat status variables
+// Status metrics
+// 0 = depleted, 1 = low, 2 = average, 3 = full
+int catHunger = 3;
+int catHygiene = 3;
+int catMorale = 2;
+int catEducation = 0;
+// Status change timing (decrement status variable every x frames)
+/*
+int catHungerStep = 9000; // 1h
+int catHygieneStep = 18000; // 2h
+int catMoraleStep = 4500; // 30m
+int catEducationStep = 1500; // 10m
+*/
+int catHungerStep = 900; // 6m
+int catHygieneStep = 1800; // 12m
+int catMoraleStep = 450; // 3m
+int catEducationStep = 150; // 1m
+// Tracking status checks
+int lastCatHungerCheck = 0;
+int lastCatHygieneCheck = 0;
+int lastCatMoraleCheck = 0;
+int lastCatEducationCheck = 0;
+
 #define comframev4_width 128
 #define comframev4_height 64
 static unsigned char comframev4_bits[] U8G_PROGMEM = {
@@ -460,15 +484,45 @@ void checkButton()
     if (ButtonWasPressed)
     {
       // Button was just pressed
-      buttonCount += 1;
     }
     else
     {
       // Button was just released
-      // DEBUG - Temporary - Cycle through status icons
-      currentIcon += 1;
-      if (currentIcon>6) {
-        currentIcon = 0;
+      if (gameMode == 1) {
+        // Do something only if cat needs something
+        switch (currentIcon) {
+          case 0:
+            // Happy
+            gameMode = 0;
+            break;
+          case 1:
+            // Ghost
+            gameMode = 0;
+            break;
+          case 2:
+            // Play
+            gameMode = 0;
+            break;
+          case 3:
+            // Study
+            gameMode = 0;
+            break;
+          case 4:
+            // Cuddle
+            gameMode = 0;
+            catMorale += 1;
+            break;
+          case 5:
+            // Bubbles
+            gameMode = 0;
+            catHygiene += 1;
+            break;
+          case 6:
+            // Pizza
+            gameMode = 0;
+            catHunger += 1;
+            break;
+        }
       }
     }
   }
@@ -490,19 +544,6 @@ void setup(void) {
 
 void loop(void) {
   randomNumber = random(1, 10);
-  /*
-  // read the state of the pushbutton value:
-  buttonState = digitalRead(buttonPin);
-  if (buttonState == HIGH) {
-    // Button pressed
-    buttonCount += 1;
-  }
-  */
-  if (buttonCount>0) {
-    frameCounter = 0;
-    idlingStep = 1;
-    buttonCount -= 1;
-  }
   checkButton();
   frameCounter += 1;
   itoa(frameCounter, counterText, 10);
@@ -512,6 +553,41 @@ void loop(void) {
     idlingStep = 1;
   }
   itoa(idlingStep, generalCounter, 10);
+
+  // Refresh cat statistics
+  // Hunger
+  if (frameCounter == lastCatHungerCheck + catHungerStep) {
+    catHunger -= 1;
+    lastCatHungerCheck = frameCounter;
+  }
+  // Hygiene
+  if (frameCounter == lastCatHygieneCheck + catHygieneStep) {
+    catHygiene -= 1;
+    lastCatHygieneCheck = frameCounter;
+  }
+  // Morale
+  if (frameCounter == lastCatMoraleCheck + catMoraleStep) {
+    catMorale -= 1;
+    lastCatMoraleCheck = frameCounter;
+  }
+  // Education
+  // Not required
+
+  // Act on cat statistics
+  // Hunger
+  if (catHunger == 0) {
+    // Time to feed the cat
+    currentIcon = 6;
+    gameMode = 1;
+  } else if (catHygiene==0) {
+    // Time to clean
+    currentIcon = 5;
+    gameMode = 1;
+  } else if (catMorale==0) {
+    // Time to cuddle
+    currentIcon = 4;
+    gameMode = 1;
+  }
   
   u8g.firstPage();
   do {
@@ -522,6 +598,40 @@ void loop(void) {
         // Icon frame
         u8g.drawXBMP(0, 0, comframev4_width, comframev4_height, comframev4_bits);
         // Icon (always happy)
+        u8g.drawXBMP(87, 12, happy_cat_28x28_width, happy_cat_28x28_height, happy_cat_28x28_bits);
+        switch (idlingStep) {
+          case 1:
+            checkButton();
+            catX = 8;
+            catY = 8;
+            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+            break;
+          case 2:
+            checkButton();
+            catX = 8;
+            catY = 8;
+            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_002_width, cat_sitting_upscaled4x_002_height, cat_sitting_upscaled4x_002_bits);
+            break;
+          case 3:
+            checkButton();
+            catX = 8;
+            catY = 8;
+            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_003_width, cat_sitting_upscaled4x_003_height, cat_sitting_upscaled4x_003_bits);
+            break;
+          case 4:
+            checkButton();
+            catX = 8;
+            catY = 8;
+            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_004_width, cat_sitting_upscaled4x_004_height, cat_sitting_upscaled4x_004_bits);
+            break;
+        }
+        break;
+      case 1:
+        // Idle - looking left
+        checkButton();
+        // Icon frame
+        u8g.drawXBMP(0, 0, comframev4_width, comframev4_height, comframev4_bits);
+        // Icon (anything else than happy)
         switch (currentIcon) {
           case 0:
             // Happy
@@ -557,45 +667,6 @@ void loop(void) {
             checkButton();
             catX = 8;
             catY = 8;
-            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
-            break;
-          case 2:
-            checkButton();
-            catX = 8;
-            catY = 8;
-            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_002_width, cat_sitting_upscaled4x_002_height, cat_sitting_upscaled4x_002_bits);
-            break;
-          case 3:
-            checkButton();
-            catX = 8;
-            catY = 8;
-            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_003_width, cat_sitting_upscaled4x_003_height, cat_sitting_upscaled4x_003_bits);
-            break;
-          case 4:
-            checkButton();
-            catX = 8;
-            catY = 8;
-            u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_004_width, cat_sitting_upscaled4x_004_height, cat_sitting_upscaled4x_004_bits);
-            /*
-            if (randomNumber>7) {
-              gameMode = 1;
-            }
-            */
-            break;
-        }
-        break;
-      case 1:
-        // Idle - looking left
-        checkButton();
-        // Icon frame
-        u8g.drawXBMP(0, 0, comframev4_width, comframev4_height, comframev4_bits);
-        // Icon (anything else than happy)
-        u8g.drawXBMP(87, 12, happy_cat_28x28_width, happy_cat_28x28_height, happy_cat_28x28_bits);
-        switch (idlingStep) {
-          case 1:
-            checkButton();
-            catX = 8;
-            catY = 8;
             u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_005_width, cat_sitting_upscaled4x_005_height, cat_sitting_upscaled4x_005_bits);
             break;
           case 2:
@@ -615,7 +686,6 @@ void loop(void) {
             catX = 8;
             catY = 8;
             u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_008_width, cat_sitting_upscaled4x_008_height, cat_sitting_upscaled4x_008_bits);
-            gameMode = 0;
             break;
         }
         break;
