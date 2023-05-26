@@ -1,3 +1,7 @@
+# 2023-05-26
+- Improved Hunger, Hygiene, Morale and Culture management
+- Added Education and Play management
+
 # 2023-05-25
 - Implementing Hunger, Hygiene, Morale and Culture counters
 - Button programmed to cancel any need
