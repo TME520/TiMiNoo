@@ -64,7 +64,6 @@ int lastCatHygieneCheck = 0;
 int lastCatMoraleCheck = 0;
 int lastCatEducationCheck = 0;
 int lastCatEntertainmentCheck = 0;
-bool reminderForCatEducation = false;
 
 #define comframev4_width 128
 #define comframev4_height 64
@@ -507,7 +506,7 @@ void checkButton()
           case 2:
             // Play
             gameMode = 0;
-            catEntertainment += 1;
+            catEntertainment = 3;
             break;
           case 3:
             // Study
@@ -517,17 +516,17 @@ void checkButton()
           case 4:
             // Cuddle
             gameMode = 0;
-            catMorale += 1;
+            catMorale = 3;
             break;
           case 5:
             // Bubbles
             gameMode = 0;
-            catHygiene += 1;
+            catHygiene = 3;
             break;
           case 6:
             // Pizza
             gameMode = 0;
-            catHunger += 1;
+            catHunger = 3;
             break;
         }
       }
@@ -565,63 +564,59 @@ void loop(void) {
   // Hunger
   if (frameCounter == lastCatHungerCheck + catHungerStep) {
     catHunger -= 1;
-    if (catHunger<0) {
+    if (catHunger < 0) {
       catHunger = 0;
+    } else if (catHunger == 0) {
+      // Time to feed the cat
+      currentIcon = 6;
+      gameMode = 1;
     }
     lastCatHungerCheck = frameCounter;
   }
   // Hygiene
   if (frameCounter == lastCatHygieneCheck + catHygieneStep) {
     catHygiene -= 1;
-    if (catHygiene<0) {
+    if (catHygiene < 0) {
       catHygiene = 0;
+    } else if (catHygiene==0) {
+      // Time to clean
+      currentIcon = 5;
+      gameMode = 1;
     }
     lastCatHygieneCheck = frameCounter;
   }
   // Morale
   if (frameCounter == lastCatMoraleCheck + catMoraleStep) {
     catMorale -= 1;
-    if (catMorale<0) {
+    if (catMorale < 0) {
       catMorale = 0;
+    } else if (catMorale==0) {
+      // Time to cuddle
+      currentIcon = 4;
+      gameMode = 1;
     }
     lastCatMoraleCheck = frameCounter;
   }
   // Education
   if (frameCounter == lastCatEducationCheck + catEducationStep) {
-    reminderForCatEducation = true;
     lastCatEducationCheck = frameCounter;
+    if (catEducation < 3) {
+      // Time to study
+      currentIcon = 3;
+      gameMode = 1;
+    }
   }
   // Entertainment
   if (frameCounter == lastCatEntertainmentCheck + catEntertainmentStep) {
     catEntertainment -= 1;
-    if (catEntertainment<0) {
+    if (catEntertainment < 0) {
       catEntertainment = 0;
+    } else if (catEntertainment==0) {
+      // Time to play
+      currentIcon = 2;
+      gameMode = 1;
     }
     lastCatEntertainmentCheck = frameCounter;
-  }
-
-  // Act on cat statistics
-  // Hunger
-  if (catHunger == 0) {
-    // Time to feed the cat
-    currentIcon = 6;
-    gameMode = 1;
-  } else if (catHygiene==0) {
-    // Time to clean
-    currentIcon = 5;
-    gameMode = 1;
-  } else if (catMorale==0) {
-    // Time to cuddle
-    currentIcon = 4;
-    gameMode = 1;
-  } else if (catEducation<3 && reminderForCatEducation == true) {
-    // Time to study
-    currentIcon = 3;
-    gameMode = 1;
-  } else if (catEntertainment==0) {
-    // Time to play
-    currentIcon = 2;
-    gameMode = 1;
   }
   
   u8g.firstPage();
