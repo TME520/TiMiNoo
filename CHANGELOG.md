@@ -1,6 +1,8 @@
 # 2023-05-27
 - Tuning needs/wants management
 - Re-enabled frame counter for debugging purposes
+- Added code to randomise cat characteristics
+- Events timing debug session
 
 # 2023-05-26
 - Improved Hunger, Hygiene, Morale and Culture management

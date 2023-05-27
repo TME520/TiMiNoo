@@ -26,7 +26,7 @@ int buttonState = 0;
 int buttonCount = 0;
 int frameCounter = 0;
 char generalCounter[4];
-char counterText[6];
+char counterText[7];
 long randomNumber;
 int catX = 0;
 int catY = 0;
@@ -41,23 +41,40 @@ int currentIcon = 0;
 // Status metrics
 // 0 = depleted, 1 = low, 2 = average, 3 = full
 int catHunger = 3;
+// long catHunger = random(1, 3);
 int catHygiene = 3;
+// long catHygiene = random(1, 3);
 int catMorale = 2;
+// long catMorale = random(1, 3);
 int catEducation = 0;
+// long catEducation = random(1, 3);
 int catEntertainment = 1;
+// long catEntertainment = random(1, 3);
+
 // Status change timing (decrement status variable every x frames)
 /*
 int catHungerStep = 9000; // 1h
+// long catHungerStep = random(8990, 9010);
 int catHygieneStep = 18000; // 2h
+// long catHygieneStep = random(17090, 18010);
 int catMoraleStep = 4500; // 30m
+// long catMoraleStep = random(4490, 4510);
 int catEducationStep = 1500; // 10m
+// long catEducationStep = random(1490, 1510);
 int catEntertainementStep = 150; // 1m
+// long catEntertainementStep = random(140, 160);
 */
 int catHungerStep = 900; // 6m
+// long catHungerStep = random(890, 910);
 int catHygieneStep = 1800; // 12m
+// long catHygieneStep = random(1790, 1810);
 int catMoraleStep = 450; // 3m
+// long catMoraleStep = random(440, 460);
 int catEducationStep = 150; // 1m
+// long catEducationStep = random(140, 160);
 int catEntertainmentStep = 150; // 1m
+// long catEntertainmentStep = random(140, 160);
+
 // Tracking status checks
 int lastCatHungerCheck = 0;
 int lastCatHygieneCheck = 0;
@@ -587,12 +604,12 @@ void loop(void) {
   }
   // Education
   if (frameCounter == lastCatEducationCheck + catEducationStep) {
-    lastCatEducationCheck = frameCounter;
     if (catEducation < 3) {
       // Time to study
       currentIcon = 3;
       gameMode = 1;
     }
+    lastCatEducationCheck = frameCounter;
   }
   // Entertainment
   if (frameCounter == lastCatEntertainmentCheck + catEntertainmentStep) {
@@ -724,7 +741,7 @@ void loop(void) {
         break;
     }
     // Frame counter
-    u8g.drawStr(64, 62, counterText);
+    u8g.drawStr(64, 64, counterText);
     // Idling counter
     // u8g.drawStr(30, 62, generalCounter);
   } while( u8g.nextPage() );
