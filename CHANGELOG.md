@@ -1,3 +1,7 @@
+# 2023-05-27
+- Tuning needs/wants management
+- Re-enabled frame counter for debugging purposes
+
 # 2023-05-26
 - Improved Hunger, Hygiene, Morale and Culture management
 - Added Education and Play management
