@@ -566,10 +566,6 @@ void loop(void) {
     catHunger -= 1;
     if (catHunger < 0) {
       catHunger = 0;
-    } else if (catHunger == 0) {
-      // Time to feed the cat
-      currentIcon = 6;
-      gameMode = 1;
     }
     lastCatHungerCheck = frameCounter;
   }
@@ -578,10 +574,6 @@ void loop(void) {
     catHygiene -= 1;
     if (catHygiene < 0) {
       catHygiene = 0;
-    } else if (catHygiene==0) {
-      // Time to clean
-      currentIcon = 5;
-      gameMode = 1;
     }
     lastCatHygieneCheck = frameCounter;
   }
@@ -590,10 +582,6 @@ void loop(void) {
     catMorale -= 1;
     if (catMorale < 0) {
       catMorale = 0;
-    } else if (catMorale==0) {
-      // Time to cuddle
-      currentIcon = 4;
-      gameMode = 1;
     }
     lastCatMoraleCheck = frameCounter;
   }
@@ -611,12 +599,27 @@ void loop(void) {
     catEntertainment -= 1;
     if (catEntertainment < 0) {
       catEntertainment = 0;
-    } else if (catEntertainment==0) {
-      // Time to play
-      currentIcon = 2;
-      gameMode = 1;
     }
     lastCatEntertainmentCheck = frameCounter;
+  }
+
+  // Act on cat stats
+  if (catHunger == 0) {
+    // Time to feed the cat
+    currentIcon = 6;
+    gameMode = 1;
+  } else if (catHygiene==0) {
+    // Time to clean
+    currentIcon = 5;
+    gameMode = 1;
+  } else if (catMorale==0) {
+    // Time to cuddle
+    currentIcon = 4;
+    gameMode = 1;
+  } else if (catEntertainment==0) {
+    // Time to play
+    currentIcon = 2;
+    gameMode = 1;
   }
   
   u8g.firstPage();
@@ -721,7 +724,7 @@ void loop(void) {
         break;
     }
     // Frame counter
-    // u8g.drawStr(64, 62, counterText);
+    u8g.drawStr(64, 62, counterText);
     // Idling counter
     // u8g.drawStr(30, 62, generalCounter);
   } while( u8g.nextPage() );
