@@ -1,4 +1,5 @@
 # 2023-05-28
+- WIP: Implementing game modes 2 to 6 (feed, cuddle, educate, clean, play)
 - frameCounter changed to unsigned int
 - WIP: display stats
 

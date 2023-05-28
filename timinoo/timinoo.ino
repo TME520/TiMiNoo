@@ -23,7 +23,6 @@ int gameMode = 0;
 const char* textToDisplay = "";
 const int buttonPin = 2;
 int buttonState = 0;
-int buttonCount = 0;
 unsigned int frameCounter = 0;
 char generalCounter[4];
 char frameCounterString[7];
@@ -36,27 +35,29 @@ const unsigned long DebounceTime = 10;
 boolean ButtonWasPressed = false;
 unsigned long ButtonStateChangeTime = 0; // Debounce timer
 int currentIcon = 0;
-int currentStat = 0;
+// int currentStat = 0;
 
 // Cat status variables
 // Status metrics
 // 0 = depleted, 1 = low, 2 = average, 3 = full
-int catHunger = 3;
-// long catHunger = random(1, 3);
-int catHygiene = 3;
-// long catHygiene = random(1, 3);
-int catMorale = 2;
-// long catMorale = random(1, 3);
-int catEducation = 0;
-// long catEducation = random(1, 3);
-int catEntertainment = 1;
-// long catEntertainment = random(1, 3);
+// int catHunger = 3;
+long catHunger = random(1, 3);
+// int catHygiene = 3;
+long catHygiene = random(1, 3);
+// int catMorale = 2;
+long catMorale = random(1, 3);
+// int catEducation = 0;
+long catEducation = random(1, 3);
+// int catEntertainment = 1;
+long catEntertainment = random(1, 3);
 
+/*
 char catHungerString[1];
 char catHygieneString[1];
 char catMoraleString[1];
 char catEducationString[1];
 char catEntertainmentString[1];
+*/
 
 // Status change timing (decrement status variable every x frames)
 /*
@@ -71,16 +72,16 @@ int catEducationStep = 1500; // 10m
 int catEntertainementStep = 150; // 1m
 // long catEntertainementStep = random(140, 160);
 */
-int catHungerStep = 900; // 6m
-// long catHungerStep = random(890, 910);
-int catHygieneStep = 1800; // 12m
-// long catHygieneStep = random(1790, 1810);
-int catMoraleStep = 450; // 3m
-// long catMoraleStep = random(440, 460);
-int catEducationStep = 150; // 1m
-// long catEducationStep = random(140, 160);
-int catEntertainmentStep = 150; // 1m
-// long catEntertainmentStep = random(140, 160);
+// int catHungerStep = 900; // 6m
+long catHungerStep = random(890, 910);
+// int catHygieneStep = 1800; // 12m
+long catHygieneStep = random(1790, 1810);
+// int catMoraleStep = 450; // 3m
+long catMoraleStep = random(440, 460);
+// int catEducationStep = 150; // 1m
+long catEducationStep = random(140, 160);
+// int catEntertainmentStep = 150; // 1m
+long catEntertainmentStep = random(140, 160);
 
 // Tracking status checks
 int lastCatHungerCheck = 0;
@@ -530,26 +531,31 @@ void checkButton()
           case 2:
             // Play
             gameMode = 0;
+            // gameMode = 6;
             catEntertainment = 3;
             break;
           case 3:
             // Study
             gameMode = 0;
+            // gameMode = 4;
             catEducation += 1;
             break;
           case 4:
             // Cuddle
             gameMode = 0;
+            // gameMode = 3;
             catMorale = 3;
             break;
           case 5:
             // Bubbles
             gameMode = 0;
+            // gameMode = 5;
             catHygiene = 3;
             break;
           case 6:
             // Pizza
             gameMode = 0;
+            // gameMode = 2;
             catHunger = 3;
             break;
         }
@@ -577,10 +583,12 @@ void loop(void) {
   frameCounter += 1;
   itoa(frameCounter, frameCounterString, 10);
 
+  /*
   currentStat += 1;
   if (currentStat==50) {
     currentStat = 0;
   }
+  */
 
   idlingStep += 1;
   if (idlingStep>4) {
@@ -595,7 +603,7 @@ void loop(void) {
     if (catHunger < 0) {
       catHunger = 0;
     }
-    itoa(catHunger, catHungerString, 10);
+    // itoa(catHunger, catHungerString, 10);
     lastCatHungerCheck = frameCounter;
   }
   // Hygiene
@@ -604,7 +612,7 @@ void loop(void) {
     if (catHygiene < 0) {
       catHygiene = 0;
     }
-    itoa(catHygiene, catHygieneString, 10);
+    // itoa(catHygiene, catHygieneString, 10);
     lastCatHygieneCheck = frameCounter;
   }
   // Morale
@@ -613,7 +621,7 @@ void loop(void) {
     if (catMorale < 0) {
       catMorale = 0;
     }
-    itoa(catMorale, catMoraleString, 10);
+    // itoa(catMorale, catMoraleString, 10);
     lastCatMoraleCheck = frameCounter;
   }
   // Education
@@ -623,7 +631,7 @@ void loop(void) {
       currentIcon = 3;
       gameMode = 1;
     }
-    itoa(catEducation, catEducationString, 10);
+    // itoa(catEducation, catEducationString, 10);
     lastCatEducationCheck = frameCounter;
   }
   // Entertainment
@@ -632,7 +640,7 @@ void loop(void) {
     if (catEntertainment < 0) {
       catEntertainment = 0;
     }
-    itoa(catEntertainment, catEntertainmentString, 10);
+    // itoa(catEntertainment, catEntertainmentString, 10);
     lastCatEntertainmentCheck = frameCounter;
   }
 
@@ -755,11 +763,26 @@ void loop(void) {
             break;
         }
         break;
+      case 2:
+        // Feed
+        break;
+      case 3:
+        // Cuddle
+        break;
+      case 4:
+        // Educate
+        break;
+      case 5:
+        // Clean
+        break;
+      case 6:
+        // Play
+        break;
     }
     /*
     // Frame counter
-    // u8g.setFont(u8g_font_unifont);
-    // u8g.drawStr(64, 64, frameCounterString);
+    u8g.setFont(u8g_font_unifont);
+    u8g.drawStr(64, 64, frameCounterString);
     // Idling counter
     // u8g.drawStr(30, 62, generalCounter);
     u8g.setFont(u8g_font_u8glib_4);
