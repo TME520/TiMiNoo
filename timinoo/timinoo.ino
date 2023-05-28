@@ -35,31 +35,16 @@ const unsigned long DebounceTime = 10;
 boolean ButtonWasPressed = false;
 unsigned long ButtonStateChangeTime = 0; // Debounce timer
 int currentIcon = 0;
-// int currentStat = 0;
 int cuddleCounter = 0;
-int flashCounter = 0;
 
 // Cat status variables
 // Status metrics
 // 0 = depleted, 1 = low, 2 = average, 3 = full
-// int catHunger = 3;
 long catHunger = random(1, 3);
-// int catHygiene = 3;
 long catHygiene = random(1, 3);
-// int catMorale = 2;
 long catMorale = random(1, 3);
-// int catEducation = 0;
 long catEducation = random(1, 3);
-// int catEntertainment = 1;
 long catEntertainment = random(1, 3);
-
-/*
-char catHungerString[1];
-char catHygieneString[1];
-char catMoraleString[1];
-char catEducationString[1];
-char catEntertainmentString[1];
-*/
 
 // Status change timing (decrement status variable every x frames)
 /*
@@ -591,13 +576,6 @@ void loop(void) {
   frameCounter += 1;
   itoa(frameCounter, frameCounterString, 10);
 
-  /*
-  currentStat += 1;
-  if (currentStat==50) {
-    currentStat = 0;
-  }
-  */
-
   idlingStep += 1;
   if (idlingStep>4) {
     idlingStep = 1;
@@ -611,7 +589,6 @@ void loop(void) {
     if (catHunger < 0) {
       catHunger = 0;
     }
-    // itoa(catHunger, catHungerString, 10);
     lastCatHungerCheck = frameCounter;
   }
   // Hygiene
@@ -620,7 +597,6 @@ void loop(void) {
     if (catHygiene < 0) {
       catHygiene = 0;
     }
-    // itoa(catHygiene, catHygieneString, 10);
     lastCatHygieneCheck = frameCounter;
   }
   // Morale
@@ -629,7 +605,6 @@ void loop(void) {
     if (catMorale < 0) {
       catMorale = 0;
     }
-    // itoa(catMorale, catMoraleString, 10);
     lastCatMoraleCheck = frameCounter;
   }
   // Education
@@ -639,7 +614,6 @@ void loop(void) {
       currentIcon = 3;
       gameMode = 1;
     }
-    // itoa(catEducation, catEducationString, 10);
     lastCatEducationCheck = frameCounter;
   }
   // Entertainment
@@ -648,7 +622,6 @@ void loop(void) {
     if (catEntertainment < 0) {
       catEntertainment = 0;
     }
-    // itoa(catEntertainment, catEntertainmentString, 10);
     lastCatEntertainmentCheck = frameCounter;
   }
 
@@ -776,18 +749,24 @@ void loop(void) {
         break;
       case 3:
         // Cuddle
-        catX = 16;
+        catX = 8;
         catY = 8;
         u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
-        if (flashCounter==0) {
-          // Display heart
-          u8g.drawXBMP(catX, catY, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
-          flashCounter=1;
-        } else {
-          flashCounter=0;
-        }
         cuddleCounter += 1;
-        if (cuddleCounter>8) {
+        if (cuddleCounter<31) {
+          u8g.drawXBMP(80, 45 - cuddleCounter, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
+          u8g.drawXBMP(92, 40 - cuddleCounter, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
+          u8g.drawXBMP(104, 45 - cuddleCounter, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
+        } else if (cuddleCounter>30 && cuddleCounter < 161) {
+          u8g.drawXBMP(80, 15, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
+          u8g.drawXBMP(92, 10, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
+          u8g.drawXBMP(104, 15, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
+          u8g.setFont(u8g_font_u8glib_4);
+          u8g.drawStr(70, 40, "I love you too <3");
+        } else if (cuddleCounter>160 && cuddleCounter < 240) {
+          u8g.setFont(u8g_font_u8glib_4);
+          u8g.drawStr(70, 40, "I love you too <3");
+        } else if (cuddleCounter==240) {
           catMorale = 3;
           gameMode = 0;
         }
@@ -809,28 +788,6 @@ void loop(void) {
     // Idling counter
     // u8g.drawStr(30, 62, generalCounter);
     u8g.setFont(u8g_font_u8glib_4);
-    switch (currentStat) {
-      case 0 ... 9:
-        // Hunger
-        u8g.drawStr(8, 62, "Hunger:");
-        break;
-      case 10 ... 19:
-        // Hygiene
-        u8g.drawStr(8, 62, "Hygiene:");
-        break;
-      case 20 ... 29:
-        // Morale
-        u8g.drawStr(8, 62, "Morale:");
-        break;
-      case 30 ... 39:
-        // Fun
-        u8g.drawStr(8, 62, "Fun:");
-        break;
-      case 40 ... 49:
-        // Education
-        u8g.drawStr(8, 62, "Education:");
-        break;
-    }
     */
   } while( u8g.nextPage() );
 

@@ -1,4 +1,5 @@
 # 2023-05-28
+- Completed the 1st version of the Cuddle sequence
 - WIP: Implementing game modes 2 to 6 (feed, cuddle, educate, clean, play)
 - frameCounter changed to unsigned int
 - WIP: display stats
