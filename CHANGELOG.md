@@ -1,3 +1,7 @@
+# 2023-05-28
+- frameCounter changed to unsigned int
+- WIP: display stats
+
 # 2023-05-27
 - Tuning needs/wants management
 - Re-enabled frame counter for debugging purposes

@@ -24,9 +24,9 @@ const char* textToDisplay = "";
 const int buttonPin = 2;
 int buttonState = 0;
 int buttonCount = 0;
-int frameCounter = 0;
+unsigned int frameCounter = 0;
 char generalCounter[4];
-char counterText[7];
+char frameCounterString[7];
 long randomNumber;
 int catX = 0;
 int catY = 0;
@@ -36,6 +36,7 @@ const unsigned long DebounceTime = 10;
 boolean ButtonWasPressed = false;
 unsigned long ButtonStateChangeTime = 0; // Debounce timer
 int currentIcon = 0;
+int currentStat = 0;
 
 // Cat status variables
 // Status metrics
@@ -50,6 +51,12 @@ int catEducation = 0;
 // long catEducation = random(1, 3);
 int catEntertainment = 1;
 // long catEntertainment = random(1, 3);
+
+char catHungerString[1];
+char catHygieneString[1];
+char catMoraleString[1];
+char catEducationString[1];
+char catEntertainmentString[1];
 
 // Status change timing (decrement status variable every x frames)
 /*
@@ -562,14 +569,18 @@ void setup(void) {
   pinMode(buttonPin, INPUT);
   // flip screen, if required
   u8g.setRot180();
-  u8g.setFont(u8g_font_unifont);
 }
 
 void loop(void) {
   randomNumber = random(1, 10);
   checkButton();
   frameCounter += 1;
-  itoa(frameCounter, counterText, 10);
+  itoa(frameCounter, frameCounterString, 10);
+
+  currentStat += 1;
+  if (currentStat==50) {
+    currentStat = 0;
+  }
 
   idlingStep += 1;
   if (idlingStep>4) {
@@ -584,6 +595,7 @@ void loop(void) {
     if (catHunger < 0) {
       catHunger = 0;
     }
+    itoa(catHunger, catHungerString, 10);
     lastCatHungerCheck = frameCounter;
   }
   // Hygiene
@@ -592,6 +604,7 @@ void loop(void) {
     if (catHygiene < 0) {
       catHygiene = 0;
     }
+    itoa(catHygiene, catHygieneString, 10);
     lastCatHygieneCheck = frameCounter;
   }
   // Morale
@@ -600,6 +613,7 @@ void loop(void) {
     if (catMorale < 0) {
       catMorale = 0;
     }
+    itoa(catMorale, catMoraleString, 10);
     lastCatMoraleCheck = frameCounter;
   }
   // Education
@@ -609,6 +623,7 @@ void loop(void) {
       currentIcon = 3;
       gameMode = 1;
     }
+    itoa(catEducation, catEducationString, 10);
     lastCatEducationCheck = frameCounter;
   }
   // Entertainment
@@ -617,6 +632,7 @@ void loop(void) {
     if (catEntertainment < 0) {
       catEntertainment = 0;
     }
+    itoa(catEntertainment, catEntertainmentString, 10);
     lastCatEntertainmentCheck = frameCounter;
   }
 
@@ -740,10 +756,36 @@ void loop(void) {
         }
         break;
     }
+    /*
     // Frame counter
-    u8g.drawStr(64, 64, counterText);
+    // u8g.setFont(u8g_font_unifont);
+    // u8g.drawStr(64, 64, frameCounterString);
     // Idling counter
     // u8g.drawStr(30, 62, generalCounter);
+    u8g.setFont(u8g_font_u8glib_4);
+    switch (currentStat) {
+      case 0 ... 9:
+        // Hunger
+        u8g.drawStr(8, 62, "Hunger:");
+        break;
+      case 10 ... 19:
+        // Hygiene
+        u8g.drawStr(8, 62, "Hygiene:");
+        break;
+      case 20 ... 29:
+        // Morale
+        u8g.drawStr(8, 62, "Morale:");
+        break;
+      case 30 ... 39:
+        // Fun
+        u8g.drawStr(8, 62, "Fun:");
+        break;
+      case 40 ... 49:
+        // Education
+        u8g.drawStr(8, 62, "Education:");
+        break;
+    }
+    */
   } while( u8g.nextPage() );
 
   // delay(50);
