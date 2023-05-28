@@ -36,6 +36,8 @@ boolean ButtonWasPressed = false;
 unsigned long ButtonStateChangeTime = 0; // Debounce timer
 int currentIcon = 0;
 // int currentStat = 0;
+int cuddleCounter = 0;
+int flashCounter = 0;
 
 // Cat status variables
 // Status metrics
@@ -495,6 +497,12 @@ static unsigned char cat_sitting_upscaled4x_008_bits[] U8G_PROGMEM = {
    0x00, 0xff, 0xff, 0xff, 0xff, 0xff, 0x00, 0xff, 0xff, 0xff, 0xff, 0xff,
    0x00, 0xff, 0xff, 0xff, 0xff, 0xff, 0x00, 0xff, 0xff, 0xff, 0xff, 0xff };
 
+#define cuddle_heart_11x10_width 11
+#define cuddle_heart_11x10_height 10
+static unsigned char cuddle_heart_11x10_bits[] U8G_PROGMEM = {
+   0x8c, 0x01, 0xde, 0x03, 0xff, 0x07, 0xff, 0x07, 0xff, 0x07, 0xfe, 0x03,
+   0xfc, 0x01, 0xf8, 0x00, 0x70, 0x00, 0x20, 0x00 };
+
 void checkButton()
 {
   unsigned long currentTime = millis();
@@ -542,9 +550,9 @@ void checkButton()
             break;
           case 4:
             // Cuddle
-            gameMode = 0;
-            // gameMode = 3;
-            catMorale = 3;
+            // gameMode = 0;
+            cuddleCounter = 0;
+            gameMode = 3;
             break;
           case 5:
             // Bubbles
@@ -768,6 +776,21 @@ void loop(void) {
         break;
       case 3:
         // Cuddle
+        catX = 16;
+        catY = 8;
+        u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+        if (flashCounter==0) {
+          // Display heart
+          u8g.drawXBMP(catX, catY, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
+          flashCounter=1;
+        } else {
+          flashCounter=0;
+        }
+        cuddleCounter += 1;
+        if (cuddleCounter>8) {
+          catMorale = 3;
+          gameMode = 0;
+        }
         break;
       case 4:
         // Educate
