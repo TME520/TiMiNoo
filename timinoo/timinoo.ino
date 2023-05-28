@@ -634,7 +634,7 @@ void loop(void) {
   }
   // Education
   if (frameCounter == lastCatEducationCheck + catEducationStep) {
-    if (catEducation < 3 && gameMode < 2) {
+    if (catEducation < 3 && gameMode == 0) {
       // Time to study
       currentIcon = 3;
       gameMode = 1;
@@ -653,19 +653,19 @@ void loop(void) {
   }
 
   // Act on cat stats
-  if (catHunger == 0 && gameMode < 2) {
+  if (catHunger == 0 && gameMode == 0) {
     // Time to feed the cat
     currentIcon = 6;
     gameMode = 1;
-  } else if (catHygiene==0 && gameMode < 2) {
+  } else if (catHygiene==0 && gameMode == 0) {
     // Time to clean
     currentIcon = 5;
     gameMode = 1;
-  } else if (catMorale==0 && gameMode < 2) {
+  } else if (catMorale==0 && gameMode == 0) {
     // Time to cuddle
     currentIcon = 4;
     gameMode = 1;
-  } else if (catEntertainment==0 && gameMode < 2) {
+  } else if (catEntertainment==0 && gameMode == 0) {
     // Time to play
     currentIcon = 2;
     gameMode = 1;
