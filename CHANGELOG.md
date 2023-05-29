@@ -1,3 +1,7 @@
+# 2023-05-30
+- Fixed a bug in animation loop
+- Tuned Clean sequence
+
 # 2023-05-29
 - Testing production timings
 - Fixed a bug in events timing

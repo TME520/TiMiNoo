@@ -1006,6 +1006,7 @@ void loop(void) {
           u8g.setFont(u8g_font_u8glib_4);
           u8g.drawStr(70, 40, "I love you too <3");
         } else if (cuddleCounter==240) {
+          animationStep = 1;
           catMorale = 3;
           gameMode = 0;
         }
@@ -1017,25 +1018,25 @@ void loop(void) {
         // Clean
         switch (animationStep) {
           case 1:
-            u8g.drawXBMP(8, 8, cat_licking_upscaled4x_001_width, cat_licking_upscaled4x_001_height, cat_licking_upscaled4x_001_bits);
+            u8g.drawXBMP(38, 8, cat_licking_upscaled4x_001_width, cat_licking_upscaled4x_001_height, cat_licking_upscaled4x_001_bits);
             break;
           case 2:
-            u8g.drawXBMP(8, 12, cat_licking_upscaled4x_002_width, cat_licking_upscaled4x_002_height, cat_licking_upscaled4x_002_bits);
+            u8g.drawXBMP(38, 12, cat_licking_upscaled4x_002_width, cat_licking_upscaled4x_002_height, cat_licking_upscaled4x_002_bits);
             break;
           case 3:
-            u8g.drawXBMP(8, 12, cat_licking_upscaled4x_003_width, cat_licking_upscaled4x_003_height, cat_licking_upscaled4x_003_bits);
+            u8g.drawXBMP(38, 12, cat_licking_upscaled4x_003_width, cat_licking_upscaled4x_003_height, cat_licking_upscaled4x_003_bits);
             break;
           case 4:
-            u8g.drawXBMP(8, 8, cat_licking_upscaled4x_004_width, cat_licking_upscaled4x_004_height, cat_licking_upscaled4x_004_bits);
+            u8g.drawXBMP(38, 8, cat_licking_upscaled4x_004_width, cat_licking_upscaled4x_004_height, cat_licking_upscaled4x_004_bits);
             break;
           case 5:
-            u8g.drawXBMP(8, 8, cat_licking_upscaled4x_005_width, cat_licking_upscaled4x_005_height, cat_licking_upscaled4x_005_bits);
+            u8g.drawXBMP(38, 8, cat_licking_upscaled4x_005_width, cat_licking_upscaled4x_005_height, cat_licking_upscaled4x_005_bits);
             break;
           case 6:
-            u8g.drawXBMP(8, 12, cat_licking_upscaled4x_006_width, cat_licking_upscaled4x_006_height, cat_licking_upscaled4x_006_bits);
+            u8g.drawXBMP(38, 12, cat_licking_upscaled4x_006_width, cat_licking_upscaled4x_006_height, cat_licking_upscaled4x_006_bits);
             break;
           case 7:
-            u8g.drawXBMP(8, 12, cat_licking_upscaled4x_007_width, cat_licking_upscaled4x_007_height, cat_licking_upscaled4x_007_bits);
+            u8g.drawXBMP(38, 12, cat_licking_upscaled4x_007_width, cat_licking_upscaled4x_007_height, cat_licking_upscaled4x_007_bits);
             break;
           case 8:
             u8g.drawXBMP(8, 8, cat_licking_upscaled4x_008_width, cat_licking_upscaled4x_008_height, cat_licking_upscaled4x_008_bits);
@@ -1049,7 +1050,7 @@ void loop(void) {
             break;
         }
         u8g.setFont(u8g_font_u8glib_4);
-        u8g.drawStr(70, 40, "Scrub scrub !!!");
+        u8g.drawStr(54, 62, "Scrub scrub <3");
         break;
       case 6:
         // Play
