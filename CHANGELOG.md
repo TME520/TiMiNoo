@@ -1,5 +1,6 @@
 # 2023-05-29
 - Testing production timings
+- Fixed a bug in events timing
 
 # 2023-05-28
 - Completed the 1st version of the Cuddle sequence

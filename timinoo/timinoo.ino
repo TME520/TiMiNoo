@@ -23,7 +23,7 @@ int gameMode = 0;
 const char* textToDisplay = "";
 const int buttonPin = 2;
 int buttonState = 0;
-unsigned int frameCounter = 0;
+unsigned long frameCounter = 0;
 char generalCounter[4];
 char frameCounterString[7];
 long randomNumber;
@@ -48,27 +48,27 @@ long catEntertainment = random(1, 3);
 
 // Status change timing (decrement status variable every x frames)
 // Production timings
-long catHungerStep = random(8990, 9010);
-long catHygieneStep = random(17090, 18010);
-long catMoraleStep = random(4490, 4510);
-long catEducationStep = random(1490, 1510);
-long catEntertainmentStep = random(140, 160);
+unsigned long catHungerStep = random(8990, 9010);
+unsigned long catHygieneStep = random(17090, 18010);
+unsigned long catMoraleStep = random(4490, 4510);
+unsigned long catEducationStep = random(1490, 1510);
+unsigned long catEntertainmentStep = random(140, 160);
 
 /*
 // Testing timings
-long catHungerStep = random(890, 910);
-long catHygieneStep = random(1790, 1810);
-long catMoraleStep = random(440, 460);
-long catEducationStep = random(140, 160);
-long catEntertainmentStep = random(140, 160);
+unsigned long catHungerStep = random(890, 910);
+unsigned long catHygieneStep = random(1790, 1810);
+unsigned long catMoraleStep = random(440, 460);
+unsigned long catEducationStep = random(140, 160);
+unsigned long catEntertainmentStep = random(140, 160);
 */
 
 // Tracking status checks
-int lastCatHungerCheck = 0;
-int lastCatHygieneCheck = 0;
-int lastCatMoraleCheck = 0;
-int lastCatEducationCheck = 0;
-int lastCatEntertainmentCheck = 0;
+unsigned long lastCatHungerCheck = 0;
+unsigned long lastCatHygieneCheck = 0;
+unsigned long lastCatMoraleCheck = 0;
+unsigned long lastCatEducationCheck = 0;
+unsigned long lastCatEntertainmentCheck = 0;
 
 #define comframev4_width 128
 #define comframev4_height 64
@@ -567,7 +567,7 @@ void loop(void) {
   randomNumber = random(1, 10);
   checkButton();
   frameCounter += 1;
-  itoa(frameCounter, frameCounterString, 10);
+  ltoa(frameCounter, frameCounterString, 10);
 
   idlingStep += 1;
   if (idlingStep>4) {
