@@ -47,28 +47,21 @@ long catEducation = random(1, 3);
 long catEntertainment = random(1, 3);
 
 // Status change timing (decrement status variable every x frames)
-/*
-int catHungerStep = 9000; // 1h
-// long catHungerStep = random(8990, 9010);
-int catHygieneStep = 18000; // 2h
-// long catHygieneStep = random(17090, 18010);
-int catMoraleStep = 4500; // 30m
-// long catMoraleStep = random(4490, 4510);
-int catEducationStep = 1500; // 10m
-// long catEducationStep = random(1490, 1510);
-int catEntertainementStep = 150; // 1m
-// long catEntertainementStep = random(140, 160);
-*/
-// int catHungerStep = 900; // 6m
-long catHungerStep = random(890, 910);
-// int catHygieneStep = 1800; // 12m
-long catHygieneStep = random(1790, 1810);
-// int catMoraleStep = 450; // 3m
-long catMoraleStep = random(440, 460);
-// int catEducationStep = 150; // 1m
-long catEducationStep = random(140, 160);
-// int catEntertainmentStep = 150; // 1m
+// Production timings
+long catHungerStep = random(8990, 9010);
+long catHygieneStep = random(17090, 18010);
+long catMoraleStep = random(4490, 4510);
+long catEducationStep = random(1490, 1510);
 long catEntertainmentStep = random(140, 160);
+
+/*
+// Testing timings
+long catHungerStep = random(890, 910);
+long catHygieneStep = random(1790, 1810);
+long catMoraleStep = random(440, 460);
+long catEducationStep = random(140, 160);
+long catEntertainmentStep = random(140, 160);
+*/
 
 // Tracking status checks
 int lastCatHungerCheck = 0;

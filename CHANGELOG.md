@@ -1,3 +1,6 @@
+# 2023-05-29
+- Testing production timings
+
 # 2023-05-28
 - Completed the 1st version of the Cuddle sequence
 - WIP: Implementing game modes 2 to 6 (feed, cuddle, educate, clean, play)
