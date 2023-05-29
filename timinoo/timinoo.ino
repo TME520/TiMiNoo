@@ -25,10 +25,12 @@ const int buttonPin = 2;
 int buttonState = 0;
 unsigned long frameCounter = 0;
 char frameCounterString[7];
+char animationStepString[1];
 long randomNumber;
 int catX = 0;
 int catY = 0;
 int animationStep = 1;
+int animationStepMax = 4;
 const byte ButtonPin = 2;
 const unsigned long DebounceTime = 10;
 boolean ButtonWasPressed = false;
@@ -816,8 +818,11 @@ void loop(void) {
   checkButton();
   frameCounter += 1;
   ltoa(frameCounter, frameCounterString, 10);
-
   animationStep += 1;
+  if (animationStep>animationStepMax) {
+    animationStep=1;
+  }
+  ltoa(animationStep, animationStepString, 10);
 
   // Refresh cat statistics
   // Hunger
@@ -886,6 +891,7 @@ void loop(void) {
     switch (gameMode) {
       case 0:
         // Idling
+        animationStepMax = 4;
         checkButton();
         // Icon frame
         u8g.drawXBMP(0, 0, comframev4_width, comframev4_height, comframev4_bits);
@@ -915,12 +921,12 @@ void loop(void) {
             catX = 8;
             catY = 8;
             u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_004_width, cat_sitting_upscaled4x_004_height, cat_sitting_upscaled4x_004_bits);
-            animationStep = 1;
             break;
         }
         break;
       case 1:
         // Idle - looking left
+        animationStepMax = 4;
         checkButton();
         // Icon frame
         u8g.drawXBMP(0, 0, comframev4_width, comframev4_height, comframev4_bits);
@@ -979,7 +985,6 @@ void loop(void) {
             catX = 8;
             catY = 8;
             u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_008_width, cat_sitting_upscaled4x_008_height, cat_sitting_upscaled4x_008_bits);
-            animationStep = 1;
             break;
         }
         break;
@@ -1006,7 +1011,6 @@ void loop(void) {
           u8g.setFont(u8g_font_u8glib_4);
           u8g.drawStr(70, 40, "I love you too <3");
         } else if (cuddleCounter==240) {
-          animationStep = 1;
           catMorale = 3;
           gameMode = 0;
         }
@@ -1016,6 +1020,7 @@ void loop(void) {
         break;
       case 5:
         // Clean
+        animationStepMax = 8;
         switch (animationStep) {
           case 1:
             u8g.drawXBMP(38, 8, cat_licking_upscaled4x_001_width, cat_licking_upscaled4x_001_height, cat_licking_upscaled4x_001_bits);
@@ -1039,10 +1044,9 @@ void loop(void) {
             u8g.drawXBMP(38, 12, cat_licking_upscaled4x_007_width, cat_licking_upscaled4x_007_height, cat_licking_upscaled4x_007_bits);
             break;
           case 8:
-            u8g.drawXBMP(8, 8, cat_licking_upscaled4x_008_width, cat_licking_upscaled4x_008_height, cat_licking_upscaled4x_008_bits);
-            animationStep = 1;
+            u8g.drawXBMP(38, 8, cat_licking_upscaled4x_008_width, cat_licking_upscaled4x_008_height, cat_licking_upscaled4x_008_bits);
             cleanCounter += 1;
-            if (cleanCounter>7) {
+            if (cleanCounter>40) {
               cleanCounter = 0;
               catHygiene = 3;
               gameMode = 0;
@@ -1050,7 +1054,7 @@ void loop(void) {
             break;
         }
         u8g.setFont(u8g_font_u8glib_4);
-        u8g.drawStr(54, 62, "Scrub scrub <3");
+        u8g.drawStr(38, 62, "Scrub scrub <3");
         break;
       case 6:
         // Play
@@ -1059,10 +1063,8 @@ void loop(void) {
     /*
     // Frame counter
     u8g.setFont(u8g_font_unifont);
-    u8g.drawStr(64, 64, frameCounterString);
-    // Idling counter
-    // u8g.drawStr(30, 62, generalCounter);
-    u8g.setFont(u8g_font_u8glib_4);
+    u8g.drawStr(8, 50, frameCounterString);
+    u8g.drawStr(8, 10, animationStepString);
     */
   } while( u8g.nextPage() );
 
