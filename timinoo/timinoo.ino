@@ -39,6 +39,7 @@ int currentIcon = 0;
 int cuddleCounter = 0;
 int cleanCounter = 0;
 int cleanLoopCounter = 0;
+int gameCounter = 0;
 
 // Cat status variables
 // Status metrics
@@ -47,7 +48,8 @@ long catHunger = random(1, 3);
 long catHygiene = random(1, 3);
 long catMorale = random(1, 3);
 long catEducation = random(1, 3);
-long catEntertainment = random(1, 3);
+// long catEntertainment = random(1, 3);
+long catEntertainment = 0;
 
 // Status change timing (decrement status variable every x frames)
 // Production timings
@@ -55,7 +57,8 @@ unsigned long catHungerStep = random(8990, 9010);
 unsigned long catHygieneStep = random(17090, 18010);
 unsigned long catMoraleStep = random(4490, 4510);
 unsigned long catEducationStep = random(1490, 1510);
-unsigned long catEntertainmentStep = random(140, 160);
+// unsigned long catEntertainmentStep = random(140, 160);
+unsigned long catEntertainmentStep = 100;
 
 /*
 // Testing timings
@@ -72,6 +75,27 @@ unsigned long lastCatHygieneCheck = 0;
 unsigned long lastCatMoraleCheck = 0;
 unsigned long lastCatEducationCheck = 0;
 unsigned long lastCatEntertainmentCheck = 0;
+
+#define casino_frame_40x40_width 40
+#define casino_frame_40x40_height 40
+static unsigned char casino_frame_40x40_bits[] U8G_PROGMEM = {
+   0xf8, 0xff, 0xff, 0xff, 0x1f, 0xf8, 0xff, 0xff, 0xff, 0x1f, 0xf8, 0xff,
+   0xff, 0xff, 0x1f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+   0xff, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f,
+   0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00,
+   0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8,
+   0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00,
+   0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00,
+   0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f,
+   0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00,
+   0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8,
+   0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00,
+   0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00,
+   0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f,
+   0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0x1f, 0x00, 0x00,
+   0x00, 0xf8, 0x1f, 0x00, 0x00, 0x00, 0xf8, 0xff, 0xff, 0xff, 0xff, 0xff,
+   0xff, 0xff, 0xff, 0xff, 0xff, 0xf8, 0xff, 0xff, 0xff, 0x1f, 0xf8, 0xff,
+   0xff, 0xff, 0x1f, 0xf8, 0xff, 0xff, 0xff, 0x1f };
 
 #define comframev4_width 128
 #define comframev4_height 64
@@ -767,9 +791,8 @@ void checkButton()
             break;
           case 2:
             // Play
-            gameMode = 0;
-            // gameMode = 6;
-            catEntertainment = 3;
+            gameCounter = 0;
+            gameMode = 6;
             break;
           case 3:
             // Study
@@ -1058,6 +1081,50 @@ void loop(void) {
         break;
       case 6:
         // Play
+        animationStepMax = 8;
+        u8g.drawXBMP(0, 10, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
+        u8g.drawXBMP(41, 10, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
+        u8g.drawXBMP(82, 10, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
+        switch (animationStep) {
+          case 1:
+            // Item 1: ghost
+            u8g.drawXBMP(6, 16, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
+            break;
+          case 2:
+            // Item 2
+            u8g.drawXBMP(6, 16, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
+            break;
+          case 3:
+            // Item 3
+            u8g.drawXBMP(6, 16, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
+            break;
+          case 4:
+            // Item 4
+            u8g.drawXBMP(6, 16, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
+            break;
+          case 5:
+            // Item 5
+            u8g.drawXBMP(6, 16, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
+            break;
+          case 6:
+            // Item 6
+            u8g.drawXBMP(6, 16, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
+            break;
+          case 7:
+            // Item 7
+            u8g.drawXBMP(6, 16, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
+            break;
+          case 8:
+            // Item 8
+            u8g.drawXBMP(6, 16, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
+            gameCounter += 1;
+            if (gameCounter>40) {
+              gameCounter = 0;
+              catEntertainment = 3;
+              gameMode = 0;
+            }
+            break;
+        }
         break;
     }
     /*
