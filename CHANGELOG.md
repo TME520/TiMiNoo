@@ -1,5 +1,5 @@
 # 2023-05-30
-- WIP: Game
+- Completed Game implementation
 - Fixed a bug in animation loop
 - Tuned Clean sequence
 
