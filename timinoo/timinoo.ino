@@ -48,6 +48,10 @@ int iceCreamFoodStock = 1;
 int grapeFoodStock = 0;
 int coffeeFoodStock = 0;
 int orangeFoodStock = 0;
+int lessonSequence = 0;
+int snailCounter = 0;
+int kokoXPos = 0;
+long randomQuote = 0;
 
 // Cat status variables
 // Status metrics
@@ -57,7 +61,6 @@ long catHygiene = random(1, 3);
 long catMorale = random(1, 3);
 long catEducation = random(1, 3);
 long catEntertainment = random(1, 3);
-// long catEntertainment = 0;
 
 // Status change timing (decrement status variable every x frames)
 // Production timings
@@ -66,7 +69,6 @@ unsigned long catHygieneStep = random(17090, 18010);
 unsigned long catMoraleStep = random(4490, 4510);
 unsigned long catEducationStep = random(1490, 1510);
 unsigned long catEntertainmentStep = random(140, 160);
-// unsigned long catEntertainmentStep = 5;
 
 /*
 // Testing timings
@@ -915,9 +917,11 @@ void checkButton()
             break;
           case 3:
             // Study
-            gameMode = 0;
-            // gameMode = 4;
-            catEducation += 1;
+            randomQuote = random(1, 9);
+            kokoXPos = 128;
+            snailCounter = 0;
+            lessonSequence = 0;
+            gameMode = 4;
             break;
           case 4:
             // Cuddle
@@ -1164,6 +1168,116 @@ void loop(void) {
         break;
       case 4:
         // Educate
+        switch (lessonSequence) {
+          case 0:
+            // Snail arrives
+            u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+            u8g.drawXBMP(kokoXPos, 40, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
+            kokoXPos -= 1;
+            if (kokoXPos < 97) {
+              kokoXPos = 97;
+            }
+            snailCounter += 1;
+            if (snailCounter>100) {
+              snailCounter = 0;
+              lessonSequence = 1;
+            }
+            break;
+          case 1:
+            // Snail says hello
+            u8g.setFont(u8g_font_u8glib_4);
+            u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+            u8g.drawXBMP(97, 40, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
+            u8g.drawStr(54, 16, "   -= *** =-   ");
+            u8g.drawStr(54, 22, "Welcome to a");
+            u8g.drawStr(54, 28, "new lesson with");
+            u8g.drawStr(54, 34, "Koko Le Snail");
+            snailCounter += 1;
+            if (snailCounter>300) {
+              snailCounter = 0;
+              lessonSequence = 2;
+            }
+            break;
+          case 2:
+            // Snail wisdom quote
+            u8g.setFont(u8g_font_u8glib_4);
+            u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+            u8g.drawXBMP(97, 40, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
+            switch (randomQuote) {
+              case 1:
+                u8g.drawStr(54, 16, "Sometimes dogs");
+                u8g.drawStr(54, 22, "are grey.");
+                u8g.drawStr(54, 28, "");
+                u8g.drawStr(54, 34, "  -- Koko");
+                break;
+              case 2:
+                u8g.drawStr(54, 16, "Do not sneeze");
+                u8g.drawStr(54, 22, "on the bus.");
+                u8g.drawStr(54, 28, "");
+                u8g.drawStr(54, 34, "  -- Koko");
+                break;
+              case 3:
+                u8g.drawStr(54, 16, "Always wear");
+                u8g.drawStr(54, 22, "pants.");
+                u8g.drawStr(54, 28, "");
+                u8g.drawStr(54, 34, "  -- Koko");
+                break;
+              case 4:
+                u8g.drawStr(54, 16, "Never yawn");
+                u8g.drawStr(54, 22, "during class.");
+                u8g.drawStr(54, 28, "");
+                u8g.drawStr(54, 34, "  -- Koko");
+                break;
+              case 5:
+                u8g.drawStr(54, 16, "Eat fruits and");
+                u8g.drawStr(54, 22, "vegetables.");
+                u8g.drawStr(54, 28, "");
+                u8g.drawStr(54, 34, "  -- Koko");
+                break;
+              case 6:
+                u8g.drawStr(54, 16, "Respect your");
+                u8g.drawStr(54, 22, "elders.");
+                u8g.drawStr(54, 28, "");
+                u8g.drawStr(54, 34, "  -- Koko");
+                break;
+              case 7:
+                u8g.drawStr(54, 16, "Wash your hands");
+                u8g.drawStr(54, 22, "after lunch.");
+                u8g.drawStr(54, 28, "");
+                u8g.drawStr(54, 34, "  -- Koko");
+                break;
+              case 8:
+                u8g.drawStr(54, 16, "Pull my finger...");
+                u8g.drawStr(54, 22, "teehee!");
+                u8g.drawStr(54, 28, "");
+                u8g.drawStr(54, 34, "  -- Koko");
+                break;
+              case 9:
+                u8g.drawStr(54, 16, "Walk 5000 steps");
+                u8g.drawStr(54, 22, "a day.");
+                u8g.drawStr(54, 28, "");
+                u8g.drawStr(54, 34, "  -- Koko");
+                break;
+            }
+            snailCounter += 1;
+            if (snailCounter>300) {
+              snailCounter = 0;
+              lessonSequence = 3;
+            }
+            break;
+          case 3:
+            // Score
+            u8g.setFont(u8g_font_unifont);
+            u8g.drawXBMP(51, 14, study_26x28_width, study_26x28_height, study_26x28_bits);
+            u8g.drawStr(10, 58, "+ 1 Education");
+            snailCounter += 1;
+            if (snailCounter>300) {
+              snailCounter = 0;
+              catEducation += 1;
+              gameMode = 0;
+            }
+            break;
+        }
         break;
       case 5:
         // Clean

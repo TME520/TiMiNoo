@@ -1,5 +1,5 @@
 # 2023-05-31
-- WIP: Implementing Education
+- Completed Education implementation
 
 # 2023-05-30
 - Completed Game implementation
