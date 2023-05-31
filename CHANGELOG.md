@@ -1,4 +1,5 @@
 # 2023-05-31
+- 1st feature-complete version
 - Completed Education implementation
 - COmpleted Feed 
 
