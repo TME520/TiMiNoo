@@ -34,7 +34,7 @@ Go to the casino with your TiMiNoo and do your best to win some yummy food to br
 ### Starting the game
 Plug your TiMiNoo to a 5V Micro USB charger, a new game will start.
 There is no save feature, no scoring, no experience. Every run is a fresh beginning with new statistics.
-TiMiNoo can not die.
+TiMiNoo cannot die.
 ### Understand what your TiMiNoo wants
 #### Home screen
 TiMiNoo looks straight at you, waving its tail.
