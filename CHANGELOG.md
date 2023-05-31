@@ -1,3 +1,6 @@
+# 2023-05-31
+- WIP: Implementing Education
+
 # 2023-05-30
 - Completed Game implementation
 - Fixed a bug in animation loop
