@@ -1,5 +1,7 @@
 # 2023-05-31
 - Completed Education implementation
+- WIP: Feed implementation
+- Getting very low on available RAM
 
 # 2023-05-30
 - Completed Game implementation

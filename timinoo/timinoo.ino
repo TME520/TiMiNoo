@@ -52,6 +52,8 @@ int lessonSequence = 0;
 int snailCounter = 0;
 int kokoXPos = 0;
 long randomQuote = 0;
+int feedSequence = 0;
+int feedCounter = 0;
 
 // Cat status variables
 // Status metrics
@@ -85,6 +87,19 @@ unsigned long lastCatHygieneCheck = 0;
 unsigned long lastCatMoraleCheck = 0;
 unsigned long lastCatEducationCheck = 0;
 unsigned long lastCatEntertainmentCheck = 0;
+
+#define cindy_28x26_width 28
+#define cindy_28x26_height 26
+static unsigned char cindy_28x26_bits[] U8G_PROGMEM = {
+   0xcf, 0xff, 0x3f, 0x0f, 0xcf, 0xff, 0x3f, 0x0f, 0xf3, 0xff, 0xff, 0x0c,
+   0xf3, 0xff, 0xff, 0x0c, 0x3c, 0x3f, 0xff, 0x03, 0x3c, 0x3f, 0xff, 0x03,
+   0x3c, 0x3f, 0xff, 0x03, 0x3c, 0x3f, 0xff, 0x03, 0xfc, 0xff, 0xff, 0x03,
+   0xfc, 0xff, 0xff, 0x03, 0xff, 0xf0, 0xff, 0x03, 0xff, 0xf0, 0xff, 0x03,
+   0xff, 0xff, 0xff, 0x03, 0xff, 0xff, 0xff, 0x03, 0xfc, 0xff, 0xff, 0x00,
+   0xfc, 0xff, 0xff, 0x00, 0x00, 0xff, 0x03, 0x00, 0x00, 0xff, 0x03, 0x00,
+   0xf0, 0xff, 0xff, 0x00, 0xf0, 0xff, 0xff, 0x00, 0xfc, 0xff, 0xff, 0x03,
+   0xfc, 0xff, 0xff, 0x03, 0x3c, 0xff, 0xcf, 0x03, 0x3c, 0xff, 0xcf, 0x03,
+   0xc0, 0x03, 0x3c, 0x00, 0xc0, 0x03, 0x3c, 0x00 };
 
 #define koko_le_snail_26x22_width 26
 #define koko_le_snail_26x22_height 22
@@ -935,10 +950,10 @@ void checkButton()
             gameMode = 5;
             break;
           case 6:
-            // Pizza
-            gameMode = 0;
-            // gameMode = 2;
-            catHunger = 3;
+            // Feed
+            feedSequence = 0;
+            feedCounter = 0;
+            gameMode = 2;
             break;
         }
       } else if (gameMode == 6) {
@@ -1141,6 +1156,34 @@ void loop(void) {
         break;
       case 2:
         // Feed
+        switch (feedSequence) {
+          case 0:
+            // Knock on door
+            u8g.setFont(u8g_font_unifont);
+            u8g.drawStr(14, 58, "Knock knock!");
+            feedCounter += 1;
+            if (feedCounter>300) {
+              feedCounter = 0;
+              feedSequence = 1;
+            }
+            break;
+          case 1:
+            // Enter room
+            u8g.setFont(u8g_font_u8glib_4);
+            u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+            u8g.drawXBMP(96, 40, cindy_28x26_width, cindy_28x26_height, cindy_28x26_bits);
+            u8g.drawStr(54, 16, "   Helloooooo <3   ");
+            u8g.drawStr(54, 22, "");
+            u8g.drawStr(54, 28, "I am your friend Cindy.");
+            u8g.drawStr(54, 34, "I brought you food <3");
+            feedCounter += 1;
+            if (feedCounter>300) {
+              feedCounter = 0;
+              catHunger = 3;
+              gameMode = 0;
+            }
+            break;
+        }
         break;
       case 3:
         // Cuddle
@@ -1437,6 +1480,4 @@ void loop(void) {
     u8g.drawStr(8, 10, animationStepString);
     */
   } while( u8g.nextPage() );
-
-  // delay(50);
 }
