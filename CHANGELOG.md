@@ -1,3 +1,7 @@
+# 2023-06-01
+- Trying to optimize and save memory
+- If successful enough, will implement features I had to leave out
+
 # 2023-05-31
 - 1st feature-complete version
 - Completed Education implementation
