@@ -53,6 +53,7 @@ long randomQuote = 0;
 int feedSequence = 0;
 int feedCounter = 0;
 int selectedFood = 0;
+int superHappyCounter = 0;
 
 // Cat status variables
 // Status metrics
@@ -79,6 +80,20 @@ unsigned long lastCatHygieneCheck = 0;
 unsigned long lastCatMoraleCheck = 0;
 unsigned long lastCatEducationCheck = 0;
 unsigned long lastCatEntertainmentCheck = 0;
+
+#define super_happy_28x28_width 28
+#define super_happy_28x28_height 28
+static unsigned char super_happy_28x28_bits[] U8G_PROGMEM = {
+   0xc0, 0xff, 0x3f, 0x00, 0xc0, 0xff, 0x3f, 0x00, 0xf0, 0xff, 0xff, 0x00,
+   0xf0, 0xff, 0xff, 0x00, 0xfc, 0xff, 0xff, 0x03, 0xfc, 0xff, 0xff, 0x03,
+   0xff, 0xfc, 0xf3, 0x0f, 0xff, 0xfc, 0xf3, 0x0f, 0xff, 0xfc, 0xf3, 0x0f,
+   0xff, 0xfc, 0xf3, 0x0f, 0xff, 0xfc, 0xf3, 0x0f, 0xff, 0xfc, 0xf3, 0x0f,
+   0xff, 0xff, 0xff, 0x0f, 0xff, 0xff, 0xff, 0x0f, 0x3f, 0x00, 0xc0, 0x0f,
+   0x3f, 0x00, 0xc0, 0x0f, 0x3f, 0x0c, 0xc3, 0x0f, 0x3f, 0x0c, 0xc3, 0x0f,
+   0x3f, 0xfc, 0xc3, 0x0f, 0x3f, 0xfc, 0xc3, 0x0f, 0xff, 0xfc, 0xf3, 0x0f,
+   0xff, 0xfc, 0xf3, 0x0f, 0xfc, 0x03, 0xfc, 0x03, 0xfc, 0x03, 0xfc, 0x03,
+   0xf0, 0xff, 0xff, 0x00, 0xf0, 0xff, 0xff, 0x00, 0xc0, 0xff, 0x3f, 0x00,
+   0xc0, 0xff, 0x3f, 0x00 };
 
 #define diamond_28x24_width 28
 #define diamond_28x24_height 24
@@ -731,7 +746,12 @@ void loop(void) {
         // Icon frame
         u8g.drawXBMP(0, 0, comframev4_width, comframev4_height, comframev4_bits);
         // Icon (always happy)
-        u8g.drawXBMP(87, 12, happy_cat_28x28_width, happy_cat_28x28_height, happy_cat_28x28_bits);
+        if (superHappyCounter<1) {
+          u8g.drawXBMP(87, 12, happy_cat_28x28_width, happy_cat_28x28_height, happy_cat_28x28_bits);
+        } else {
+          u8g.drawXBMP(87, 12, super_happy_28x28_width, super_happy_28x28_height, super_happy_28x28_bits);
+          superHappyCounter -= 1;
+        }
         switch (animationStep) {
           case 1:
             checkButton();
@@ -877,6 +897,7 @@ void loop(void) {
             if (feedCounter>300) {
               feedCounter = 0;
               if (selectedFood != 6) {
+                superHappyCounter = 100;
                 catHunger = 3;
               }
               gameMode = 0;
@@ -902,6 +923,7 @@ void loop(void) {
           u8g.setFont(u8g_font_baby);
           u8g.drawStr(70, 40, "I love you too <3");
         } else if (cuddleCounter==240) {
+          superHappyCounter = 100;
           catMorale = 3;
           gameMode = 0;
         }
@@ -995,6 +1017,7 @@ void loop(void) {
             snailCounter += 1;
             if (snailCounter>300) {
               snailCounter = 0;
+              superHappyCounter = 100;
               catEducation += 1;
               gameMode = 0;
             }
@@ -1060,6 +1083,7 @@ void loop(void) {
             cleanCounter += 1;
             if (cleanCounter>400) {
               cleanCounter = 0;
+              superHappyCounter = 100;
               catHygiene = 3;
               gameMode = 0;
             }
@@ -1162,6 +1186,7 @@ void loop(void) {
           gameCounter += 1;
           if (gameCounter>400) {
             gameCounter = 0;
+            superHappyCounter = 100;
             catEntertainment = 3;
             gameMode = 0;
           }

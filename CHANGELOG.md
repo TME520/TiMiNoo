@@ -3,6 +3,7 @@
 - Changed Want/Need animation to save memory
 - Removed Ice Cream and replaced Coffee with Milk
 - Overhauled Clean The Cat game
+- Implemented Super Happy Cat icon
 - Trying to optimize and save memory
 - If successful enough, will implement features I had to leave out
 
