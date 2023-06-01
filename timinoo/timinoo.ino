@@ -46,7 +46,7 @@ int strawberryFoodStock = 0;
 int appleFoodStock = 10000;
 int iceCreamFoodStock = 1;
 int grapeFoodStock = 0;
-int coffeeFoodStock = 0;
+int milkFoodStock = 0;
 int orangeFoodStock = 0;
 int lessonSequence = 0;
 int snailCounter = 0;
@@ -106,33 +106,19 @@ static unsigned char orange_28x28_bits[] U8G_PROGMEM = {
    0xc0, 0xff, 0x3f, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
    0x00, 0x00, 0x00, 0x00 };
 
-#define coffee_28x28_width 28
-#define coffee_28x28_height 28
-static unsigned char coffee_28x28_bits[] U8G_PROGMEM = {
-   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0x3f, 0x00,
-   0xff, 0xff, 0x3f, 0x00, 0xff, 0xff, 0x03, 0x00, 0xff, 0xff, 0x03, 0x00,
-   0xff, 0xff, 0xff, 0x0f, 0xff, 0xff, 0xff, 0x0f, 0xff, 0xff, 0x03, 0x0f,
-   0xff, 0xff, 0x03, 0x0f, 0xff, 0xff, 0x0f, 0x0f, 0xff, 0xff, 0x0f, 0x0f,
-   0xff, 0xff, 0x3f, 0x0f, 0xff, 0xff, 0x3f, 0x0f, 0xff, 0xff, 0x3f, 0x0f,
-   0xff, 0xff, 0x3f, 0x0f, 0xff, 0xff, 0x3f, 0x0f, 0xff, 0xff, 0x3f, 0x0f,
-   0xff, 0xff, 0x03, 0x0f, 0xff, 0xff, 0x03, 0x0f, 0xff, 0xff, 0xff, 0x03,
-   0xff, 0xff, 0xff, 0x03, 0xff, 0xff, 0x03, 0x00, 0xff, 0xff, 0x03, 0x00,
-   0xff, 0xff, 0x3f, 0x00, 0xff, 0xff, 0x3f, 0x00, 0x00, 0x00, 0x00, 0x00,
-   0x00, 0x00, 0x00, 0x00 };
-
-#define ice_cream_28x28_width 28
-#define ice_cream_28x28_height 28
-static unsigned char ice_cream_28x28_bits[] U8G_PROGMEM = {
-   0x00, 0xc0, 0x3f, 0x00, 0x00, 0xc0, 0x3f, 0x00, 0x00, 0xf0, 0xff, 0x00,
-   0x00, 0xf0, 0xff, 0x00, 0x00, 0xfc, 0xff, 0x03, 0x00, 0xfc, 0xff, 0x03,
-   0x00, 0xff, 0xff, 0x0f, 0x00, 0xff, 0xff, 0x0f, 0xc0, 0xcf, 0x3f, 0x0f,
-   0xc0, 0xcf, 0x3f, 0x0f, 0xf0, 0xf3, 0x3f, 0x0f, 0xf0, 0xf3, 0x3f, 0x0f,
-   0xfc, 0xfc, 0xcf, 0x0f, 0xfc, 0xfc, 0xcf, 0x0f, 0x30, 0xff, 0xf3, 0x03,
-   0x30, 0xff, 0xf3, 0x03, 0xc0, 0xff, 0xfc, 0x00, 0xc0, 0xff, 0xfc, 0x00,
-   0x30, 0x3f, 0x3f, 0x00, 0x30, 0x3f, 0x3f, 0x00, 0xfc, 0xcc, 0x0f, 0x00,
-   0xfc, 0xcc, 0x0f, 0x00, 0xff, 0xf3, 0x03, 0x00, 0xff, 0xf3, 0x03, 0x00,
-   0xfc, 0xc0, 0x00, 0x00, 0xfc, 0xc0, 0x00, 0x00, 0x30, 0x00, 0x00, 0x00,
-   0x30, 0x00, 0x00, 0x00 };
+#define milk_28x28_width 28
+#define milk_28x28_height 28
+static unsigned char milk_28x28_bits[] U8G_PROGMEM = {
+   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+   0x00, 0x78, 0x01, 0x00, 0x00, 0xfc, 0x02, 0x00, 0x00, 0xfc, 0x02, 0x00,
+   0x00, 0x00, 0x00, 0x00, 0x00, 0xfe, 0x06, 0x00, 0x00, 0x7f, 0x0f, 0x00,
+   0x80, 0xbf, 0x1f, 0x00, 0x00, 0xc0, 0x3f, 0x00, 0xc0, 0xdf, 0x2e, 0x00,
+   0xc0, 0xdf, 0x24, 0x00, 0xc0, 0xdf, 0x2a, 0x00, 0xc0, 0xdf, 0x2e, 0x00,
+   0xc0, 0xdf, 0x2e, 0x00, 0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00,
+   0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00,
+   0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00,
+   0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00,
+   0xc0, 0xdf, 0x3f, 0x00 };
 
 #define grape_28x28_width 28
 #define grape_28x28_height 28
@@ -1079,23 +1065,20 @@ void loop(void) {
             if (strawberryFoodStock > 0) {
               selectedFood = 1;
               strawberryFoodStock -= 1;
-            } else if (iceCreamFoodStock > 0) {
-              selectedFood = 2;
-              iceCreamFoodStock -= 1;
             } else if (grapeFoodStock > 0) {
-              selectedFood = 3;
+              selectedFood = 2;
               grapeFoodStock -= 1;
-            } else if (coffeeFoodStock > 0) {
-              selectedFood = 4;
-              coffeeFoodStock -= 1;
+            } else if (milkFoodStock > 0) {
+              selectedFood = 3;
+              milkFoodStock -= 1;
             } else if (orangeFoodStock > 0) {
-              selectedFood = 5;
+              selectedFood = 4;
               orangeFoodStock -= 1;
             } else if (appleFoodStock > 0) {
-              selectedFood = 6;
+              selectedFood = 5;
               appleFoodStock -= 1;
             } else {
-              selectedFood = 7;
+              selectedFood = 6;
             }
             feedSequence = 1;
             break;
@@ -1107,26 +1090,22 @@ void loop(void) {
                 // u8g.drawStr(14, 58, "Yummy strawberry");
                 break;
               case 2:
-                u8g.drawXBMP(50, 14, ice_cream_28x28_width, ice_cream_28x28_height, ice_cream_28x28_bits);
-                // u8g.drawStr(14, 58, "Cold ice cream");
-                break;
-              case 3:
                 u8g.drawXBMP(50, 14, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
                 // u8g.drawStr(14, 58, "Fresh grapes");
                 break;
-              case 4:
-                u8g.drawXBMP(50, 14, coffee_28x28_width, coffee_28x28_height, coffee_28x28_bits);
-                // u8g.drawStr(14, 58, "Hot coffee");
+              case 3:
+                u8g.drawXBMP(50, 14, milk_28x28_width, milk_28x28_height, milk_28x28_bits);
+                // u8g.drawStr(14, 58, "Farm milk");
                 break;
-              case 5:
+              case 4:
                 u8g.drawXBMP(50, 14, orange_28x28_width, orange_28x28_height, orange_28x28_bits);
                 // u8g.drawStr(14, 58, "Juicy orange");
                 break;
-              case 6:
+              case 5:
                 u8g.drawXBMP(50, 14, apple_28x28_width, apple_28x28_height, apple_28x28_bits);
                 // u8g.drawStr(14, 58, "Tasty apple");
                 break;
-              case 7:
+              case 6:
                 u8g.drawXBMP(50, 14, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
                 u8g.drawStr(14, 58, "No food");
                 break;
@@ -1315,7 +1294,7 @@ void loop(void) {
         // Play
         if (gameSequence == 0) {
           // Roll the dice
-          animationStepMax = 8;
+          animationStepMax = 7;
           u8g.drawXBMP(0, 10, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
           u8g.drawXBMP(41, 10, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
           u8g.drawXBMP(82, 10, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
@@ -1338,17 +1317,13 @@ void loop(void) {
               break;
             case 5:
               checkButton();
-              u8g.drawXBMP(47, 16, ice_cream_28x28_width, ice_cream_28x28_height, ice_cream_28x28_bits);
+              u8g.drawXBMP(88, 16, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
               break;
             case 6:
               checkButton();
-              u8g.drawXBMP(88, 16, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
+              u8g.drawXBMP(6, 16, milk_28x28_width, milk_28x28_height, milk_28x28_bits);
               break;
             case 7:
-              checkButton();
-              u8g.drawXBMP(6, 16, coffee_28x28_width, coffee_28x28_height, coffee_28x28_bits);
-              break;
-            case 8:
               checkButton();
               u8g.drawXBMP(47, 16, orange_28x28_width, orange_28x28_height, orange_28x28_bits);
               gameCounter += 1;
@@ -1373,9 +1348,8 @@ void loop(void) {
               u8g.drawStr(14, 58, "+ 1 of all!");
               strawberryFoodStock += 1;
               appleFoodStock += 1;
-              iceCreamFoodStock += 1;
               grapeFoodStock += 1;
-              coffeeFoodStock += 1;
+              milkFoodStock += 1;
               orangeFoodStock += 1;
               break;
             case 2:
@@ -1391,24 +1365,18 @@ void loop(void) {
               appleFoodStock += 1;
               break;
             case 4:
-              // Ice cream
-              u8g.drawXBMP(50, 14, ice_cream_28x28_width, ice_cream_28x28_height, ice_cream_28x28_bits);
-              u8g.drawStr(14, 58, "+ 1 ice cream");
-              iceCreamFoodStock += 1;
-              break;
-            case 5:
               // Grape
               u8g.drawXBMP(50, 14, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
               u8g.drawStr(14, 58, "+ 1 grape");
               grapeFoodStock += 1;
               break;
-            case 6:
-              // Coffee
-              u8g.drawXBMP(50, 14, coffee_28x28_width, coffee_28x28_height, coffee_28x28_bits);
-              u8g.drawStr(14, 58, "+ 1 coffee");
-              coffeeFoodStock += 1;
+            case 5:
+              // Milk
+              u8g.drawXBMP(50, 14, milk_28x28_width, milk_28x28_height, milk_28x28_bits);
+              u8g.drawStr(14, 58, "+ 1 milk");
+              milkFoodStock += 1;
               break;
-            case 7:
+            case 6:
               // Orange
               u8g.drawXBMP(50, 14, orange_28x28_width, orange_28x28_height, orange_28x28_bits);
               u8g.drawStr(14, 58, "+ 1 orange");

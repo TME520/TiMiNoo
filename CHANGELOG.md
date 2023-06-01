@@ -1,4 +1,7 @@
 # 2023-06-01
+- Working on TiMiNoo version 1.1
+- Changed Want/Need animation to save memory
+- Removed Ice Cream and replaced Coffee with Milk
 - Trying to optimize and save memory
 - If successful enough, will implement features I had to leave out
 
