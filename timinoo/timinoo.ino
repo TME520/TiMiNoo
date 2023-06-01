@@ -61,8 +61,7 @@ int randomVisitCounter = 0;
 // Cat status variables
 // Status metrics
 // 0 = depleted, 1 = low, 2 = average, 3 = full
-// long catHunger = random(1, 3);
-long catHunger = 0;
+long catHunger = random(1, 3);
 long catHygiene = random(1, 3);
 long catMorale = random(1, 3);
 long catEducation = random(1, 3);
@@ -70,8 +69,7 @@ long catEntertainment = random(1, 3);
 
 // Status change timing (decrement status variable every x frames)
 // Production timings
-// unsigned long catHungerStep = random(7500, 8500);
-unsigned long catHungerStep = 10;
+unsigned long catHungerStep = random(7500, 8500);
 unsigned long catHygieneStep = random(15000, 20000);
 unsigned long catMoraleStep = random(4000, 5000);
 unsigned long catEducationStep = random(800, 1600);
@@ -782,7 +780,7 @@ void loop(void) {
     // Time to feed the cat
     currentIcon = 6;
     randomVisit = random(0, 3136);
-    if (randomVisit<10000) {
+    if (randomVisit<300) {
       randomVisitSequence = 0;
       randomVisitCounter = 0;
       gameMode = 7;
@@ -1288,7 +1286,12 @@ void loop(void) {
             // Gift
             u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
             u8g.drawXBMP(96, 14, cindy_28x26_width, cindy_28x26_height, cindy_28x26_bits);
-            u8g.drawStr(45, 59, "I got matcha tea!");
+            if (randomVisit<51) {
+              // Matcha
+              u8g.drawStr(45, 59, "I got matcha tea!");
+            } else {
+              u8g.drawStr(45, 59, "I got coco cake!");
+            }
             randomVisitCounter += 1;
             if (randomVisitCounter>200) {
               randomVisitSequence = 3;
@@ -1298,7 +1301,12 @@ void loop(void) {
           case 3:
             // Drink
             u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
-            u8g.drawXBMP(49, 14, matcha_30x32_width, matcha_30x32_height, matcha_30x32_bits);
+            if (randomVisit<51) {
+              // Matcha
+              u8g.drawXBMP(49, 14, matcha_30x32_width, matcha_30x32_height, matcha_30x32_bits);
+            } else {
+              u8g.drawXBMP(49, 14, coco_cake_28x32_width, coco_cake_28x32_height, coco_cake_28x32_bits);
+            }
             u8g.drawXBMP(96, 14, cindy_28x26_width, cindy_28x26_height, cindy_28x26_bits);
             u8g.drawStr(45, 59, "Have some <3");
             randomVisitCounter += 1;
@@ -1310,7 +1318,12 @@ void loop(void) {
           case 4:
             // Bonus
             u8g.setFont(u8g_font_unifont);
-            u8g.drawXBMP(49, 14, matcha_30x32_width, matcha_30x32_height, matcha_30x32_bits);
+            if (randomVisit<51) {
+              // Matcha
+              u8g.drawXBMP(49, 14, matcha_30x32_width, matcha_30x32_height, matcha_30x32_bits);
+            } else {
+              u8g.drawXBMP(49, 14, coco_cake_28x32_width, coco_cake_28x32_height, coco_cake_28x32_bits);
+            }
             u8g.drawStr(46, 59, "Yum!");
             randomVisitCounter += 1;
             if (randomVisitCounter>200) {
