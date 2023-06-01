@@ -58,7 +58,8 @@ int selectedFood = 0;
 // Status metrics
 // 0 = depleted, 1 = low, 2 = average, 3 = full
 long catHunger = random(1, 3);
-long catHygiene = random(1, 3);
+// long catHygiene = random(1, 3);
+long catHygiene = 0;
 long catMorale = random(1, 3);
 long catEducation = random(1, 3);
 long catEntertainment = random(1, 3);
@@ -66,7 +67,8 @@ long catEntertainment = random(1, 3);
 // Status change timing (decrement status variable every x frames)
 // Production timings
 unsigned long catHungerStep = random(7500, 8500);
-unsigned long catHygieneStep = random(15000, 20000);
+// unsigned long catHygieneStep = random(15000, 20000);
+unsigned long catHygieneStep = 5;
 unsigned long catMoraleStep = random(4000, 5000);
 unsigned long catEducationStep = random(800, 1600);
 unsigned long catEntertainmentStep = random(250, 500);
@@ -77,6 +79,18 @@ unsigned long lastCatHygieneCheck = 0;
 unsigned long lastCatMoraleCheck = 0;
 unsigned long lastCatEducationCheck = 0;
 unsigned long lastCatEntertainmentCheck = 0;
+
+#define diamond_28x24_width 28
+#define diamond_28x24_height 24
+static unsigned char diamond_28x24_bits[] U8G_PROGMEM = {
+   0xc0, 0xcc, 0x3c, 0x00, 0xc0, 0xcc, 0x3c, 0x00, 0x30, 0xc3, 0xf3, 0x00,
+   0x30, 0xc3, 0xf3, 0x00, 0x0c, 0xc3, 0xf3, 0x03, 0x0c, 0xc3, 0xf3, 0x03,
+   0xff, 0x3f, 0x00, 0x00, 0xff, 0x3f, 0x00, 0x00, 0xc3, 0xc0, 0xcf, 0x0f,
+   0xc3, 0xc0, 0xcf, 0x0f, 0xc3, 0xc0, 0xcf, 0x0f, 0xc3, 0xc0, 0xcf, 0x0f,
+   0xcc, 0xc0, 0xcf, 0x03, 0xcc, 0xc0, 0xcf, 0x03, 0xf0, 0xc0, 0xf3, 0x00,
+   0xf0, 0xc0, 0xf3, 0x00, 0xc0, 0xc3, 0x3f, 0x00, 0xc0, 0xc3, 0x3f, 0x00,
+   0x00, 0xcf, 0x0f, 0x00, 0x00, 0xcf, 0x0f, 0x00, 0x00, 0xfc, 0x03, 0x00,
+   0x00, 0xfc, 0x03, 0x00, 0x00, 0xf0, 0x00, 0x00, 0x00, 0xf0, 0x00, 0x00 };
 
 #define koko_le_snail_26x22_width 26
 #define koko_le_snail_26x22_height 22
@@ -107,16 +121,16 @@ static unsigned char orange_28x28_bits[] U8G_PROGMEM = {
 #define milk_28x28_width 28
 #define milk_28x28_height 28
 static unsigned char milk_28x28_bits[] U8G_PROGMEM = {
-   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-   0x00, 0x78, 0x01, 0x00, 0x00, 0xfc, 0x02, 0x00, 0x00, 0xfc, 0x02, 0x00,
-   0x00, 0x00, 0x00, 0x00, 0x00, 0xfe, 0x06, 0x00, 0x00, 0x7f, 0x0f, 0x00,
-   0x80, 0xbf, 0x1f, 0x00, 0x00, 0xc0, 0x3f, 0x00, 0xc0, 0xdf, 0x2e, 0x00,
-   0xc0, 0xdf, 0x24, 0x00, 0xc0, 0xdf, 0x2a, 0x00, 0xc0, 0xdf, 0x2e, 0x00,
-   0xc0, 0xdf, 0x2e, 0x00, 0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00,
-   0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00,
-   0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00,
-   0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00, 0xc0, 0xdf, 0x3f, 0x00,
-   0xc0, 0xdf, 0x3f, 0x00 };
+   0xff, 0xff, 0xff, 0x0f, 0xff, 0xff, 0xff, 0x0f, 0xff, 0xff, 0xff, 0x0f,
+   0xff, 0xff, 0xff, 0x0f, 0xff, 0xff, 0xff, 0x0f, 0xff, 0x07, 0xfe, 0x0f,
+   0xff, 0x7b, 0xfd, 0x0f, 0xff, 0xfd, 0xfa, 0x0f, 0xff, 0xfd, 0xfa, 0x0f,
+   0xff, 0x01, 0xf8, 0x0f, 0xff, 0xfe, 0xf6, 0x0f, 0x7f, 0x7f, 0xef, 0x0f,
+   0xbf, 0xbf, 0xdf, 0x0f, 0x3f, 0xc0, 0xbf, 0x0f, 0xbf, 0xdf, 0xae, 0x0f,
+   0xbf, 0xdf, 0xa4, 0x0f, 0xbf, 0xdf, 0xaa, 0x0f, 0xbf, 0xdf, 0xae, 0x0f,
+   0xbf, 0xdf, 0xae, 0x0f, 0xbf, 0xdf, 0xbf, 0x0f, 0xbf, 0xdf, 0xbf, 0x0f,
+   0xbf, 0xdf, 0xbf, 0x0f, 0xbf, 0xdf, 0xbf, 0x0f, 0xbf, 0xdf, 0xbf, 0x0f,
+   0xbf, 0xdf, 0xbf, 0x0f, 0xbf, 0xdf, 0xbf, 0x0f, 0xbf, 0xdf, 0xbf, 0x0f,
+   0xbf, 0xdf, 0xbf, 0x0f };
 
 #define grape_28x28_width 28
 #define grape_28x28_height 28
@@ -597,7 +611,7 @@ void checkButton()
           case 5:
             // Clean
             cleanSequence = 0;
-            cleanCounter=0;
+            cleanCounter = 0;
             gameMode = 5;
             break;
           case 6:
@@ -608,6 +622,9 @@ void checkButton()
             gameMode = 2;
             break;
         }
+      } else if (gameMode == 5) {
+        // Clean The Cat game
+        cleanCounter += 14;
       } else if (gameMode == 6) {
         // Game
         gamePick = random (0, 7);
@@ -853,13 +870,13 @@ void loop(void) {
           case 2:
             // Yum
             u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
-            if (selectedFood != 7) {
+            if (selectedFood != 6) {
               u8g.drawStr(30, 30, "Yum!");
             }
             feedCounter += 1;
             if (feedCounter>300) {
               feedCounter = 0;
-              if (selectedFood != 7) {
+              if (selectedFood != 6) {
                 catHunger = 3;
               }
               gameMode = 0;
@@ -986,16 +1003,62 @@ void loop(void) {
         break;
       case 5:
         // Clean
-        u8g.drawXBMP(38, 8, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
         switch (cleanSequence) {
           case 0:
-            // Meh
+            // Clean The Cat game
+            u8g.drawXBMP(38, 8, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+            checkButton();
+            cleanCounter -= 1;
+            if (cleanCounter<0) {
+              cleanCounter = 0;
+            } else if (cleanCounter>100) {
+              cleanCounter = 0;
+              cleanSequence = 1;
+            }
+            switch(cleanCounter) {
+              case 5 ... 25:
+                u8g.drawXBMP(32, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                break;
+              case 26 ... 46:
+                u8g.drawXBMP(32, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(64, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                break;
+              case 47 ... 67:
+                u8g.drawXBMP(0, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(32, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(64, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(96, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                break;
+              case 68 ... 88:
+                u8g.drawXBMP(0, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(32, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(64, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(96, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(32, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(64, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                break;
+              case 89 ... 100:
+                u8g.drawXBMP(0, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(32, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(64, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(96, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(0, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(32, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(64, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(96, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                break;
+            }
             break;
           case 1:
-            u8g.setFont(u8g_font_baby);
-            u8g.drawStr(38, 62, "Scrub scrub <3");
+            u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+            u8g.drawXBMP(72, 22, diamond_28x24_width, diamond_28x24_height, diamond_28x24_bits);
+            u8g.drawXBMP(69, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
+            u8g.drawXBMP(81, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
+            u8g.drawXBMP(93, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
+            u8g.setFont(u8g_font_unifont);
+            u8g.drawStr(50, 16, "All clean");
             cleanCounter += 1;
-            if (cleanCounter>40) {
+            if (cleanCounter>400) {
               cleanCounter = 0;
               catHygiene = 3;
               gameMode = 0;
