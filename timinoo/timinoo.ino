@@ -56,27 +56,26 @@ int selectedFood = 0;
 int superHappyCounter = 0;
 long randomVisit = 0;
 int randomVisitSequence = 0;
+int randomVisitCounter = 0;
 
 // Cat status variables
 // Status metrics
 // 0 = depleted, 1 = low, 2 = average, 3 = full
-long catHunger = random(1, 3);
-// long catHygiene = random(1, 3);
-long catHygiene = 0;
+// long catHunger = random(1, 3);
+long catHunger = 0;
+long catHygiene = random(1, 3);
 long catMorale = random(1, 3);
 long catEducation = random(1, 3);
-// long catEntertainment = random(1, 3);
-long catEntertainment = 0;
+long catEntertainment = random(1, 3);
 
 // Status change timing (decrement status variable every x frames)
 // Production timings
-unsigned long catHungerStep = random(7500, 8500);
-// unsigned long catHygieneStep = random(15000, 20000);
-unsigned long catHygieneStep = 5;
+// unsigned long catHungerStep = random(7500, 8500);
+unsigned long catHungerStep = 10;
+unsigned long catHygieneStep = random(15000, 20000);
 unsigned long catMoraleStep = random(4000, 5000);
 unsigned long catEducationStep = random(800, 1600);
-// unsigned long catEntertainmentStep = random(250, 500);
-unsigned long catEntertainmentStep = 2;
+unsigned long catEntertainmentStep = random(250, 500);
 
 // Tracking status checks
 unsigned long lastCatHungerCheck = 0;
@@ -84,6 +83,20 @@ unsigned long lastCatHygieneCheck = 0;
 unsigned long lastCatMoraleCheck = 0;
 unsigned long lastCatEducationCheck = 0;
 unsigned long lastCatEntertainmentCheck = 0;
+
+#define door_28x30_width 28
+#define door_28x30_height 30
+static unsigned char door_28x30_bits[] U8G_PROGMEM = {
+   0xff, 0xff, 0xff, 0x0f, 0xff, 0xff, 0xff, 0x0f, 0x03, 0x00, 0x00, 0x0c,
+   0x03, 0x00, 0x00, 0x0c, 0x03, 0x00, 0x00, 0x0c, 0x03, 0x00, 0x00, 0x0c,
+   0xf3, 0xff, 0xff, 0x0c, 0xf3, 0xff, 0xff, 0x0c, 0xf3, 0x00, 0x30, 0x0c,
+   0xf3, 0x00, 0x30, 0x0c, 0xf3, 0xfc, 0x33, 0x0c, 0xf3, 0xfc, 0x33, 0x0c,
+   0xf3, 0xfc, 0x33, 0x0c, 0xf3, 0xfc, 0x33, 0x0c, 0xf3, 0xff, 0xff, 0x0c,
+   0xf3, 0xff, 0xff, 0x0c, 0xc3, 0xff, 0xff, 0x0c, 0xc3, 0xff, 0xff, 0x0c,
+   0xc3, 0xff, 0xff, 0x0c, 0xc3, 0xff, 0xff, 0x0c, 0xf3, 0x00, 0xf0, 0x0c,
+   0xf3, 0x00, 0xf0, 0x0c, 0xf3, 0xfc, 0x33, 0x0c, 0xf3, 0xfc, 0x33, 0x0c,
+   0xf3, 0xfc, 0x33, 0x0c, 0xf3, 0xfc, 0x33, 0x0c, 0xf3, 0xff, 0x3f, 0x0c,
+   0xf3, 0xff, 0x3f, 0x0c, 0xf3, 0xff, 0xff, 0x0c, 0xf3, 0xff, 0xff, 0x0c };
 
 #define coco_cake_28x32_width 28
 #define coco_cake_28x32_height 32
@@ -769,8 +782,9 @@ void loop(void) {
     // Time to feed the cat
     currentIcon = 6;
     randomVisit = random(0, 3136);
-    if (randomVisit<100) {
+    if (randomVisit<10000) {
       randomVisitSequence = 0;
+      randomVisitCounter = 0;
       gameMode = 7;
     } else {
       gameMode = 1;
@@ -1247,18 +1261,65 @@ void loop(void) {
         break;
       case 7:
         // Random visitor
+        u8g.setFont(u8g_font_baby);
         switch (randomVisitSequence) {
           case 0:
             // Knock
+            u8g.drawXBMP(50, 14, door_28x30_width, door_28x30_height, door_28x30_bits);
+            u8g.drawStr(40, 59, "Knock knock!");
+            randomVisitCounter += 1;
+            if (randomVisitCounter>200) {
+              randomVisitSequence = 1;
+              randomVisitCounter = 0;
+            }
             break;
           case 1:
             // Hello
+            u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+            u8g.drawXBMP(96, 14, cindy_28x26_width, cindy_28x26_height, cindy_28x26_bits);
+            u8g.drawStr(45, 59, "Hi friend!");
+            randomVisitCounter += 1;
+            if (randomVisitCounter>200) {
+              randomVisitSequence = 2;
+              randomVisitCounter = 0;
+            }
             break;
           case 2:
             // Gift
+            u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+            u8g.drawXBMP(96, 14, cindy_28x26_width, cindy_28x26_height, cindy_28x26_bits);
+            u8g.drawStr(45, 59, "I got matcha tea!");
+            randomVisitCounter += 1;
+            if (randomVisitCounter>200) {
+              randomVisitSequence = 3;
+              randomVisitCounter = 0;
+            }
             break;
           case 3:
+            // Drink
+            u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+            u8g.drawXBMP(49, 14, matcha_30x32_width, matcha_30x32_height, matcha_30x32_bits);
+            u8g.drawXBMP(96, 14, cindy_28x26_width, cindy_28x26_height, cindy_28x26_bits);
+            u8g.drawStr(45, 59, "Have some <3");
+            randomVisitCounter += 1;
+            if (randomVisitCounter>200) {
+              randomVisitSequence = 4;
+              randomVisitCounter = 0;
+            }
+            break;
+          case 4:
             // Bonus
+            u8g.setFont(u8g_font_unifont);
+            u8g.drawXBMP(49, 14, matcha_30x32_width, matcha_30x32_height, matcha_30x32_bits);
+            u8g.drawStr(46, 59, "Yum!");
+            randomVisitCounter += 1;
+            if (randomVisitCounter>200) {
+              randomVisitSequence = 0;
+              randomVisitCounter = 0;
+              superHappyCounter = 100;
+              catHunger = 3;
+              gameMode = 0;
+            }
             break;
         }
         break;
