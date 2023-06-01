@@ -869,9 +869,7 @@ void loop(void) {
         break;
       case 3:
         // Cuddle
-        catX = 8;
-        catY = 8;
-        u8g.drawXBMP(catX, catY, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+        u8g.drawXBMP(8, 8, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
         cuddleCounter += 1;
         if (cuddleCounter<31) {
           u8g.drawXBMP(80, 45 - cuddleCounter, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
@@ -988,15 +986,12 @@ void loop(void) {
         break;
       case 5:
         // Clean
+        u8g.drawXBMP(38, 8, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
         switch (cleanSequence) {
           case 0:
-            u8g.drawXBMP(38, 8, cat_licking_upscaled4x_001_width, cat_licking_upscaled4x_001_height, cat_licking_upscaled4x_001_bits);
+            // Meh
             break;
           case 1:
-            u8g.drawXBMP(38, 12, cat_licking_upscaled4x_002_width, cat_licking_upscaled4x_002_height, cat_licking_upscaled4x_002_bits);
-            break;
-          case 2:
-            u8g.drawXBMP(38, 8, cat_licking_upscaled4x_008_width, cat_licking_upscaled4x_008_height, cat_licking_upscaled4x_008_bits);
             u8g.setFont(u8g_font_baby);
             u8g.drawStr(38, 62, "Scrub scrub <3");
             cleanCounter += 1;
