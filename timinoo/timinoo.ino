@@ -57,23 +57,30 @@ int superHappyCounter = 0;
 long randomVisit = 0;
 int randomVisitSequence = 0;
 int randomVisitCounter = 0;
+long randomGameIconXPos = 0;
+long randomFoodType = 0;
+int gameIconXPos = 0;
 
 // Cat status variables
 // Status metrics
 // 0 = depleted, 1 = low, 2 = average, 3 = full
-long catHunger = random(1, 3);
-long catHygiene = random(1, 3);
-long catMorale = random(1, 3);
-long catEducation = random(1, 3);
-long catEntertainment = random(1, 3);
+long catHunger = random(1, 4);
+// long catHunger = 0;
+long catHygiene = random(1, 4);
+long catMorale = random(1, 4);
+long catEducation = random(1, 4);
+// long catEntertainment = random(1, 4);
+long catEntertainment = 0;
 
 // Status change timing (decrement status variable every x frames)
 // Production timings
 unsigned long catHungerStep = random(7500, 8500);
+// unsigned long catHungerStep = 5;
 unsigned long catHygieneStep = random(15000, 20000);
 unsigned long catMoraleStep = random(4000, 5000);
 unsigned long catEducationStep = random(800, 1600);
-unsigned long catEntertainmentStep = random(250, 500);
+// unsigned long catEntertainmentStep = random(250, 500);
+unsigned long catEntertainmentStep = 5;
 
 // Tracking status checks
 unsigned long lastCatHungerCheck = 0;
@@ -670,7 +677,7 @@ void checkButton()
             break;
           case 3:
             // Study
-            randomQuote = random(1, 6);
+            randomQuote = random(1, 7);
             kokoXPos = 128;
             snailCounter = 0;
             lessonSequence = 0;
@@ -700,9 +707,14 @@ void checkButton()
         cleanCounter += 14;
       } else if (gameMode == 6) {
         // Game
-        gamePick = random (0, 7);
-        gameSequence = 1;
-        gameCounter = 0;
+        if (gameSequence == 0) {
+          gamePick = random (0, 7);
+          gameSequence = 1;
+          gameCounter = 0;
+        }
+      } else if (gameMode == 7) {
+        randomVisitSequence = 1;
+        randomVisitCounter = 0;
       }
     }
   }
@@ -722,7 +734,7 @@ void setup(void) {
 }
 
 void loop(void) {
-  randomNumber = random(1, 10);
+  randomNumber = random(1, 11);
   checkButton();
   frameCounter += 1;
   ltoa(frameCounter, frameCounterString, 10);
@@ -923,27 +935,27 @@ void loop(void) {
             switch (selectedFood) {
               case 1:
                 u8g.drawXBMP(50, 14, strawberry_28x28_width, strawberry_28x28_height, strawberry_28x28_bits);
-                // u8g.drawStr(14, 58, "Yummy strawberry");
+                u8g.drawStr(0, 58, "Yummy strawberry");
                 break;
               case 2:
                 u8g.drawXBMP(50, 14, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
-                // u8g.drawStr(14, 58, "Fresh grapes");
+                u8g.drawStr(0, 58, "  Fresh grapes  ");
                 break;
               case 3:
                 u8g.drawXBMP(50, 14, milk_28x28_width, milk_28x28_height, milk_28x28_bits);
-                // u8g.drawStr(14, 58, "Farm milk");
+                u8g.drawStr(0, 58, "   Farm milk    ");
                 break;
               case 4:
                 u8g.drawXBMP(50, 14, orange_28x28_width, orange_28x28_height, orange_28x28_bits);
-                // u8g.drawStr(14, 58, "Juicy orange");
+                u8g.drawStr(0, 58, "  Juicy orange  ");
                 break;
               case 5:
                 u8g.drawXBMP(50, 14, apple_28x28_width, apple_28x28_height, apple_28x28_bits);
-                // u8g.drawStr(14, 58, "Tasty apple");
+                u8g.drawStr(0, 58, "  Tasty apple   ");
                 break;
               case 6:
                 u8g.drawXBMP(50, 14, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
-                u8g.drawStr(14, 58, "No food");
+                u8g.drawStr(0, 58, "    No food     ");
                 break;
             }
             feedCounter += 1;
@@ -956,7 +968,7 @@ void loop(void) {
             // Yum
             u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
             if (selectedFood != 6) {
-              u8g.drawStr(30, 30, "Yum!");
+              u8g.drawStr(0, 30, "      Yum!      ");
             }
             feedCounter += 1;
             if (feedCounter>300) {
@@ -1015,10 +1027,10 @@ void loop(void) {
             u8g.setFont(u8g_font_baby);
             u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
             u8g.drawXBMP(97, 40, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
-            u8g.drawStr(54, 16, "   -= *** =-   ");
-            u8g.drawStr(54, 22, "Welcome to a");
-            u8g.drawStr(54, 28, "new lesson with");
-            u8g.drawStr(54, 34, "Koko Le Snail");
+            // u8g.drawStr(54, 16, "   -= *** =-   ");
+            u8g.drawStr(54, 23, "Welcome to a");
+            u8g.drawStr(54, 29, "new lesson with");
+            u8g.drawStr(54, 35, "Koko Le Snail");
             snailCounter += 1;
             if (snailCounter>300) {
               snailCounter = 0;
@@ -1033,39 +1045,39 @@ void loop(void) {
             switch (randomQuote) {
               case 1:
                 u8g.drawStr(54, 16, "Sometimes dogs");
-                u8g.drawStr(54, 22, "are grey.");
-                u8g.drawStr(54, 28, "");
-                u8g.drawStr(54, 34, "  -- Koko");
+                u8g.drawStr(54, 23, "are grey.");
+                u8g.drawStr(54, 29, "");
+                u8g.drawStr(54, 35, "  -- Koko");
                 break;
               case 2:
                 u8g.drawStr(54, 16, "Do not sneeze");
-                u8g.drawStr(54, 22, "on the bus.");
-                u8g.drawStr(54, 28, "");
-                u8g.drawStr(54, 34, "  -- Koko");
+                u8g.drawStr(54, 23, "on the bus.");
+                u8g.drawStr(54, 29, "");
+                u8g.drawStr(54, 35, "  -- Koko");
                 break;
               case 3:
                 u8g.drawStr(54, 16, "Always wear");
-                u8g.drawStr(54, 22, "pants.");
-                u8g.drawStr(54, 28, "");
-                u8g.drawStr(54, 34, "  -- Koko");
+                u8g.drawStr(54, 23, "pants.");
+                u8g.drawStr(54, 29, "");
+                u8g.drawStr(54, 35, "  -- Koko");
                 break;
               case 4:
                 u8g.drawStr(54, 16, "Never yawn");
-                u8g.drawStr(54, 22, "during class.");
-                u8g.drawStr(54, 28, "");
-                u8g.drawStr(54, 34, "  -- Koko");
+                u8g.drawStr(54, 23, "during class.");
+                u8g.drawStr(54, 29, "");
+                u8g.drawStr(54, 35, "  -- Koko");
                 break;
               case 5:
                 u8g.drawStr(54, 16, "Wash your hands");
-                u8g.drawStr(54, 22, "after lunch.");
-                u8g.drawStr(54, 28, "");
-                u8g.drawStr(54, 34, "  -- Koko");
+                u8g.drawStr(54, 23, "after lunch.");
+                u8g.drawStr(54, 29, "");
+                u8g.drawStr(54, 35, "  -- Koko");
                 break;
               case 6:
                 u8g.drawStr(54, 16, "Pull my finger...");
-                u8g.drawStr(54, 22, "teehee!");
-                u8g.drawStr(54, 28, "");
-                u8g.drawStr(54, 34, "  -- Koko");
+                u8g.drawStr(54, 23, "teehee!");
+                u8g.drawStr(54, 29, "");
+                u8g.drawStr(54, 35, "  -- Koko");
                 break;
             }
             snailCounter += 1;
@@ -1078,7 +1090,7 @@ void loop(void) {
             // Score
             u8g.setFont(u8g_font_unifont);
             u8g.drawXBMP(51, 14, study_26x28_width, study_26x28_height, study_26x28_bits);
-            u8g.drawStr(10, 58, "+ 1 Education");
+            u8g.drawStr(0, 58, "  + 1 Education ");
             snailCounter += 1;
             if (snailCounter>300) {
               snailCounter = 0;
@@ -1144,7 +1156,7 @@ void loop(void) {
             u8g.drawXBMP(81, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
             u8g.drawXBMP(93, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
             u8g.setFont(u8g_font_unifont);
-            u8g.drawStr(50, 16, "All clean");
+            u8g.drawStr(0, 16, "     All clean  ");
             cleanCounter += 1;
             if (cleanCounter>300) {
               cleanCounter = 0;
@@ -1159,44 +1171,53 @@ void loop(void) {
         // Play
         if (gameSequence == 0) {
           // Roll the dice
+          checkButton();
           animationStepMax = 7;
           u8g.drawXBMP(0, 10, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
           u8g.drawXBMP(41, 10, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
           u8g.drawXBMP(82, 10, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
-          switch (animationStep) {
+          checkButton();
+          randomGameIconXPos = random(0, 3);
+          randomFoodType = random(0, 7);
+          switch (randomGameIconXPos) {
+            case 0:
+              gameIconXPos = 6;
+              break;
             case 1:
-              checkButton();
-              u8g.drawXBMP(6, 16, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
+              gameIconXPos = 47;
               break;
             case 2:
-              checkButton();
-              u8g.drawXBMP(47, 16, bar_28x28_width, bar_28x28_height, bar_28x28_bits);
+              gameIconXPos = 88;
+              break;
+          }
+          checkButton();
+          switch (randomFoodType) {
+            case 0:
+              u8g.drawXBMP(gameIconXPos, 16, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
+              break;
+            case 1:
+              u8g.drawXBMP(gameIconXPos, 16, bar_28x28_width, bar_28x28_height, bar_28x28_bits);
+              break;
+            case 2:
+              u8g.drawXBMP(gameIconXPos, 16, strawberry_28x28_width, strawberry_28x28_height, strawberry_28x28_bits);
               break;
             case 3:
-              checkButton();
-              u8g.drawXBMP(88, 16, strawberry_28x28_width, strawberry_28x28_height, strawberry_28x28_bits);
+              u8g.drawXBMP(gameIconXPos, 16, apple_28x28_width, apple_28x28_height, apple_28x28_bits);
               break;
             case 4:
-              checkButton();
-              u8g.drawXBMP(6, 16, apple_28x28_width, apple_28x28_height, apple_28x28_bits);
+              u8g.drawXBMP(gameIconXPos, 16, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
               break;
             case 5:
-              checkButton();
-              u8g.drawXBMP(88, 16, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
+              u8g.drawXBMP(gameIconXPos, 16, milk_28x28_width, milk_28x28_height, milk_28x28_bits);
               break;
             case 6:
-              checkButton();
-              u8g.drawXBMP(6, 16, milk_28x28_width, milk_28x28_height, milk_28x28_bits);
+              u8g.drawXBMP(gameIconXPos, 16, orange_28x28_width, orange_28x28_height, orange_28x28_bits);
               break;
-            case 7:
-              checkButton();
-              u8g.drawXBMP(47, 16, orange_28x28_width, orange_28x28_height, orange_28x28_bits);
-              gameCounter += 1;
-              if (gameCounter>300) {
-                gameCounter = 0;
-                gameMode = 0;
-              }
-              break;
+          }
+          gameCounter += 1;
+          if (gameCounter>600) {
+            gameCounter = 0;
+            gameMode = 0;
           }
         } else if (gameSequence == 1) {
           // See the result
@@ -1205,12 +1226,12 @@ void loop(void) {
             case 0:
               // Ghost
               u8g.drawXBMP(50, 14, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
-              u8g.drawStr(14, 58, "Nothing, boo!");
+              u8g.drawStr(0, 58, " Nothing, boo!  ");
               break;
             case 1:
               // Bar
               u8g.drawXBMP(50, 14, bar_28x28_width, bar_28x28_height, bar_28x28_bits);
-              u8g.drawStr(14, 58, "+ 1 of all!");
+              u8g.drawStr(0, 58, "  + 1 of all!   ");
               strawberryFoodStock += 1;
               appleFoodStock += 1;
               grapeFoodStock += 1;
@@ -1220,31 +1241,31 @@ void loop(void) {
             case 2:
               // Strawberry
               u8g.drawXBMP(50, 14, strawberry_28x28_width, strawberry_28x28_height, strawberry_28x28_bits);
-              u8g.drawStr(14, 58, "+ 1 strawberry");
+              u8g.drawStr(0, 58, " + 1 strawberry ");
               strawberryFoodStock += 1;
               break;
             case 3:
               // Apple
               u8g.drawXBMP(50, 14, apple_28x28_width, apple_28x28_height, apple_28x28_bits);
-              u8g.drawStr(14, 58, "+ 1 apple");
+              u8g.drawStr(0, 58, "   + 1 apple    ");
               appleFoodStock += 1;
               break;
             case 4:
               // Grape
               u8g.drawXBMP(50, 14, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
-              u8g.drawStr(14, 58, "+ 1 grape");
+              u8g.drawStr(0, 58, "   + 1 grape    ");
               grapeFoodStock += 1;
               break;
             case 5:
               // Milk
               u8g.drawXBMP(50, 14, milk_28x28_width, milk_28x28_height, milk_28x28_bits);
-              u8g.drawStr(14, 58, "+ 1 milk");
+              u8g.drawStr(0, 58, "    + 1 milk    ");
               milkFoodStock += 1;
               break;
             case 6:
               // Orange
               u8g.drawXBMP(50, 14, orange_28x28_width, orange_28x28_height, orange_28x28_bits);
-              u8g.drawStr(14, 58, "+ 1 orange");
+              u8g.drawStr(0, 58, "   + 1 orange   ");
               orangeFoodStock += 1;
               break;
           }
@@ -1263,10 +1284,11 @@ void loop(void) {
         switch (randomVisitSequence) {
           case 0:
             // Knock
+            checkButton();
             u8g.drawXBMP(50, 14, door_28x30_width, door_28x30_height, door_28x30_bits);
             u8g.drawStr(40, 59, "Knock knock!");
             randomVisitCounter += 1;
-            if (randomVisitCounter>200) {
+            if (randomVisitCounter>4000) {
               randomVisitSequence = 1;
               randomVisitCounter = 0;
             }
@@ -1324,7 +1346,7 @@ void loop(void) {
             } else {
               u8g.drawXBMP(49, 14, coco_cake_28x32_width, coco_cake_28x32_height, coco_cake_28x32_bits);
             }
-            u8g.drawStr(46, 59, "Yum!");
+            u8g.drawStr(0, 59, "      Yum!      ");
             randomVisitCounter += 1;
             if (randomVisitCounter>200) {
               randomVisitSequence = 0;

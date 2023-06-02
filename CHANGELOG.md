@@ -1,3 +1,10 @@
+# 2023-06-02
+- Fixes pack 1 for TiMiNoo version 1.1
+- Game: Improved visual effects
+- Education: Tuned line spacing
+- Visit: Now waits for button before playing animation
+- All text has been recentered
+
 # 2023-06-01
 - Working on TiMiNoo version 1.1
 - Changed Want/Need animation to save memory
