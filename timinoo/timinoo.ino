@@ -65,22 +65,18 @@ int gameIconXPos = 0;
 // Status metrics
 // 0 = depleted, 1 = low, 2 = average, 3 = full
 long catHunger = random(1, 4);
-// long catHunger = 0;
 long catHygiene = random(1, 4);
 long catMorale = random(1, 4);
 long catEducation = random(1, 4);
-// long catEntertainment = random(1, 4);
-long catEntertainment = 0;
+long catEntertainment = random(1, 4);
 
 // Status change timing (decrement status variable every x frames)
 // Production timings
 unsigned long catHungerStep = random(7500, 8500);
-// unsigned long catHungerStep = 5;
 unsigned long catHygieneStep = random(15000, 20000);
 unsigned long catMoraleStep = random(4000, 5000);
 unsigned long catEducationStep = random(800, 1600);
-// unsigned long catEntertainmentStep = random(250, 500);
-unsigned long catEntertainmentStep = 5;
+unsigned long catEntertainmentStep = random(250, 500);
 
 // Tracking status checks
 unsigned long lastCatHungerCheck = 0;
