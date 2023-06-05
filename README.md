@@ -16,10 +16,13 @@ TiMiNoo is about enjoying a simple yet feature-rich virtual cat, a companion for
 Tamagotchi lovers could compare it to a Nano.
 
 ## Features
+### Single button gameplay
+I love having a virtual pet on my desk at work, but I also need to preserve my workflow from distractions.
+A single button gameplay is perfect for that.
 ### 2 games
-#### Casino
+#### Catsino
 Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home.
-Press the button once to randomly pick a food item.
+Press the button once to randomly pick a food item. Beware of the ghost though !
 #### Clean The Cat
 When the fur of TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub !
 Repeatedly press the button to get a squicky clean kitty.
