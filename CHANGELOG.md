@@ -1,3 +1,6 @@
+# 2023-06-05
+- Specs for version 1.2 defined
+
 # 2023-06-02
 - Fixes pack 1 for TiMiNoo version 1.1
 - Game: Improved visual effects
