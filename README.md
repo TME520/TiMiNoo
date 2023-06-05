@@ -1,7 +1,7 @@
 # TiMiNoo
 Cute 1 bit VPet for Arduino - Feed, cuddle, clean and educate your own unique cat.
 
-## Current version: 1.2.0
+## Current version: 1.2.1
 ## WIP version: -
 
 ## Presentation
@@ -19,14 +19,14 @@ Tamagotchi lovers could compare it to a Nano.
 ### Single button gameplay
 I love having a virtual pet on my desk at work, but I also need to preserve my workflow from distractions.
 A single button gameplay is perfect for that.
-### 2 games
+### 2 mini games
 #### Catsino
 Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home.
 Press the button once to randomly pick a food item. Beware of the ghost though !
 #### Clean The Cat
 When the fur of TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub !
 Repeatedly press the button to get a squicky clean kitty.
-### 8 types of food
+### 8 food items
 Your TiMiNoo will get hungry as time goes on. Feed it a variety of food including:
 - Grape
 - Strawberry
@@ -35,11 +35,11 @@ Your TiMiNoo will get hungry as time goes on. Feed it a variety of food includin
 - Milk
 - Coco cake (bonus item)
 - Matcha tea (bonus item)
-### Educate
+### Educate your cat with Professor Koko
 Your TiMiNoo will want to learn new things. Call Professor Koko Le Snail, a wise teacher that will share is best knowledge with your cuttie.
 ### Cuddle
 TiMiNoo craves attention and love, make sure to give it plenty.
-### Visits from your friend
+### Random visits from a friend
 Sometimes, when the cat gets hungry, its friend Cindy will come and offer either a nice Matcha tea or a home made Coco cake.
 
 ## How to play
