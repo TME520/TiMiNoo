@@ -1,3 +1,11 @@
+# 2023-06-05
+- Specs for version 1.2 defined
+- Casino: add banner
+- Clean The Cat: “all clear” 1 character to the right
+- Move Casino 3 pixels to the right on X axis
+- Clean The Cat: reposition bubbles
+- Cat is not happy anymore when getting the ghost at the Catsino
+
 # 2023-06-02
 - Fixes pack 1 for TiMiNoo version 1.1
 - Game: Improved visual effects

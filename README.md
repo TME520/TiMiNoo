@@ -1,6 +1,9 @@
 # TiMiNoo
 Cute 1 bit VPet for Arduino - Feed, cuddle, clean and educate your own unique cat.
 
+## Current version: 1.2.0
+## WIP version: -
+
 ## Presentation
 
 TiMiNoo is an Open Source virtual pet for Arduino Leonardo R3. It's a game in which you take care of a cute cat: you feed it, clean it, train it and cuddle it.
