@@ -1,8 +1,8 @@
 # TiMiNoo
 Cute 1 bit VPet for Arduino - Feed, cuddle, clean and educate your own unique cat.
 
-## Current version: 1.1.0
-## WIP version: 1.2.0
+## Current version: 1.2.0
+## WIP version: -
 
 ## Presentation
 
