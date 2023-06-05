@@ -76,7 +76,8 @@ unsigned long catHungerStep = random(7500, 8500);
 unsigned long catHygieneStep = random(15000, 20000);
 unsigned long catMoraleStep = random(4000, 5000);
 unsigned long catEducationStep = random(800, 1600);
-unsigned long catEntertainmentStep = random(250, 500);
+// unsigned long catEntertainmentStep = random(250, 500);
+unsigned long catEntertainmentStep = 1;
 
 // Tracking status checks
 unsigned long lastCatHungerCheck = 0;
@@ -707,6 +708,8 @@ void checkButton()
           gamePick = random (0, 7);
           gameSequence = 1;
           gameCounter = 0;
+          randomGameIconXPos = random(0, 3);
+          randomFoodType = random(0, 7);
         }
       } else if (gameMode == 7) {
         randomVisitSequence = 1;
@@ -1152,7 +1155,7 @@ void loop(void) {
             u8g.drawXBMP(81, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
             u8g.drawXBMP(93, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
             u8g.setFont(u8g_font_unifont);
-            u8g.drawStr(0, 16, "     All clean  ");
+            u8g.drawStr(0, 16, "      All clean ");
             cleanCounter += 1;
             if (cleanCounter>300) {
               cleanCounter = 0;
@@ -1169,45 +1172,49 @@ void loop(void) {
           // Roll the dice
           checkButton();
           animationStepMax = 7;
-          u8g.drawXBMP(0, 10, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
-          u8g.drawXBMP(41, 10, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
-          u8g.drawXBMP(82, 10, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
+          u8g.setFont(u8g_font_baby);
+          u8g.drawStr(13, 6, "xxxx Catsino Deluxe xxxx");
+          u8g.drawXBMP(3, 18, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
+          u8g.drawXBMP(44, 18, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
+          u8g.drawXBMP(85, 18, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
           checkButton();
-          randomGameIconXPos = random(0, 3);
-          randomFoodType = random(0, 7);
+          if ( (gameCounter % 2) == 0) {
+            randomGameIconXPos = random(0, 3);
+            randomFoodType = random(0, 7);
+          }
           switch (randomGameIconXPos) {
             case 0:
-              gameIconXPos = 6;
+              gameIconXPos = 9;
               break;
             case 1:
-              gameIconXPos = 47;
+              gameIconXPos = 50;
               break;
             case 2:
-              gameIconXPos = 88;
+              gameIconXPos = 91;
               break;
           }
           checkButton();
           switch (randomFoodType) {
             case 0:
-              u8g.drawXBMP(gameIconXPos, 16, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
+              u8g.drawXBMP(gameIconXPos, 24, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
               break;
             case 1:
-              u8g.drawXBMP(gameIconXPos, 16, bar_28x28_width, bar_28x28_height, bar_28x28_bits);
+              u8g.drawXBMP(gameIconXPos, 24, bar_28x28_width, bar_28x28_height, bar_28x28_bits);
               break;
             case 2:
-              u8g.drawXBMP(gameIconXPos, 16, strawberry_28x28_width, strawberry_28x28_height, strawberry_28x28_bits);
+              u8g.drawXBMP(gameIconXPos, 24, strawberry_28x28_width, strawberry_28x28_height, strawberry_28x28_bits);
               break;
             case 3:
-              u8g.drawXBMP(gameIconXPos, 16, apple_28x28_width, apple_28x28_height, apple_28x28_bits);
+              u8g.drawXBMP(gameIconXPos, 24, apple_28x28_width, apple_28x28_height, apple_28x28_bits);
               break;
             case 4:
-              u8g.drawXBMP(gameIconXPos, 16, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
+              u8g.drawXBMP(gameIconXPos, 24, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
               break;
             case 5:
-              u8g.drawXBMP(gameIconXPos, 16, milk_28x28_width, milk_28x28_height, milk_28x28_bits);
+              u8g.drawXBMP(gameIconXPos, 24, milk_28x28_width, milk_28x28_height, milk_28x28_bits);
               break;
             case 6:
-              u8g.drawXBMP(gameIconXPos, 16, orange_28x28_width, orange_28x28_height, orange_28x28_bits);
+              u8g.drawXBMP(gameIconXPos, 24, orange_28x28_width, orange_28x28_height, orange_28x28_bits);
               break;
           }
           gameCounter += 1;
@@ -1221,12 +1228,12 @@ void loop(void) {
           switch (gamePick) {
             case 0:
               // Ghost
-              u8g.drawXBMP(50, 14, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
+              u8g.drawXBMP(50, 12, ghost_28x28_width, ghost_28x28_height, ghost_28x28_bits);
               u8g.drawStr(0, 58, " Nothing, boo!  ");
               break;
             case 1:
               // Bar
-              u8g.drawXBMP(50, 14, bar_28x28_width, bar_28x28_height, bar_28x28_bits);
+              u8g.drawXBMP(50, 12, bar_28x28_width, bar_28x28_height, bar_28x28_bits);
               u8g.drawStr(0, 58, "  + 1 of all!   ");
               strawberryFoodStock += 1;
               appleFoodStock += 1;
@@ -1236,31 +1243,31 @@ void loop(void) {
               break;
             case 2:
               // Strawberry
-              u8g.drawXBMP(50, 14, strawberry_28x28_width, strawberry_28x28_height, strawberry_28x28_bits);
+              u8g.drawXBMP(50, 12, strawberry_28x28_width, strawberry_28x28_height, strawberry_28x28_bits);
               u8g.drawStr(0, 58, " + 1 strawberry ");
               strawberryFoodStock += 1;
               break;
             case 3:
               // Apple
-              u8g.drawXBMP(50, 14, apple_28x28_width, apple_28x28_height, apple_28x28_bits);
+              u8g.drawXBMP(50, 12, apple_28x28_width, apple_28x28_height, apple_28x28_bits);
               u8g.drawStr(0, 58, "   + 1 apple    ");
               appleFoodStock += 1;
               break;
             case 4:
               // Grape
-              u8g.drawXBMP(50, 14, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
+              u8g.drawXBMP(50, 12, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
               u8g.drawStr(0, 58, "   + 1 grape    ");
               grapeFoodStock += 1;
               break;
             case 5:
               // Milk
-              u8g.drawXBMP(50, 14, milk_28x28_width, milk_28x28_height, milk_28x28_bits);
+              u8g.drawXBMP(50, 12, milk_28x28_width, milk_28x28_height, milk_28x28_bits);
               u8g.drawStr(0, 58, "    + 1 milk    ");
               milkFoodStock += 1;
               break;
             case 6:
               // Orange
-              u8g.drawXBMP(50, 14, orange_28x28_width, orange_28x28_height, orange_28x28_bits);
+              u8g.drawXBMP(50, 12, orange_28x28_width, orange_28x28_height, orange_28x28_bits);
               u8g.drawStr(0, 58, "   + 1 orange   ");
               orangeFoodStock += 1;
               break;
