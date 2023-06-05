@@ -65,7 +65,8 @@ int gameIconXPos = 0;
 // Status metrics
 // 0 = depleted, 1 = low, 2 = average, 3 = full
 long catHunger = random(1, 4);
-long catHygiene = random(1, 4);
+// long catHygiene = random(1, 4);
+long catHygiene = 0;
 long catMorale = random(1, 4);
 long catEducation = random(1, 4);
 long catEntertainment = random(1, 4);
@@ -73,11 +74,11 @@ long catEntertainment = random(1, 4);
 // Status change timing (decrement status variable every x frames)
 // Production timings
 unsigned long catHungerStep = random(7500, 8500);
-unsigned long catHygieneStep = random(15000, 20000);
+// unsigned long catHygieneStep = random(15000, 20000);
+unsigned long catHygieneStep = 1;
 unsigned long catMoraleStep = random(4000, 5000);
 unsigned long catEducationStep = random(800, 1600);
-// unsigned long catEntertainmentStep = random(250, 500);
-unsigned long catEntertainmentStep = 1;
+unsigned long catEntertainmentStep = random(250, 500);
 
 // Tracking status checks
 unsigned long lastCatHungerCheck = 0;
@@ -1116,35 +1117,35 @@ void loop(void) {
             }
             switch(cleanCounter) {
               case 5 ... 25:
-                u8g.drawXBMP(32, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(38, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 break;
               case 26 ... 46:
-                u8g.drawXBMP(32, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
-                u8g.drawXBMP(64, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(38, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(58, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 break;
               case 47 ... 67:
-                u8g.drawXBMP(0, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
-                u8g.drawXBMP(32, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
-                u8g.drawXBMP(64, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
-                u8g.drawXBMP(96, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(23, 16, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(38, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(58, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(73, 16, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 break;
               case 68 ... 88:
-                u8g.drawXBMP(0, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
-                u8g.drawXBMP(32, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
-                u8g.drawXBMP(64, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
-                u8g.drawXBMP(96, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(23, 16, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(38, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(58, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(73, 16, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(32, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(64, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 break;
               case 89 ... 100:
+                u8g.drawXBMP(23, 16, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(38, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(58, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(73, 16, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(0, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
-                u8g.drawXBMP(32, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
-                u8g.drawXBMP(64, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
-                u8g.drawXBMP(96, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
-                u8g.drawXBMP(0, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(32, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(64, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
-                u8g.drawXBMP(96, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(96, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 break;
             }
             break;
