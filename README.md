@@ -26,7 +26,7 @@ Press the button once to randomly pick a food item. Beware of the ghost though !
 #### Clean The Cat
 When the fur of TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub !
 Repeatedly press the button to get a squicky clean kitty.
-### 8 food items
+### 7 food items
 Your TiMiNoo will get hungry as time goes on. Feed it a variety of food including:
 - Grape
 - Strawberry
