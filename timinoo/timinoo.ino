@@ -65,8 +65,7 @@ int gameIconXPos = 0;
 // Status metrics
 // 0 = depleted, 1 = low, 2 = average, 3 = full
 long catHunger = random(1, 4);
-// long catHygiene = random(1, 4);
-long catHygiene = 0;
+long catHygiene = random(1, 4);
 long catMorale = random(1, 4);
 long catEducation = random(1, 4);
 long catEntertainment = random(1, 4);
@@ -74,8 +73,7 @@ long catEntertainment = random(1, 4);
 // Status change timing (decrement status variable every x frames)
 // Production timings
 unsigned long catHungerStep = random(7500, 8500);
-// unsigned long catHygieneStep = random(15000, 20000);
-unsigned long catHygieneStep = 1;
+unsigned long catHygieneStep = random(15000, 20000);
 unsigned long catMoraleStep = random(4000, 5000);
 unsigned long catEducationStep = random(800, 1600);
 unsigned long catEntertainmentStep = random(250, 500);
@@ -973,7 +971,7 @@ void loop(void) {
             feedCounter += 1;
             if (feedCounter>300) {
               feedCounter = 0;
-              if (selectedFood != 6) {
+              if (selectedFood < 6) {
                 superHappyCounter = 100;
                 catHunger = 3;
               }
@@ -1027,7 +1025,6 @@ void loop(void) {
             u8g.setFont(u8g_font_baby);
             u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
             u8g.drawXBMP(97, 40, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
-            // u8g.drawStr(54, 16, "   -= *** =-   ");
             u8g.drawStr(54, 23, "Welcome to a");
             u8g.drawStr(54, 29, "new lesson with");
             u8g.drawStr(54, 35, "Koko Le Snail");
@@ -1276,8 +1273,10 @@ void loop(void) {
           gameCounter += 1;
           if (gameCounter>400) {
             gameCounter = 0;
-            superHappyCounter = 100;
-            catEntertainment = 3;
+            if (gamePick > 0) {
+              superHappyCounter = 100;
+              catEntertainment = 3;
+            }
             gameMode = 0;
           }
         }
