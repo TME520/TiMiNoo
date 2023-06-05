@@ -13,22 +13,28 @@ TiMiNoo is about enjoying a simple yet feature-rich virtual cat, a companion for
 Tamagotchi lovers could compare it to a Nano.
 
 ## Features
-### Feed
+### 2 games
+#### Casino
+Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home.
+Press the button once to randomly pick a food item.
+#### Clean The Cat
+When the fur of TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub !
+Repeatedly press the button to get a squicky clean kitty.
+### 8 types of food
 Your TiMiNoo will get hungry as time goes on. Feed it a variety of food including:
 - Grape
 - Strawberry
 - Apple
 - Orange
-- Ice cream
-- Coffee
+- Milk
+- Coco cake (bonus item)
+- Matcha tea (bonus item)
 ### Educate
 Your TiMiNoo will want to learn new things. Call Professor Koko Le Snail, a wise teacher that will share is best knowledge with your cuttie.
 ### Cuddle
 TiMiNoo craves attention and love, make sure to give it plenty.
-### Clean
-When the fur of TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub !
-### Play
-Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home.
+### Visits from your friend
+Sometimes, when the cat gets hungry, its friend Cindy will come and offer either a nice Matcha tea or a home made Coco cake.
 
 ## How to play
 ### Starting the game

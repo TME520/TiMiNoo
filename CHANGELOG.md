@@ -1,3 +1,20 @@
+# 2023-06-02
+- Fixes pack 1 for TiMiNoo version 1.1
+- Game: Improved visual effects
+- Education: Tuned line spacing
+- Visit: Now waits for button before playing animation
+- All text has been recentered
+
+# 2023-06-01
+- Working on TiMiNoo version 1.1
+- Changed Want/Need animation to save memory
+- Removed Ice Cream and replaced Coffee with Milk
+- Overhauled Clean The Cat game
+- Implemented Super Happy Cat icon
+- Reimplemented random visits when cat is hungry
+- Trying to optimize and save memory
+- If successful enough, will implement features I had to leave out
+
 # 2023-05-31
 - 1st feature-complete version
 - Completed Education implementation
