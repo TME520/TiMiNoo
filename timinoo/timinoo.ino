@@ -67,7 +67,7 @@ int gameIconXPos = 0;
 long catHunger = random(1, 4);
 long catHygiene = random(1, 4);
 long catMorale = random(1, 4);
-long catEducation = random(1, 4);
+long catEducation = random(1, 3);
 long catEntertainment = random(1, 4);
 
 // Status change timing (decrement status variable every x frames)
@@ -790,7 +790,7 @@ void loop(void) {
     // Time to feed the cat
     currentIcon = 6;
     randomVisit = random(0, 3136);
-    if (randomVisit<300) {
+    if (randomVisit<1000) {
       randomVisitSequence = 0;
       randomVisitCounter = 0;
       gameMode = 7;
