@@ -790,7 +790,7 @@ void loop(void) {
     // Time to feed the cat
     currentIcon = 6;
     randomVisit = random(0, 3136);
-    if (randomVisit<1000) {
+    if (randomVisit<2000 && randomVisit % 2 == 0) {
       randomVisitSequence = 0;
       randomVisitCounter = 0;
       gameMode = 7;
@@ -1025,9 +1025,9 @@ void loop(void) {
             u8g.setFont(u8g_font_baby);
             u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
             u8g.drawXBMP(97, 40, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
-            u8g.drawStr(54, 23, "Welcome to a");
+            u8g.drawStr(54, 23, "~~ Welcome to a");
             u8g.drawStr(54, 29, "new lesson with");
-            u8g.drawStr(54, 35, "Koko Le Snail");
+            u8g.drawStr(54, 35, "Koko Le Snail ~~");
             snailCounter += 1;
             if (snailCounter>300) {
               snailCounter = 0;
@@ -1086,7 +1086,7 @@ void loop(void) {
           case 3:
             // Score
             u8g.setFont(u8g_font_unifont);
-            u8g.drawXBMP(51, 14, study_26x28_width, study_26x28_height, study_26x28_bits);
+            u8g.drawXBMP(51, 12, study_26x28_width, study_26x28_height, study_26x28_bits);
             u8g.drawStr(0, 58, "  + 1 Education ");
             snailCounter += 1;
             if (snailCounter>300) {
@@ -1176,7 +1176,7 @@ void loop(void) {
           u8g.drawXBMP(44, 18, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
           u8g.drawXBMP(85, 18, casino_frame_40x40_width, casino_frame_40x40_height, casino_frame_40x40_bits);
           checkButton();
-          if ( (gameCounter % 2) == 0) {
+          if ( (gameCounter % 3) == 0) {
             randomGameIconXPos = random(0, 3);
             randomFoodType = random(0, 7);
           }

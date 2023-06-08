@@ -1,3 +1,8 @@
+# 2023-06-08
+- TiMiNoo version 1.2.2
+- Tweaked chances of random visit by friend
+- Adjusted display refresh for Catsino Deluxe game
+
 # 2023-06-05
 - Specs for version 1.2 defined
 - Casino: add banner
