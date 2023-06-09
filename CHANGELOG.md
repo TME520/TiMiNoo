@@ -1,7 +1,7 @@
 # 2023-06-09
 - Starting work on TiMiNoo version 1.3.0
 - This version is an attempt at packing more features into the game
-- Memory saved: From 28182 down to 24408
+- Memory saved: From 28182 down to 24408 (3773 bytes)
 
 # 2023-06-08
 - TiMiNoo version 1.2.2
