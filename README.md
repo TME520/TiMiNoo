@@ -2,7 +2,7 @@
 Cute 1 bit VPet for Arduino - Feed, cuddle, clean and educate your own unique cat.
 
 ## Current version: 1.2.2
-## WIP version: -
+## WIP version: 1.3.0
 
 ## Presentation
 
@@ -78,6 +78,10 @@ Press the button in order to scrub all that dust off its fur.
 - Enough jumper cables to assemble the circuitry
 
 ![Prototype board](./assets/proto4.jpg "TiMiNoo")
+
+## About version 1.3.0
+1st, I must say version 1.2.2 can be considered feature-complete. Version 1.3.0 is an attempt at saving memory in order to pack more features (games, new friends, more food items...), but it might not work.
+FYI, the hardware used only allows for 28K of code + data and has 2.5K of RAM. Compared to even an entry-level computer, that's not much at all. I know from experience that some [very skilled coders were able to do wonders with such limited resources](https://www.pouet.net/prodlist.php?type%5B%5D=32k&page=1) and their work is my main source of inspiration.
 
 ## Commercial status
 TiMiNoo is an open source project that is not meant to be sold. Please note the cat sprites are under a [Creative Commons Attribution-NonCommercial 4.0 International CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license that explicitly prohibits commercial use. I'm 100% OK with this.
