@@ -1,3 +1,7 @@
+# 2023-06-10
+- Exploring the possibilities of 2X display mode
+- Sitting cat sprites 2X ready
+
 # 2023-06-09
 - Starting work on TiMiNoo version 1.3.0
 - This version is an attempt at packing more features into the game
