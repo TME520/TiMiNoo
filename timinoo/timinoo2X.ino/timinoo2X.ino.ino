@@ -239,41 +239,65 @@ static unsigned char pizza_13x14_bits[] U8G_PROGMEM = {
    0xe0, 0x07, 0x74, 0x07, 0x38, 0x02, 0x78, 0x03, 0xf0, 0x01, 0xd0, 0x01,
    0xa0, 0x00, 0x20, 0x00 };
 
-#define cat_sitting_001_12x12_width 12
-#define cat_sitting_001_12x12_height 12
-static unsigned char cat_sitting_001_12x12_bits[] U8G_PROGMEM = {
-   0x00, 0x00, 0x40, 0x04, 0xc0, 0x07, 0x40, 0x03, 0xc0, 0x07, 0xc0, 0x07,
-   0xe0, 0x03, 0xe0, 0x03, 0xe0, 0x03, 0x70, 0x05, 0x76, 0x05, 0x00, 0x00 };
+#define cat_sitting_001_24x24_width 24
+#define cat_sitting_001_24x24_height 24
+static unsigned char cat_sitting_001_24x24_bits[] U8G_PROGMEM = {
+   0x00, 0x3c, 0xf0, 0x00, 0x3c, 0xf0, 0x00, 0xcc, 0xcf, 0x00, 0xcc, 0xcf,
+   0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0xcc, 0xf0, 0x00, 0xcc, 0xf0,
+   0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0,
+   0x00, 0x03, 0x30, 0x00, 0x03, 0x30, 0x00, 0x03, 0x30, 0x00, 0x03, 0x30,
+   0x00, 0x03, 0x30, 0x00, 0x03, 0x30, 0xfc, 0xc0, 0xcc, 0xfc, 0xc0, 0xcc,
+   0xc3, 0xc0, 0xcc, 0xc3, 0xc0, 0xcc, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff };
 
-#define cat_sitting_002_12x12_width 12
-#define cat_sitting_002_12x12_height 12
-static unsigned char cat_sitting_002_12x12_bits[] U8G_PROGMEM = {
-   0x00, 0x00, 0x40, 0x04, 0xc0, 0x07, 0x40, 0x03, 0xc0, 0x07, 0xc0, 0x07,
-   0xe0, 0x03, 0xe0, 0x03, 0xe0, 0x03, 0x74, 0x05, 0x72, 0x05, 0x00, 0x00 };
+#define cat_sitting_002_24x24_width 24
+#define cat_sitting_002_24x24_height 24
+static unsigned char cat_sitting_002_24x24_bits[] U8G_PROGMEM = {
+   0x00, 0x3c, 0xf0, 0x00, 0x3c, 0xf0, 0x00, 0xcc, 0xcf, 0x00, 0xcc, 0xcf,
+   0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0xcc, 0xf0, 0x00, 0xcc, 0xf0,
+   0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0,
+   0x00, 0x03, 0x30, 0x00, 0x03, 0x30, 0x00, 0x03, 0x30, 0x00, 0x03, 0x30,
+   0xf0, 0x03, 0x30, 0xf0, 0x03, 0x30, 0xcc, 0xc0, 0xcc, 0xcc, 0xc0, 0xcc,
+   0xf3, 0xc0, 0xcc, 0xf3, 0xc0, 0xcc, 0xcf, 0xff, 0xff, 0xcf, 0xff, 0xff };
 
-#define cat_sitting_003_12x12_width 12
-#define cat_sitting_003_12x12_height 12
-static unsigned char cat_sitting_003_12x12_bits[] U8G_PROGMEM = {
-   0x00, 0x00, 0x40, 0x04, 0xc0, 0x07, 0x40, 0x03, 0xc0, 0x07, 0xc0, 0x07,
-   0xe0, 0x03, 0xe0, 0x03, 0xe0, 0x03, 0x76, 0x05, 0x70, 0x05, 0x00, 0x00 };
+#define cat_sitting_003_24x24_width 24
+#define cat_sitting_003_24x24_height 24
+static unsigned char cat_sitting_003_24x24_bits[] U8G_PROGMEM = {
+   0x00, 0x3c, 0xf0, 0x00, 0x3c, 0xf0, 0x00, 0xcc, 0xcf, 0x00, 0xcc, 0xcf,
+   0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0xcc, 0xf0, 0x00, 0xcc, 0xf0,
+   0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0,
+   0x00, 0x03, 0x30, 0x00, 0x03, 0x30, 0x00, 0x03, 0x30, 0x00, 0x03, 0x30,
+   0xfc, 0x03, 0x30, 0xfc, 0x03, 0x30, 0xc3, 0xc0, 0xcc, 0xc3, 0xc0, 0xcc,
+   0xff, 0xc0, 0xcc, 0xff, 0xc0, 0xcc, 0xc0, 0xff, 0xff, 0xc0, 0xff, 0xff };
 
-#define cat_sitting_004_12x12_width 12
-#define cat_sitting_004_12x12_height 12
-static unsigned char cat_sitting_004_12x12_bits[] U8G_PROGMEM = {
-   0x00, 0x00, 0x40, 0x04, 0xc0, 0x07, 0x40, 0x03, 0xc0, 0x07, 0xc0, 0x07,
-   0xe0, 0x03, 0xe0, 0x03, 0xe0, 0x03, 0x72, 0x05, 0x74, 0x05, 0x00, 0x00 };
+#define cat_sitting_004_24x24_width 24
+#define cat_sitting_004_24x24_height 24
+static unsigned char cat_sitting_004_24x24_bits[] U8G_PROGMEM = {
+   0x00, 0x3c, 0xf0, 0x00, 0x3c, 0xf0, 0x00, 0xcc, 0xcf, 0x00, 0xcc, 0xcf,
+   0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0xcc, 0xf0, 0x00, 0xcc, 0xf0,
+   0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0,
+   0x00, 0x03, 0x30, 0x00, 0x03, 0x30, 0x00, 0x03, 0x30, 0x00, 0x03, 0x30,
+   0x0f, 0x03, 0x30, 0x0f, 0x03, 0x30, 0xf3, 0xc0, 0xcc, 0xf3, 0xc0, 0xcc,
+   0xcc, 0xc0, 0xcc, 0xcc, 0xc0, 0xcc, 0xf0, 0xff, 0xff, 0xf0, 0xff, 0xff };
 
-#define cat_sitting_006_12x12_width 12
-#define cat_sitting_006_12x12_height 12
-static unsigned char cat_sitting_006_12x12_bits[] U8G_PROGMEM = {
-   0x00, 0x00, 0x80, 0x04, 0xc0, 0x03, 0xc0, 0x06, 0xc0, 0x07, 0xc0, 0x07,
-   0xe0, 0x03, 0xe0, 0x03, 0xe0, 0x03, 0x74, 0x05, 0x72, 0x05, 0x00, 0x00 };
+#define cat_sitting_006_24x24_width 24
+#define cat_sitting_006_24x24_height 24
+static unsigned char cat_sitting_006_24x24_bits[] U8G_PROGMEM = {
+   0x00, 0xf0, 0xf0, 0x00, 0xf0, 0xf0, 0x00, 0x30, 0xcf, 0x00, 0x30, 0xcf,
+   0x00, 0x0c, 0x30, 0x00, 0x0c, 0x30, 0x00, 0x0c, 0xc3, 0x00, 0x0c, 0xc3,
+   0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0,
+   0x00, 0x03, 0x30, 0x00, 0x03, 0x30, 0x00, 0x03, 0x30, 0x00, 0x03, 0x30,
+   0xf0, 0x03, 0x30, 0xf0, 0x03, 0x30, 0xcc, 0xc0, 0xcc, 0xcc, 0xc0, 0xcc,
+   0xf3, 0xc0, 0xcc, 0xf3, 0xc0, 0xcc, 0xcf, 0xff, 0xff, 0xcf, 0xff, 0xff };
 
-#define cat_sitting_007_12x12_width 12
-#define cat_sitting_007_12x12_height 12
-static unsigned char cat_sitting_007_12x12_bits[] U8G_PROGMEM = {
-   0x00, 0x00, 0x80, 0x04, 0xc0, 0x03, 0xc0, 0x06, 0xc0, 0x07, 0xc0, 0x07,
-   0xe0, 0x03, 0xe0, 0x03, 0xe0, 0x03, 0x76, 0x05, 0x70, 0x05, 0x00, 0x00 };
+#define cat_sitting_007_24x24_width 24
+#define cat_sitting_007_24x24_height 24
+static unsigned char cat_sitting_007_24x24_bits[] U8G_PROGMEM = {
+   0x00, 0xf0, 0xf0, 0x00, 0xf0, 0xf0, 0x00, 0x30, 0xcf, 0x00, 0x30, 0xcf,
+   0x00, 0x0c, 0x30, 0x00, 0x0c, 0x30, 0x00, 0x0c, 0xc3, 0x00, 0x0c, 0xc3,
+   0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0, 0x00, 0x0c, 0xc0,
+   0x00, 0x03, 0x30, 0x00, 0x03, 0x30, 0x00, 0x03, 0x30, 0x00, 0x03, 0x30,
+   0xfc, 0x03, 0x30, 0xfc, 0x03, 0x30, 0xc3, 0xc0, 0xcc, 0xc3, 0xc0, 0xcc,
+   0xff, 0xc0, 0xcc, 0xff, 0xc0, 0xcc, 0xc0, 0xff, 0xff, 0xc0, 0xff, 0xff };
 
 #define cuddle_heart_11x10_width 11
 #define cuddle_heart_11x10_height 10
@@ -473,19 +497,19 @@ void loop(void) {
         switch (animationStep) {
           case 1:
             checkButton();
-            u8g.drawXBMP(4, 4, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_001_24x24_width, cat_sitting_001_24x24_height, cat_sitting_001_24x24_bits);
             break;
           case 2:
             checkButton();
-            u8g.drawXBMP(4, 4, cat_sitting_002_12x12_width, cat_sitting_002_12x12_height, cat_sitting_002_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_002_24x24_width, cat_sitting_002_24x24_height, cat_sitting_002_24x24_bits);
             break;
           case 3:
             checkButton();
-            u8g.drawXBMP(4, 4, cat_sitting_003_12x12_width, cat_sitting_003_12x12_height, cat_sitting_003_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_003_24x24_width, cat_sitting_003_24x24_height, cat_sitting_003_24x24_bits);
             break;
           case 4:
             checkButton();
-            u8g.drawXBMP(4, 4, cat_sitting_004_12x12_width, cat_sitting_004_12x12_height, cat_sitting_004_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_004_24x24_width, cat_sitting_004_24x24_height, cat_sitting_004_24x24_bits);
             break;
         }
         break;
@@ -529,19 +553,19 @@ void loop(void) {
         switch (animationStep) {
           case 1:
             checkButton();
-            u8g.drawXBMP(4, 4, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_001_24x24_width, cat_sitting_001_24x24_height, cat_sitting_001_24x24_bits);
             break;
           case 2:
             checkButton();
-            u8g.drawXBMP(4, 4, cat_sitting_006_12x12_width, cat_sitting_006_12x12_height, cat_sitting_006_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_006_24x24_width, cat_sitting_006_24x24_height, cat_sitting_006_24x24_bits);
             break;
           case 3:
             checkButton();
-            u8g.drawXBMP(4, 4, cat_sitting_007_12x12_width, cat_sitting_007_12x12_height, cat_sitting_007_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_007_24x24_width, cat_sitting_007_24x24_height, cat_sitting_007_24x24_bits);
             break;
           case 4:
             checkButton();
-            u8g.drawXBMP(4, 4, cat_sitting_004_12x12_width, cat_sitting_004_12x12_height, cat_sitting_004_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_004_24x24_width, cat_sitting_004_24x24_height, cat_sitting_004_24x24_bits);
             break;
         }
         break;
@@ -607,7 +631,7 @@ void loop(void) {
             break;
           case 2:
             // Yum
-            u8g.drawXBMP(-24, 13, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(-24, 13, cat_sitting_001_24x24_width, cat_sitting_001_24x24_height, cat_sitting_001_24x24_bits);
             if (selectedFood != 6) {
               u8g.drawStr(0, 30, "      Yum!      ");
             }
@@ -625,7 +649,7 @@ void loop(void) {
         break;
       case 3:
         // Cuddle
-        u8g.drawXBMP(4, 4, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+        u8g.drawXBMP(4, 4, cat_sitting_001_24x24_width, cat_sitting_001_24x24_height, cat_sitting_001_24x24_bits);
         cuddleCounter += 1;
         if (cuddleCounter<31) {
           u8g.drawXBMP(80, 45 - cuddleCounter, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
@@ -651,7 +675,7 @@ void loop(void) {
         switch (lessonSequence) {
           case 0:
             // Snail arrives
-            u8g.drawXBMP(-24, 13, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(-24, 13, cat_sitting_001_24x24_width, cat_sitting_001_24x24_height, cat_sitting_001_24x24_bits);
             u8g.drawXBMP(kokoXPos, 40, koko_le_snail_13x11_width, koko_le_snail_13x11_height, koko_le_snail_13x11_bits);
             kokoXPos -= 1;
             if (kokoXPos < 97) {
@@ -666,7 +690,7 @@ void loop(void) {
           case 1:
             // Snail says hello
             u8g.setFont(u8g_font_baby);
-            u8g.drawXBMP(-24, 13, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(-24, 13, cat_sitting_001_24x24_width, cat_sitting_001_24x24_height, cat_sitting_001_24x24_bits);
             u8g.drawXBMP(97, 40, koko_le_snail_13x11_width, koko_le_snail_13x11_height, koko_le_snail_13x11_bits);
             u8g.drawStr(54, 23, "~~ Welcome to a");
             u8g.drawStr(54, 29, "new lesson with");
@@ -680,7 +704,7 @@ void loop(void) {
           case 2:
             // Snail wisdom quote
             u8g.setFont(u8g_font_baby);
-            u8g.drawXBMP(-24, 13, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(-24, 13, cat_sitting_001_24x24_width, cat_sitting_001_24x24_height, cat_sitting_001_24x24_bits);
             u8g.drawXBMP(97, 40, koko_le_snail_13x11_width, koko_le_snail_13x11_height, koko_le_snail_13x11_bits);
             switch (randomQuote) {
               case 1:
@@ -746,7 +770,7 @@ void loop(void) {
         switch (cleanSequence) {
           case 0:
             // Clean The Cat game
-            u8g.drawXBMP(34, 4, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(34, 4, cat_sitting_001_24x24_width, cat_sitting_001_24x24_height, cat_sitting_001_24x24_bits);
             checkButton();
             cleanCounter -= 1;
             if (cleanCounter<0) {
@@ -790,7 +814,7 @@ void loop(void) {
             }
             break;
           case 1:
-            u8g.drawXBMP(-24, 13, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(-24, 13, cat_sitting_001_24x24_width, cat_sitting_001_24x24_height, cat_sitting_001_24x24_bits);
             u8g.drawXBMP(72, 22, diamond_14x12_width, diamond_14x12_height, diamond_14x12_bits);
             u8g.drawXBMP(69, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
             u8g.drawXBMP(81, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
@@ -941,7 +965,7 @@ void loop(void) {
             break;
           case 1:
             // Hello
-            u8g.drawXBMP(-24, 13, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(-24, 13, cat_sitting_001_24x24_width, cat_sitting_001_24x24_height, cat_sitting_001_24x24_bits);
             u8g.drawXBMP(96, 14, cindy_14x13_width, cindy_14x13_height, cindy_14x13_bits);
             u8g.drawStr(45, 59, "Hi friend!");
             randomVisitCounter += 1;
@@ -952,7 +976,7 @@ void loop(void) {
             break;
           case 2:
             // Gift
-            u8g.drawXBMP(-24, 13, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(-24, 13, cat_sitting_001_24x24_width, cat_sitting_001_24x24_height, cat_sitting_001_24x24_bits);
             u8g.drawXBMP(96, 14, cindy_14x13_width, cindy_14x13_height, cindy_14x13_bits);
             if (randomVisit<51) {
               // Matcha
@@ -968,7 +992,7 @@ void loop(void) {
             break;
           case 3:
             // Drink
-            u8g.drawXBMP(-24, 13, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(-24, 13, cat_sitting_001_24x24_width, cat_sitting_001_24x24_height, cat_sitting_001_24x24_bits);
             if (randomVisit<51) {
               // Matcha
               u8g.drawXBMP(49, 14, matcha_15x16_width, matcha_15x16_height, matcha_15x16_bits);
