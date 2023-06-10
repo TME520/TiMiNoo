@@ -462,30 +462,30 @@ void loop(void) {
         animationStepMax = 4;
         checkButton();
         // Icon frame
-        u8g.drawXBMP(0, 0, speech_bubble_14x12_width, speech_bubble_14x12_height, speech_bubble_14x12_bits);
+        u8g.drawXBMP(40, 10, speech_bubble_14x12_width, speech_bubble_14x12_height, speech_bubble_14x12_bits);
         // Icon (always happy)
         if (superHappyCounter<1) {
-          u8g.drawXBMP(87, 12, happy_cat_14x14_width, happy_cat_14x14_height, happy_cat_14x14_bits);
+          u8g.drawXBMP(43, 6, happy_cat_14x14_width, happy_cat_14x14_height, happy_cat_14x14_bits);
         } else {
-          u8g.drawXBMP(87, 12, super_happy_14x14_width, super_happy_14x14_height, super_happy_14x14_bits);
+          u8g.drawXBMP(43, 6, super_happy_14x14_width, super_happy_14x14_height, super_happy_14x14_bits);
           superHappyCounter -= 1;
         }
         switch (animationStep) {
           case 1:
             checkButton();
-            u8g.drawXBMP(8, 8, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
             break;
           case 2:
             checkButton();
-            u8g.drawXBMP(8, 8, cat_sitting_002_12x12_width, cat_sitting_002_12x12_height, cat_sitting_002_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_002_12x12_width, cat_sitting_002_12x12_height, cat_sitting_002_12x12_bits);
             break;
           case 3:
             checkButton();
-            u8g.drawXBMP(8, 8, cat_sitting_003_12x12_width, cat_sitting_003_12x12_height, cat_sitting_003_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_003_12x12_width, cat_sitting_003_12x12_height, cat_sitting_003_12x12_bits);
             break;
           case 4:
             checkButton();
-            u8g.drawXBMP(8, 8, cat_sitting_004_12x12_width, cat_sitting_004_12x12_height, cat_sitting_004_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_004_12x12_width, cat_sitting_004_12x12_height, cat_sitting_004_12x12_bits);
             break;
         }
         break;
@@ -499,11 +499,11 @@ void loop(void) {
         switch (currentIcon) {
           case 0:
             // Happy
-            u8g.drawXBMP(87, 12, happy_cat_14x14_width, happy_cat_14x14_height, happy_cat_14x14_bits);
+            u8g.drawXBMP(43, 6, happy_cat_14x14_width, happy_cat_14x14_height, happy_cat_14x14_bits);
             break;
           case 1:
             // Ghost
-            u8g.drawXBMP(87, 12, ghost_14x14_width, ghost_14x14_height, ghost_14x14_bits);
+            u8g.drawXBMP(43, 6, ghost_14x14_width, ghost_14x14_height, ghost_14x14_bits);
             break;
           case 2:
             // Play
@@ -529,19 +529,19 @@ void loop(void) {
         switch (animationStep) {
           case 1:
             checkButton();
-            u8g.drawXBMP(8, 8, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
             break;
           case 2:
             checkButton();
-            u8g.drawXBMP(8, 8, cat_sitting_006_12x12_width, cat_sitting_006_12x12_height, cat_sitting_006_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_006_12x12_width, cat_sitting_006_12x12_height, cat_sitting_006_12x12_bits);
             break;
           case 3:
             checkButton();
-            u8g.drawXBMP(8, 8, cat_sitting_007_12x12_width, cat_sitting_007_12x12_height, cat_sitting_007_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_007_12x12_width, cat_sitting_007_12x12_height, cat_sitting_007_12x12_bits);
             break;
           case 4:
             checkButton();
-            u8g.drawXBMP(8, 8, cat_sitting_004_12x12_width, cat_sitting_004_12x12_height, cat_sitting_004_12x12_bits);
+            u8g.drawXBMP(4, 4, cat_sitting_004_12x12_width, cat_sitting_004_12x12_height, cat_sitting_004_12x12_bits);
             break;
         }
         break;
@@ -625,7 +625,7 @@ void loop(void) {
         break;
       case 3:
         // Cuddle
-        u8g.drawXBMP(8, 8, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+        u8g.drawXBMP(4, 4, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
         cuddleCounter += 1;
         if (cuddleCounter<31) {
           u8g.drawXBMP(80, 45 - cuddleCounter, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
@@ -746,7 +746,7 @@ void loop(void) {
         switch (cleanSequence) {
           case 0:
             // Clean The Cat game
-            u8g.drawXBMP(38, 8, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
+            u8g.drawXBMP(34, 4, cat_sitting_001_12x12_width, cat_sitting_001_12x12_height, cat_sitting_001_12x12_bits);
             checkButton();
             cleanCounter -= 1;
             if (cleanCounter<0) {
