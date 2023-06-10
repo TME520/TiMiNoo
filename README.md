@@ -81,6 +81,3 @@ Press the button in order to scrub all that dust off its fur.
 
 ## Commercial status
 TiMiNoo is an open source project that is not meant to be sold. Please note the cat sprites are under a [Creative Commons Attribution-NonCommercial 4.0 International CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license that explicitly prohibits commercial use. I'm 100% OK with this.
-
-## Version
-This is TiMiNoo version 1.0
