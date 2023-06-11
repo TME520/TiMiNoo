@@ -72,11 +72,16 @@ long catEntertainment = random(1, 4);
 
 // Status change timing (decrement status variable every x frames)
 // Production timings
-unsigned long catHungerStep = random(7500, 8500);
-unsigned long catHygieneStep = random(15000, 20000);
-unsigned long catMoraleStep = random(4000, 5000);
-unsigned long catEducationStep = random(800, 1600);
-unsigned long catEntertainmentStep = random(250, 500);
+// unsigned long catHungerStep = random(7500, 8500);
+unsigned long catHungerStep = 2;
+// unsigned long catHygieneStep = random(15000, 20000);
+unsigned long catHygieneStep = 4;
+// unsigned long catMoraleStep = random(4000, 5000);
+unsigned long catMoraleStep = 6;
+// unsigned long catEducationStep = random(800, 1600);
+unsigned long catEducationStep = 8;
+// unsigned long catEntertainmentStep = random(250, 500);
+unsigned long catEntertainmentStep = 10;
 
 // Tracking status checks
 unsigned long lastCatHungerCheck = 0;
@@ -539,7 +544,7 @@ void loop(void) {
             break;
           case 3:
             // Study
-            u8g.drawXBMP(44, 6, study_13x14_width, study_13x14_height, study_13x14_bits);
+            u8g.drawXBMP(43, 6, study_13x14_width, study_13x14_height, study_13x14_bits);
             break;
           case 4:
             // Cuddle
@@ -547,7 +552,7 @@ void loop(void) {
             break;
           case 5:
             // Bubbles
-            u8g.drawXBMP(43, 5, bubbles_15x15_width, bubbles_15x15_height, bubbles_15x15_bits);
+            u8g.drawXBMP(42, 5, bubbles_15x15_width, bubbles_15x15_height, bubbles_15x15_bits);
             break;
           case 6:
             // Pizza
