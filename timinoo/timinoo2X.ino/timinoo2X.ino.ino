@@ -186,11 +186,15 @@ static unsigned char casino_frame_30x30_bits[] U8G_PROGMEM = {
    0x00, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x38, 0x07, 0x00, 0x00, 0x38,
    0x99, 0xff, 0x7f, 0x26, 0x99, 0xff, 0x7f, 0x26, 0x9e, 0xff, 0x7f, 0x1e };
 
-#define speech_bubble_14x12_width 14
-#define speech_bubble_14x12_height 12
-static unsigned char speech_bubble_14x12_bits[] U8G_PROGMEM = {
-   0xf8, 0x1f, 0xfc, 0x3f, 0xfc, 0x3f, 0xfc, 0x3f, 0xfc, 0x3f, 0xfc, 0x3f,
-   0xfe, 0x3f, 0xff, 0x3f, 0xfc, 0x3f, 0xfc, 0x3f, 0xfc, 0x3f, 0xf8, 0x1f };
+#define speech_bubble_22x22_width 22
+#define speech_bubble_22x22_height 22
+static unsigned char speech_bubble_22x22_bits[] U8G_PROGMEM = {
+   0xf8, 0xff, 0x1f, 0x0c, 0x00, 0x30, 0x04, 0x00, 0x20, 0x04, 0x00, 0x20,
+   0x04, 0x00, 0x20, 0x04, 0x00, 0x20, 0x04, 0x00, 0x20, 0x04, 0x00, 0x20,
+   0x04, 0x00, 0x20, 0x04, 0x00, 0x20, 0x04, 0x00, 0x20, 0x04, 0x00, 0x20,
+   0x04, 0x00, 0x20, 0x04, 0x00, 0x20, 0x04, 0x00, 0x20, 0x04, 0x00, 0x20,
+   0x06, 0x00, 0x20, 0x07, 0x00, 0x20, 0x04, 0x00, 0x20, 0x04, 0x00, 0x20,
+   0x0c, 0x00, 0x30, 0xf8, 0xff, 0x1f };
 
 #define happy_cat_14x14_width 14
 #define happy_cat_14x14_height 14
@@ -486,7 +490,7 @@ void loop(void) {
         animationStepMax = 4;
         checkButton();
         // Icon frame
-        u8g.drawXBMP(40, 10, speech_bubble_14x12_width, speech_bubble_14x12_height, speech_bubble_14x12_bits);
+        u8g.drawXBMP(38, 2, speech_bubble_22x22_width, speech_bubble_22x22_height, speech_bubble_22x22_bits);
         // Icon (always happy)
         if (superHappyCounter<1) {
           u8g.drawXBMP(43, 6, happy_cat_14x14_width, happy_cat_14x14_height, happy_cat_14x14_bits);
@@ -518,7 +522,7 @@ void loop(void) {
         animationStepMax = 4;
         checkButton();
         // Icon frame
-        u8g.drawXBMP(0, 0, speech_bubble_14x12_width, speech_bubble_14x12_height, speech_bubble_14x12_bits);
+        u8g.drawXBMP(38, 2, speech_bubble_22x22_width, speech_bubble_22x22_height, speech_bubble_22x22_bits);
         // Icon (anything else than happy)
         switch (currentIcon) {
           case 0:
@@ -531,23 +535,23 @@ void loop(void) {
             break;
           case 2:
             // Play
-            u8g.drawXBMP(85, 16, play_16x10_width, play_16x10_height, play_16x10_bits);
+            u8g.drawXBMP(42, 8, play_16x10_width, play_16x10_height, play_16x10_bits);
             break;
           case 3:
             // Study
-            u8g.drawXBMP(88, 12, study_13x14_width, study_13x14_height, study_13x14_bits);
+            u8g.drawXBMP(44, 6, study_13x14_width, study_13x14_height, study_13x14_bits);
             break;
           case 4:
             // Cuddle
-            u8g.drawXBMP(89, 14, cuddle_12x12_width, cuddle_12x12_height, cuddle_12x12_bits);
+            u8g.drawXBMP(44, 7, cuddle_12x12_width, cuddle_12x12_height, cuddle_12x12_bits);
             break;
           case 5:
             // Bubbles
-            u8g.drawXBMP(86, 11, bubbles_15x15_width, bubbles_15x15_height, bubbles_15x15_bits);
+            u8g.drawXBMP(43, 5, bubbles_15x15_width, bubbles_15x15_height, bubbles_15x15_bits);
             break;
           case 6:
             // Pizza
-            u8g.drawXBMP(88, 12, pizza_13x14_width, pizza_13x14_height, pizza_13x14_bits);
+            u8g.drawXBMP(44, 6, pizza_13x14_width, pizza_13x14_height, pizza_13x14_bits);
             break;
         }
         switch (animationStep) {
