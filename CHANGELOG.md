@@ -1,9 +1,8 @@
 # 2023-06-12
 - Starting work on TiMiNoo version 1.2.3
-- Leaving TiMiNoo version 1.3.0 on the side for now
-- Not satisfied with display in 2X mode
-- Empty lines appear randomly on the screen when using it
-- ^^^ Forget about the three lines above, the screen on my prototype is actually broken :-(
+- Resized the speech bubble
+- Some unused code has been removed
+- Clean The Cat has been made a bit easier
 
 # 2023-06-10
 - Exploring the possibilities of 2X display mode
