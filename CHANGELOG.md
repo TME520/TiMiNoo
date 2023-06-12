@@ -3,6 +3,7 @@
 - Resized the speech bubble
 - Some unused code has been removed
 - Clean The Cat has been made a bit easier
+- Later in the day: Starting work on TiMiNoo version 1.2.4
 
 # 2023-06-10
 - Exploring the possibilities of 2X display mode

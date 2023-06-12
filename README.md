@@ -2,7 +2,7 @@
 Cute 1 bit VPet for Arduino - Feed, cuddle, clean and educate your own unique cat.
 
 ## Current version: 1.2.2
-## WIP version: 1.2.3
+## WIP version: 1.2.4
 
 ## Presentation
 

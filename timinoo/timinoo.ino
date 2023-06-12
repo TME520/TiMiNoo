@@ -956,12 +956,10 @@ void loop(void) {
             break;
           case 1:
             // Snail says hello
-            u8g.setFont(u8g_font_baby);
+            u8g.setFont(u8g_font_unifont);
             u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
             u8g.drawXBMP(97, 40, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
-            u8g.drawStr(54, 23, "~~ Welcome to a");
-            u8g.drawStr(54, 29, "new lesson with");
-            u8g.drawStr(54, 35, "Koko Le Snail ~~");
+            u8g.drawStr(0, 58, "           Hi! >");
             snailCounter += 1;
             if (snailCounter>300) {
               snailCounter = 0;
@@ -969,6 +967,9 @@ void loop(void) {
             }
             break;
           case 2:
+            // Introduction
+            break;
+          case 3:
             // Snail wisdom quote
             u8g.setFont(u8g_font_baby);
             u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
@@ -1014,10 +1015,10 @@ void loop(void) {
             snailCounter += 1;
             if (snailCounter>300) {
               snailCounter = 0;
-              lessonSequence = 3;
+              lessonSequence = 4;
             }
             break;
-          case 3:
+          case 4:
             // Score
             u8g.setFont(u8g_font_unifont);
             u8g.drawXBMP(51, 12, study_26x28_width, study_26x28_height, study_26x28_bits);
@@ -1047,20 +1048,20 @@ void loop(void) {
               cleanSequence = 1;
             }
             switch(cleanCounter) {
-              case 5 ... 25:
+              case 5 ... 15:
                 u8g.drawXBMP(38, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 break;
-              case 26 ... 46:
+              case 16 ... 36:
                 u8g.drawXBMP(38, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(58, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 break;
-              case 47 ... 67:
+              case 37 ... 57:
                 u8g.drawXBMP(23, 16, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(38, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(58, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(73, 16, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 break;
-              case 68 ... 88:
+              case 58 ... 78:
                 u8g.drawXBMP(23, 16, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(38, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(58, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
@@ -1068,7 +1069,7 @@ void loop(void) {
                 u8g.drawXBMP(32, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(64, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 break;
-              case 89 ... 100:
+              case 79 ... 89:
                 u8g.drawXBMP(23, 16, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(38, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(58, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
@@ -1078,6 +1079,15 @@ void loop(void) {
                 u8g.drawXBMP(64, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 u8g.drawXBMP(96, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
                 break;
+              case 90 ... 100:
+                u8g.drawXBMP(0, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(32, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(64, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(96, 0, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(0, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(32, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(64, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
+                u8g.drawXBMP(96, 32, bubbles_30x30_width, bubbles_30x30_height, bubbles_30x30_bits);
             }
             break;
           case 1:
