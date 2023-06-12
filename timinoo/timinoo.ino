@@ -74,8 +74,10 @@ long catEntertainment = random(1, 4);
 // Production timings
 unsigned long catHungerStep = random(7500, 8500);
 unsigned long catHygieneStep = random(15000, 20000);
+// unsigned long catHygieneStep = 1;
 unsigned long catMoraleStep = random(4000, 5000);
 unsigned long catEducationStep = random(800, 1600);
+// unsigned long catEducationStep = 3;
 unsigned long catEntertainmentStep = random(250, 500);
 
 // Tracking status checks
@@ -959,7 +961,7 @@ void loop(void) {
             u8g.setFont(u8g_font_unifont);
             u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
             u8g.drawXBMP(97, 40, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
-            u8g.drawStr(0, 58, "           Hi! >");
+            u8g.drawStr(0, 58, "       Hi! >    ");
             snailCounter += 1;
             if (snailCounter>300) {
               snailCounter = 0;
@@ -968,48 +970,62 @@ void loop(void) {
             break;
           case 2:
             // Introduction
+            u8g.drawLine(0, 8, 127, 8);
+            u8g.drawLine(0, 56, 127, 56);
+            u8g.setFont(u8g_font_baby);
+            u8g.drawXBMP(97, 21, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
+            u8g.drawStr(16, 18, "I am Koko, your");
+            u8g.drawStr(16, 24, " teacher.");
+            u8g.drawStr(16, 30, "Ready for a new");
+            u8g.drawStr(16, 36, " lesson ?");
+            snailCounter += 1;
+            if (snailCounter>300) {
+              snailCounter = 0;
+              lessonSequence = 3;
+            }
             break;
           case 3:
             // Snail wisdom quote
+            u8g.drawLine(0, 8, 127, 8);
+            u8g.drawLine(0, 56, 127, 56);
             u8g.setFont(u8g_font_baby);
-            u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
-            u8g.drawXBMP(97, 40, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
+            u8g.drawXBMP(97, 21, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
             switch (randomQuote) {
               case 1:
-                u8g.drawStr(54, 16, "Sometimes dogs");
-                u8g.drawStr(54, 23, "are grey.");
-                u8g.drawStr(54, 29, "");
-                u8g.drawStr(54, 35, "  -- Koko");
+                u8g.drawStr(16, 18, "Sometimes dogs");
+                u8g.drawStr(16, 24, "are grey.");
+                u8g.drawStr(16, 30, "");
+                u8g.drawStr(16, 36, "  -- Koko");
                 break;
               case 2:
-                u8g.drawStr(54, 16, "Do not sneeze");
-                u8g.drawStr(54, 23, "on the bus.");
-                u8g.drawStr(54, 29, "");
-                u8g.drawStr(54, 35, "  -- Koko");
+                u8g.drawStr(16, 18, "Do not sneeze");
+                u8g.drawStr(16, 24, "on the bus.");
+                u8g.drawStr(16, 30, "");
+                u8g.drawStr(16, 36, "  -- Koko");
                 break;
               case 3:
-                u8g.drawStr(54, 16, "Always wear");
-                u8g.drawStr(54, 23, "pants.");
-                u8g.drawStr(54, 29, "");
-                u8g.drawStr(54, 35, "  -- Koko");
+                u8g.drawStr(16, 18, "Always wear");
+                u8g.drawStr(16, 24, "pants.");
+                u8g.drawStr(16, 30, "");
+                u8g.drawStr(16, 36, "  -- Koko");
                 break;
               case 4:
-                u8g.drawStr(54, 16, "Never yawn");
-                u8g.drawStr(54, 23, "during class.");
-                u8g.drawStr(54, 29, "");
-                u8g.drawStr(54, 35, "  -- Koko");
+                u8g.drawStr(16, 18, "Never yawn");
+                u8g.drawStr(16, 24, "during class.");
+                u8g.drawStr(16, 30, "");
+                u8g.drawStr(16, 36, "  -- Koko");
                 break;
               case 5:
-                u8g.drawStr(54, 16, "Wash your hands");
-                u8g.drawStr(54, 23, "after lunch.");
-                u8g.drawStr(54, 29, "");
-                u8g.drawStr(54, 35, "  -- Koko");
+                u8g.drawStr(16, 18, "Wash your hands");
+                u8g.drawStr(16, 24, "after lunch.");
+                u8g.drawStr(16, 30, "");
+                u8g.drawStr(16, 36, "  -- Koko");
                 break;
               case 6:
-                u8g.drawStr(54, 16, "Pull my finger...");
-                u8g.drawStr(54, 23, "teehee!");
-                u8g.drawStr(54, 29, "");
-                u8g.drawStr(54, 35, "  -- Koko");
+                u8g.drawStr(16, 18, "Pull my finger...");
+                u8g.drawStr(16, 24, "teehee!");
+                u8g.drawStr(16, 30, "");
+                u8g.drawStr(16, 36, "  -- Koko");
                 break;
             }
             snailCounter += 1;

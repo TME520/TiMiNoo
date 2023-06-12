@@ -4,6 +4,8 @@
 - Some unused code has been removed
 - Clean The Cat has been made a bit easier
 - Later in the day: Starting work on TiMiNoo version 1.2.4
+- 1.2.4: Updated Koko Le Snail lessons sequence, new look
+- 1.2.4: Updated Cat Wash game, repositioned bubbles and changed timing
 
 # 2023-06-10
 - Exploring the possibilities of 2X display mode

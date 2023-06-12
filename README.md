@@ -23,7 +23,7 @@ A single button gameplay is perfect for that.
 #### Catsino
 Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home.
 Press the button once to randomly pick a food item. Beware of the ghost though !
-#### Clean The Cat
+#### Cat Wash
 When the fur of your TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub !
 Repeatedly press the button to get a squicky clean kitty.
 ### 7 food items
