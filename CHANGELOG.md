@@ -1,3 +1,18 @@
+# 2023-06-12
+- Starting work on TiMiNoo version 1.2.3
+- Leaving TiMiNoo version 1.3.0 on the side for now
+- Not satisfied with display in 2X mode
+- Empty lines appear randomly on the screen when using it
+
+# 2023-06-10
+- Exploring the possibilities of 2X display mode
+- Sitting cat sprites 2X ready
+
+# 2023-06-09
+- Starting work on TiMiNoo version 1.3.0
+- This version is an attempt at packing more features into the game
+- Memory saved: From 28182 down to 24408 (3773 bytes)
+
 # 2023-06-08
 - TiMiNoo version 1.2.2
 - Tweaked chances of random visit by friend

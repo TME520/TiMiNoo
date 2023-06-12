@@ -2,7 +2,7 @@
 Cute 1 bit VPet for Arduino - Feed, cuddle, clean and educate your own unique cat.
 
 ## Current version: 1.2.2
-## WIP version: -
+## WIP version: 1.2.3
 
 ## Presentation
 
@@ -24,10 +24,10 @@ A single button gameplay is perfect for that.
 Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home.
 Press the button once to randomly pick a food item. Beware of the ghost though !
 #### Clean The Cat
-When the fur of TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub !
+When the fur of your TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub !
 Repeatedly press the button to get a squicky clean kitty.
 ### 7 food items
-Your TiMiNoo will get hungry as time goes on. Feed it a variety of food including:
+Your TiMiNoo will get hungry as time goes by. Feed it a variety of food including:
 - Grape
 - Strawberry
 - Apple
@@ -77,7 +77,11 @@ Press the button in order to scrub all that dust off its fur.
 - 1x breadboard or prototyping board
 - Enough jumper cables to assemble the circuitry
 
-![Prototype board](./assets/proto4.jpg "TiMiNoo")
+![Prototype board](./assets/proto5.jpg "TiMiNoo")
+
+## About version 1.3.0
+1st, I must say version 1.2.2 can be considered feature-complete. Version 1.3.0 is an attempt at saving memory in order to pack more features (games, new friends, more food items...), but it might not work.
+FYI, the hardware used only allows for 28K of code + data and has 2.5K of RAM. Compared to even an entry-level computer, that's not much at all. I know from experience that some [very skilled coders were able to do wonders with such limited resources](https://www.pouet.net/prodlist.php?type%5B%5D=32k&page=1) and their work is my main source of inspiration.
 
 ## Commercial status
 TiMiNoo is an open source project that is not meant to be sold. Please note the cat sprites are under a [Creative Commons Attribution-NonCommercial 4.0 International CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license that explicitly prohibits commercial use. I'm 100% OK with this.
