@@ -3,6 +3,7 @@
 - Leaving TiMiNoo version 1.3.0 on the side for now
 - Not satisfied with display in 2X mode
 - Empty lines appear randomly on the screen when using it
+- ^^^ Forget about the three lines above, the screen on my prototype is actually broken :-(
 
 # 2023-06-10
 - Exploring the possibilities of 2X display mode
