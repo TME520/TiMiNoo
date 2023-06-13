@@ -1,3 +1,27 @@
+# 2023-06-13
+- TiMiNoo version 1.2.5
+- Main counter gets reset before reaching max value
+- Version number is now displayed at startup
+- Cleaned up a bit
+
+# 2023-06-12
+- Starting work on TiMiNoo version 1.2.3
+- Resized the speech bubble
+- Some unused code has been removed
+- Clean The Cat has been made a bit easier
+- Later in the day: Starting work on TiMiNoo version 1.2.4
+- 1.2.4: Updated Koko Le Snail lessons sequence, new look
+- 1.2.4: Updated Cat Wash game, repositioned bubbles and changed timing
+
+# 2023-06-10
+- Exploring the possibilities of 2X display mode
+- Sitting cat sprites 2X ready
+
+# 2023-06-09
+- Starting work on TiMiNoo version 1.3.0
+- This version is an attempt at packing more features into the game
+- Memory saved: From 28182 down to 24408 (3773 bytes)
+
 # 2023-06-08
 - TiMiNoo version 1.2.2
 - Tweaked chances of random visit by friend

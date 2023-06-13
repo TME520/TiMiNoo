@@ -19,6 +19,10 @@ VCC = 3V
 SIG = 2
 */
 
+const int buttonPin = 2;
+int catPosX = 0;
+int catPosY = 0;
+
 #define cat_sitting_001_width 12
 #define cat_sitting_001_height 12
 static unsigned char cat_sitting_001_bits[] U8G_PROGMEM = {
@@ -33,6 +37,17 @@ void setup() {
 }
 
 void loop() {
-  u8g.setScale2x2();
-  u8g.drawXBMP(8, 8, cat_sitting_001_width, cat_sitting_001_height, cat_sitting_001_bits);
+  u8g.firstPage();
+  do {
+    u8g.setScale2x2();
+    catPosX += 1;
+    if (catPosX > 64) {
+      catPosX = 0;
+      catPosY += 1;
+      if (catPosY > 32 ) {
+        catPosY = 0;
+      }
+    }
+    u8g.drawXBMP(catPosX, catPosY, cat_sitting_001_width, cat_sitting_001_height, cat_sitting_001_bits);
+  } while( u8g.nextPage() );
 }

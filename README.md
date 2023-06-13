@@ -1,7 +1,7 @@
 # TiMiNoo
 Cute 1 bit VPet for Arduino - Feed, cuddle, clean and educate your own unique cat.
 
-## Current version: 1.2.2
+## Current version: 1.2.5
 ## WIP version: -
 
 ## Presentation
@@ -23,11 +23,11 @@ A single button gameplay is perfect for that.
 #### Catsino
 Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home.
 Press the button once to randomly pick a food item. Beware of the ghost though !
-#### Clean The Cat
-When the fur of TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub !
+#### Cat Wash
+When the fur of your TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub !
 Repeatedly press the button to get a squicky clean kitty.
 ### 7 food items
-Your TiMiNoo will get hungry as time goes on. Feed it a variety of food including:
+Your TiMiNoo will get hungry as time goes by. Feed it a variety of food including:
 - Grape
 - Strawberry
 - Apple
@@ -77,7 +77,7 @@ Press the button in order to scrub all that dust off its fur.
 - 1x breadboard or prototyping board
 - Enough jumper cables to assemble the circuitry
 
-![Prototype board](./assets/proto4.jpg "TiMiNoo")
+![Prototype board](./assets/proto5.jpg "TiMiNoo")
 
 ## Commercial status
 TiMiNoo is an open source project that is not meant to be sold. Please note the cat sprites are under a [Creative Commons Attribution-NonCommercial 4.0 International CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license that explicitly prohibits commercial use. I'm 100% OK with this.
