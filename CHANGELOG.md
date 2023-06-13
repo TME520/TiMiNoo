@@ -1,3 +1,9 @@
+# 2023-06-13
+- TiMiNoo version 1.2.5
+- Main counter gets reset before reaching max value
+- Version number is now displayed at startup
+- Cleaned up a bit
+
 # 2023-06-12
 - Starting work on TiMiNoo version 1.2.3
 - Resized the speech bubble

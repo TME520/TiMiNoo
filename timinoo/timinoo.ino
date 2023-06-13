@@ -19,14 +19,13 @@ VCC = 3V
 SIG = 2
 */
 
-int gameMode = 0;
+int gameMode = 99;
 const char* textToDisplay = "";
 const int buttonPin = 2;
 int buttonState = 0;
 unsigned long frameCounter = 0;
 char frameCounterString[7];
 char animationStepString[1];
-long randomNumber;
 int animationStep = 1;
 int animationStepMax = 4;
 const byte ButtonPin = 2;
@@ -60,6 +59,7 @@ int randomVisitCounter = 0;
 long randomGameIconXPos = 0;
 long randomFoodType = 0;
 int gameIconXPos = 0;
+int versionCounter = 0;
 
 // Cat status variables
 // Status metrics
@@ -676,15 +676,22 @@ void setup(void) {
 }
 
 void loop(void) {
-  randomNumber = random(1, 11);
   checkButton();
   frameCounter += 1;
-  ltoa(frameCounter, frameCounterString, 10);
+  if (frameCounter > 4294967290) {
+    frameCounter = 0;
+    lastCatHungerCheck = 0;
+    lastCatHygieneCheck = 0;
+    lastCatMoraleCheck = 0;
+    lastCatEducationCheck = 0;
+    lastCatEntertainmentCheck = 0;
+  }
+  // ltoa(frameCounter, frameCounterString, 10);
   animationStep += 1;
   if (animationStep>animationStepMax) {
     animationStep=1;
   }
-  ltoa(animationStep, animationStepString, 10);
+  // ltoa(animationStep, animationStepString, 10);
 
   // Refresh cat statistics
   // Hunger
@@ -1319,6 +1326,15 @@ void loop(void) {
               gameMode = 0;
             }
             break;
+        }
+        break;
+      case 99:
+        // Show version
+        u8g.setFont(u8g_font_unifont);
+        u8g.drawStr(0, 50, " TiMiNoo v1.2.5 ");
+        versionCounter += 1;
+        if (versionCounter>600) {
+          gameMode = 0;
         }
         break;
     }
