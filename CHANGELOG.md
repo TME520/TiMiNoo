@@ -1,3 +1,8 @@
+# 2023-06-19
+- Starting work on TiMiNoo version 1.2.6
+- Presumably the "definitive" version of TiMiNoo for that generation of Arduino
+- Upcoming Arduino UNO 4 might see a dedicated version of TiMiNoo
+
 # 2023-06-13
 - TiMiNoo version 1.2.5
 - Main counter gets reset before reaching max value
