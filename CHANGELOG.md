@@ -1,3 +1,10 @@
+# 2023-06-20
+- TiMiNoo version 1.2.7 complete
+- This can be considered the definitive release
+- Game is feature-complete and fully tested
+- I will now write assembly and installation instructions
+- A custom logo is being prepared by a graphic designer
+
 # 2023-06-19
 - Starting work on TiMiNoo version 1.2.6
 - Presumably the "definitive" version of TiMiNoo for that generation of Arduino
