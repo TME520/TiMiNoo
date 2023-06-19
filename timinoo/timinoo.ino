@@ -908,6 +908,23 @@ void loop(void) {
           case 2:
             // Yum
             u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
+            switch (selectedFood) {
+              case 1:
+                u8g.drawXBMP(50, 14, strawberry_28x28_width, strawberry_28x28_height, strawberry_28x28_bits);
+                break;
+              case 2:
+                u8g.drawXBMP(50, 14, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
+                break;
+              case 3:
+                u8g.drawXBMP(50, 14, milk_28x28_width, milk_28x28_height, milk_28x28_bits);
+                break;
+              case 4:
+                u8g.drawXBMP(50, 14, orange_28x28_width, orange_28x28_height, orange_28x28_bits);
+                break;
+              case 5:
+                u8g.drawXBMP(50, 14, apple_28x28_width, apple_28x28_height, apple_28x28_bits);
+                break;
+            }
             if (selectedFood != 6) {
               u8g.drawStr(0, 30, "      Yum!      ");
             }
@@ -936,10 +953,10 @@ void loop(void) {
           u8g.drawXBMP(92, 10, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
           u8g.drawXBMP(104, 15, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
           u8g.setFont(u8g_font_baby);
-          u8g.drawStr(70, 40, "I love you too <3");
+          u8g.drawStr(70, 40, "I love you too");
         } else if (cuddleCounter>160 && cuddleCounter < 240) {
           u8g.setFont(u8g_font_baby);
-          u8g.drawStr(70, 40, "I love you too <3");
+          u8g.drawStr(70, 40, "I love you too");
         } else if (cuddleCounter==240) {
           superHappyCounter = 100;
           catMorale = 3;
@@ -970,7 +987,7 @@ void loop(void) {
             u8g.drawXBMP(97, 40, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
             u8g.drawStr(0, 58, "       Hi! >    ");
             snailCounter += 1;
-            if (snailCounter>300) {
+            if (snailCounter>200) {
               snailCounter = 0;
               lessonSequence = 2;
             }
@@ -982,9 +999,9 @@ void loop(void) {
             u8g.setFont(u8g_font_baby);
             u8g.drawXBMP(97, 21, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
             u8g.drawStr(16, 18, "I am Koko, your");
-            u8g.drawStr(16, 24, " teacher.");
+            u8g.drawStr(16, 24, "teacher.");
             u8g.drawStr(16, 30, "Ready for a new");
-            u8g.drawStr(16, 36, " lesson ?");
+            u8g.drawStr(16, 36, "lesson ?");
             snailCounter += 1;
             if (snailCounter>300) {
               snailCounter = 0;
@@ -1331,7 +1348,7 @@ void loop(void) {
       case 99:
         // Show version
         u8g.setFont(u8g_font_unifont);
-        u8g.drawStr(0, 50, " TiMiNoo v1.2.5 ");
+        u8g.drawStr(0, 50, " TiMiNoo v1.2.6 ");
         versionCounter += 1;
         if (versionCounter>600) {
           gameMode = 0;
@@ -1344,5 +1361,6 @@ void loop(void) {
     u8g.drawStr(8, 50, frameCounterString);
     u8g.drawStr(8, 10, animationStepString);
     */
+    delay(10);
   } while( u8g.nextPage() );
 }

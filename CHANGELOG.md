@@ -2,6 +2,9 @@
 - Starting work on TiMiNoo version 1.2.6
 - Presumably the "definitive" version of TiMiNoo for that generation of Arduino
 - Upcoming Arduino UNO 4 might see a dedicated version of TiMiNoo
+- Reduced main loop speed
+- Sped up Koko Le Snail "Hi" screen
+- Feed The Cat: Now display the food item above "Yum!" text
 
 # 2023-06-13
 - TiMiNoo version 1.2.5
