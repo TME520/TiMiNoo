@@ -73,6 +73,7 @@ long catEntertainment = random(1, 4);
 // Status change timing (decrement status variable every x frames)
 // Production timings
 unsigned long catHungerStep = random(7500, 8500);
+// unsigned long catHungerStep = 1;
 unsigned long catHygieneStep = random(15000, 20000);
 // unsigned long catHygieneStep = 1;
 unsigned long catMoraleStep = random(4000, 5000);
@@ -902,7 +903,11 @@ void loop(void) {
             feedCounter += 1;
             if (feedCounter>300) {
               feedCounter = 0;
-              feedSequence = 2;
+              if (selectedFood != 6) {
+                feedSequence = 2;
+              } else {
+                gameMode = 0;
+              }
             }
             break;
           case 2:
@@ -926,10 +931,10 @@ void loop(void) {
                 break;
             }
             if (selectedFood != 6) {
-              u8g.drawStr(0, 30, "      Yum!      ");
+              u8g.drawStr(0, 59, "      Yum!      ");
             }
             feedCounter += 1;
-            if (feedCounter>300) {
+            if (feedCounter>250) {
               feedCounter = 0;
               if (selectedFood < 6) {
                 superHappyCounter = 100;
@@ -998,10 +1003,10 @@ void loop(void) {
             u8g.drawLine(0, 56, 127, 56);
             u8g.setFont(u8g_font_baby);
             u8g.drawXBMP(97, 21, koko_le_snail_26x22_width, koko_le_snail_26x22_height, koko_le_snail_26x22_bits);
-            u8g.drawStr(16, 18, "I am Koko, your");
-            u8g.drawStr(16, 24, "teacher.");
-            u8g.drawStr(16, 30, "Ready for a new");
-            u8g.drawStr(16, 36, "lesson ?");
+            u8g.drawStr(16, 18, "Get ready for a");
+            u8g.drawStr(16, 24, "new lesson with...");
+            u8g.drawStr(16, 30, "");
+            u8g.drawStr(16, 36, "~ Koko Le Snail ~");
             snailCounter += 1;
             if (snailCounter>300) {
               snailCounter = 0;
@@ -1348,7 +1353,7 @@ void loop(void) {
       case 99:
         // Show version
         u8g.setFont(u8g_font_unifont);
-        u8g.drawStr(0, 50, " TiMiNoo v1.2.6 ");
+        u8g.drawStr(0, 50, " TiMiNoo v1.2.7 ");
         versionCounter += 1;
         if (versionCounter>600) {
           gameMode = 0;

@@ -1,17 +1,19 @@
 # TiMiNoo
 Cute 1 bit VPet for Arduino - Feed, cuddle, clean and educate your own unique cat.
 
-## Current version: 1.2.5
-## WIP version: 1.2.6
+2 mini games, 7 food types, friends visits and presents, one button action, no sound, no death.
+
+## Current version: 1.2.7
+## WIP version: n/a
 
 ## Presentation
 
-TiMiNoo is an Open Source virtual pet for Arduino Leonardo R3. It's a game in which you take care of a cute cat: you feed it, clean it, train it and cuddle it.
+TiMiNoo is a virtual cat for busy people: minimal distraction, fully office-compatible, single button action, no sound, no death.
 The cat is different on each run, its characteritics are randomly picked at startup.
 
-TiMiNoo has been created with busy people in mind: only one button, fast action, no sound. The gameplay is very simple and fluid on purpose, as this game is meant to be playable in an office environment with minimal disturbance.
+TiMiNoo has been created with busy people in mind: The gameplay is very simple and fluid on purpose, as this game is meant to be enjoyed in an office environment.
 
-TiMiNoo is about enjoying a simple yet feature-rich virtual cat, a companion for busy days.
+TiMiNoo is about enjoying a simple yet feature-rich virtual cat, a companion for busy days: Cuddle, Feed, Educate, Wash and ENtertain your very own furry companion.
 
 Tamagotchi lovers could compare it to a Nano.
 
@@ -78,6 +80,11 @@ Press the button in order to scrub all that dust off its fur.
 - Enough jumper cables to assemble the circuitry
 
 ![Prototype board](./assets/proto5.jpg "TiMiNoo")
+
+## Build your own TiMiNoo
+### Items
+### Assembly
+### Installation instructions
 
 ## Commercial status
 TiMiNoo is an open source project that is not meant to be sold. Please note the cat sprites are under a [Creative Commons Attribution-NonCommercial 4.0 International CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license that explicitly prohibits commercial use. I'm 100% OK with this.
