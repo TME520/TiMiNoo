@@ -24,7 +24,7 @@ Tamagotchi lovers could compare it to a Nano.
 I love having a virtual pet on my desk at work, but I also need to preserve my workflow from distractions.
 A single button gameplay is perfect for that.
 ### 2 mini games
-#### Catsino
+#### Catsino ![bar](./assets/icons/bar.png "BAR +1 of all !!!")
 Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home.
 Press the button once to randomly pick a food item. Beware of the ghost though !
 #### Cat Wash
@@ -32,28 +32,19 @@ When the fur of your TiMiNoo gets dirty, it's time for a proper toilet. Scrub sc
 Repeatedly press the button to get a squicky clean kitty.
 ### 7 food items
 Your TiMiNoo will get hungry as time goes by. Feed it a variety of food including:
-- Grape
-- Strawberry
-- Apple
-- Orange
-- Milk
-- Coco cake (bonus item)
-- Matcha tea (bonus item)
-![grape](./assets/icons/grape.png ""Fresh grapes)
-![strawberry](./assets/icons/strawberry.png "Yummy strawberry")
-![apple](./assets/icons/apple.png "Tasty apple")
-![orange](./assets/icons/orange.png "Juicy orange")
-![milk](./assets/icons/milk.png "Farm milk")
-![cake](./assets/icons/coco_cake.png "Homemade coco cake")
-![matcha](./assets/icons/matcha.png "Matcha tea")
-### Educate your cat with Professor Koko
+- ![grape](./assets/icons/grape.png "Fresh grapes") Grape
+- ![strawberry](./assets/icons/strawberry.png "Yummy strawberry") Strawberry
+- ![apple](./assets/icons/apple.png "Tasty apple") Apple
+- ![orange](./assets/icons/orange.png "Juicy orange") Orange
+- ![milk](./assets/icons/milk.png "Farm milk") Milk
+- ![cake](./assets/icons/coco_cake.png "Homemade coco cake") Coco cake (bonus item)
+- ![matcha](./assets/icons/matcha.png "Matcha tea") Matcha tea (bonus item)
+### Educate your cat with Professor Koko ![koko](./assets/icons/koko_le_snail.png "Koko Le Snail")
 Your TiMiNoo will want to learn new things. Call Professor Koko Le Snail, a wise teacher that will share is best knowledge with your cuttie.
-![koko](./assets/icons/koko_le_snail.png "Koko Le Snail")
 ### Cuddle
 TiMiNoo craves attention and love, make sure to give it plenty.
-### Random visits from a friend
+### Random visits from a friend ![cindy](./assets/icons/cindy.png "Your friend")
 Sometimes, when the cat gets hungry, its friend will come and offer either a nice Matcha tea or a home made Coco cake.
-![cindy](./assets/icons/cindy.png "Your friend")
 
 ## How to play
 ### Starting the game
@@ -83,7 +74,7 @@ Press the button to feed your TiMiNoo with the food stashed in the pantry.
 The cat will look at a half-empty heart icon.
 Press the button to kiss your furry cuttie.
 #### TiMiNoo needs a bath
-![clean](./assets/icons/bubble.png "Clean")
+![clean](./assets/icons/bubbles.png "Clean")
 The cat will look at a bubble icon.
 Press the button in order to scrub all that dust off its fur.
 ## How to build your own
