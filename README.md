@@ -107,4 +107,4 @@ Use [Arduino IDE](https://support.arduino.cc/hc/en-us/articles/360019833020-Down
 Make sure you use a Micro USB cable that supports data transfer, as some cables do not have data lines wired and only provide charging capability.
 
 ## Commercial status
-TiMiNoo is an open source project that is not meant to be sold. Please note the cat sprites are under a [Creative Commons Attribution-NonCommercial 4.0 International CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license that explicitly prohibits commercial use. I'm 100% OK with this.
+TiMiNoo is an open source project that is not meant to be sold. Please note the cat sprites and the frames are under a [Creative Commons Attribution-NonCommercial 4.0 International CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license that explicitly prohibits commercial use. I'm 100% OK with this.
