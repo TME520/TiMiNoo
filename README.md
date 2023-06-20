@@ -3,17 +3,19 @@ Cute 1 bit VPet for Arduino - Feed, cuddle, clean and educate your own unique ca
 
 2 mini games, 7 food types, friends visits and presents, one button action, no sound, no death.
 
+![TiMiNoo logo](./assets/logo/2.png "TiMiNoo logo")
+
 ## Current version: 1.2.7
 ## WIP version: n/a
 
 ## Presentation
 
-TiMiNoo is a virtual cat for busy people: minimal distraction, fully office-compatible, single button action, no sound, no death.
+TiMiNoo is a virtual cat providing minimal distraction, fully office-compatible, single button action, no sound, no death.
 The cat is different on each run, its characteritics are randomly picked at startup.
 
-TiMiNoo has been created with busy people in mind: The gameplay is very simple and fluid on purpose, as this game is meant to be enjoyed in an office environment.
+TiMiNoo has been created with busy people in mind: The gameplay is very simple and fluid on purpose, as this game is meant to be enjoyed in a work environment.
 
-TiMiNoo is about enjoying a simple yet feature-rich virtual cat, a companion for busy days: Cuddle, Feed, Educate, Wash and ENtertain your very own furry companion.
+TiMiNoo is about enjoying a simple yet feature-rich virtual cat, a companion for busy days: Cuddle, Feed, Educate, Wash and Entertain your very own furry companion.
 
 Tamagotchi lovers could compare it to a Nano.
 
@@ -71,19 +73,31 @@ Press the button to kiss your furry cuttie.
 The cat will look at a bubble icon.
 Press the button in order to scrub all that dust off its fur.
 ## How to build your own
-### Hardware requirements
-- 1x Arduino Leonardo R3
-- 1x Button
-- 1x 128*64 OLED screen
-- 1x 10k Ohm resistor
-- 1x breadboard or prototyping board
-- Enough jumper cables to assemble the circuitry
 
 ![Prototype board](./assets/proto5.jpg "TiMiNoo")
 
 ## Build your own TiMiNoo
 ### Items
+- 1x Arduino Leonardo R3
+- 1x Button
+- 1x 128*64 OLED screen
+- 1x 10k Ohm resistor
+- 1x breadboard or prototyping board
+- 1x Acrylic enclosure for UNO / Leonardo
+- Enough jumper cables to assemble the circuitry
 ### Assembly
+#### Screen pinout
+- DC -> D9
+- CS -> D10
+- MOSI -> D11
+- CLOCK -> D13
+- RES -> RST
+- VCC -> 5V
+- GND -> GND
+#### Button
+- GND -> GND
+- VCC -> 3V
+- SIG -> D2
 ### Installation instructions
 
 ## Commercial status
