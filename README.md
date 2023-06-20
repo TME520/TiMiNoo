@@ -24,7 +24,7 @@ Tamagotchi lovers could compare it to a Nano.
 I love having a virtual pet on my desk at work, but I also need to preserve my workflow from distractions.
 A single button gameplay is perfect for that.
 ### 2 mini games
-#### Catsino
+#### Catsino ![bar](./assets/icons/bar.png "BAR +1 of all !!!")
 Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home.
 Press the button once to randomly pick a food item. Beware of the ghost though !
 #### Cat Wash
@@ -32,19 +32,19 @@ When the fur of your TiMiNoo gets dirty, it's time for a proper toilet. Scrub sc
 Repeatedly press the button to get a squicky clean kitty.
 ### 7 food items
 Your TiMiNoo will get hungry as time goes by. Feed it a variety of food including:
-- Grape
-- Strawberry
-- Apple
-- Orange
-- Milk
-- Coco cake (bonus item)
-- Matcha tea (bonus item)
-### Educate your cat with Professor Koko
+- ![grape](./assets/icons/grape.png "Fresh grapes") Grape
+- ![strawberry](./assets/icons/strawberry.png "Yummy strawberry") Strawberry
+- ![apple](./assets/icons/apple.png "Tasty apple") Apple
+- ![orange](./assets/icons/orange.png "Juicy orange") Orange
+- ![milk](./assets/icons/milk.png "Farm milk") Milk
+- ![cake](./assets/icons/coco_cake.png "Homemade coco cake") Coco cake (bonus item)
+- ![matcha](./assets/icons/matcha.png "Matcha tea") Matcha tea (bonus item)
+### Educate your cat with Professor Koko ![koko](./assets/icons/koko_le_snail.png "Koko Le Snail")
 Your TiMiNoo will want to learn new things. Call Professor Koko Le Snail, a wise teacher that will share is best knowledge with your cuttie.
 ### Cuddle
 TiMiNoo craves attention and love, make sure to give it plenty.
-### Random visits from a friend
-Sometimes, when the cat gets hungry, its friend Cindy will come and offer either a nice Matcha tea or a home made Coco cake.
+### Random visits from a friend ![cindy](./assets/icons/cindy.png "Your friend")
+Sometimes, when the cat gets hungry, its friend will come and offer either a nice Matcha tea or a home made Coco cake.
 
 ## How to play
 ### Starting the game
@@ -56,27 +56,31 @@ TiMiNoo cannot die.
 TiMiNoo looks straight at you, waving its tail.
 It's happy, simply enjoying the moment.
 #### TiMiNoo wants to play
+![play](./assets/icons/play.png "Play")
 The cat will look at a gamepad icon.
 Press the button once to play the integrated game: Casino.
 Food items will appear on the screen, press the button once to try your luck and see what you catch.
 That game is how TiMiNoo gets new food into its pantry.
 #### TiMiNoo wants to go to school
+![educate](./assets/icons/study.png "Study")
 The cat will look at a book icon.
 Press the button once to call Professor Koko Le Snail, a wise and knowledgeable teacher. He will happily share his best quotes with your TiMiNoo.
 #### TiMiNoo is hungry
+![feed](./assets/icons/pizza.png "Feed")
 The cat will look at a pizza slice icon.
 Press the button to feed your TiMiNoo with the food stashed in the pantry. 
 #### TiMiNoo wants to cuddle with you
+![cuddle](./assets/icons/cuddle.png "Cuddle")
 The cat will look at a half-empty heart icon.
 Press the button to kiss your furry cuttie.
 #### TiMiNoo needs a bath
+![clean](./assets/icons/bubbles.png "Clean")
 The cat will look at a bubble icon.
 Press the button in order to scrub all that dust off its fur.
 ## How to build your own
 
 ![Prototype board](./assets/proto5.jpg "TiMiNoo")
 
-## Build your own TiMiNoo
 ### Items
 - 1x Arduino Leonardo R3
 - 1x Button
@@ -99,6 +103,8 @@ Press the button in order to scrub all that dust off its fur.
 - VCC -> 3V
 - SIG -> D2
 ### Installation instructions
+Use [Arduino IDE](https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE) to upload `timinoo.ino` to your Arduino Leonardo.
+Make sure you use a Micro USB cable that supports data transfer, as some cables do not have data lines wired and only provide charging capability.
 
 ## Commercial status
-TiMiNoo is an open source project that is not meant to be sold. Please note the cat sprites are under a [Creative Commons Attribution-NonCommercial 4.0 International CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license that explicitly prohibits commercial use. I'm 100% OK with this.
+TiMiNoo is an open source project that is not meant to be sold. Please note the cat sprites and the frames are under a [Creative Commons Attribution-NonCommercial 4.0 International CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license that explicitly prohibits commercial use. I'm 100% OK with this.
