@@ -10,12 +10,12 @@ Cute 1 bit VPet for Arduino - Feed, cuddle, clean and educate your own unique ca
 
 ## Presentation
 
-TiMiNoo is a virtual cat providing minimal distraction, fully office-compatible, single button action, no sound, no death.
+TiMiNoo ("Tee Me Noo") is a virtual cat providing minimal distraction, fully office-compatible, single button action, no sound, no death.
 The cat is different on each run, its characteristics (appetite, cleanliness, cleverness, playfulness) are randomly picked at startup.
 
 TiMiNoo has been created with busy people in mind: The gameplay is very simple and fluid on purpose, as this game is meant to be enjoyed in a work environment.
 
-TiMiNoo is about enjoying a simple yet feature-rich virtual cat, a companion for busy days: Cuddle, Feed, Educate, Wash and Entertain your very own furry companion.
+TiMiNoo is a simple yet feature-rich virtual cat, a companion for busy days: Cuddle, Feed, Educate, Wash and Entertain your very own furry companion.
 
 Tamagotchi lovers could compare it to a Nano.
 
