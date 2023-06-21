@@ -1,3 +1,6 @@
+# 2023-06-21
+- Updated README file
+
 # 2023-06-20
 - TiMiNoo version 1.2.7 complete
 - This can be considered the definitive release
