@@ -654,7 +654,9 @@ void checkButton()
           gamePick = random (0, 7);
           switch (gamePick) {
             case 0:
-              score -= 1000;
+              if (score>1000) {
+                score -= 1000;
+              }
               break;
             case 1:
               strawberryFoodStock += 1;
