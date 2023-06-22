@@ -90,6 +90,9 @@ Press the button in order to scrub all that dust off its fur.
 - 1x Acrylic enclosure for UNO / Leonardo
 - Enough jumper cables to assemble the circuitry
 ### Assembly
+![Circuit top](./assets/timinoo_circuit_top.jpg "TiMiNoo circuit top")
+![Circuit bottom](./assets/timinoo_circuit_bottom.jpg "TiMiNoo circuit bottom")
+![Circuit](./assets/timinoo_circuit.jpg "TiMiNoo circuit")
 #### Screen pinout
 - DC -> D9
 - CS -> D10
