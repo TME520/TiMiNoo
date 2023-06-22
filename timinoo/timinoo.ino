@@ -24,8 +24,6 @@ const char* textToDisplay = "";
 const int buttonPin = 2;
 int buttonState = 0;
 unsigned long frameCounter = 0;
-char frameCounterString[7];
-char animationStepString[1];
 int animationStep = 1;
 int animationStepMax = 4;
 const byte ButtonPin = 2;
@@ -72,14 +70,14 @@ long catEntertainment = random(1, 4);
 
 // Status change timing (decrement status variable every x frames)
 // Production timings
-unsigned long catHungerStep = random(7500, 8500);
+unsigned long catHungerStep = random(5000, 8000);
 // unsigned long catHungerStep = 1;
-unsigned long catHygieneStep = random(15000, 20000);
+unsigned long catHygieneStep = random(10000, 20000);
 // unsigned long catHygieneStep = 1;
 unsigned long catMoraleStep = random(4000, 5000);
-unsigned long catEducationStep = random(800, 1600);
+unsigned long catEducationStep = random(500, 1600);
 // unsigned long catEducationStep = 3;
-unsigned long catEntertainmentStep = random(250, 500);
+unsigned long catEntertainmentStep = random(400, 800);
 
 // Tracking status checks
 unsigned long lastCatHungerCheck = 0;
@@ -656,8 +654,10 @@ void checkButton()
           randomFoodType = random(0, 7);
         }
       } else if (gameMode == 7) {
-        randomVisitSequence = 1;
-        randomVisitCounter = 0;
+        if (randomVisitSequence == 0) {
+          randomVisitSequence = 1;
+          randomVisitCounter = 0;
+        }
       }
     }
   }
@@ -692,7 +692,6 @@ void loop(void) {
   if (animationStep>animationStepMax) {
     animationStep=1;
   }
-  // ltoa(animationStep, animationStepString, 10);
 
   // Refresh cat statistics
   // Hunger
@@ -1353,7 +1352,7 @@ void loop(void) {
       case 99:
         // Show version
         u8g.setFont(u8g_font_unifont);
-        u8g.drawStr(0, 50, " TiMiNoo v1.2.7 ");
+        u8g.drawStr(0, 50, " TiMiNoo v1.2.8 ");
         versionCounter += 1;
         if (versionCounter>600) {
           gameMode = 0;
@@ -1364,7 +1363,6 @@ void loop(void) {
     // Frame counter
     u8g.setFont(u8g_font_unifont);
     u8g.drawStr(8, 50, frameCounterString);
-    u8g.drawStr(8, 10, animationStepString);
     */
     delay(10);
   } while( u8g.nextPage() );
