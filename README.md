@@ -45,6 +45,27 @@ Your TiMiNoo will want to learn new things. Call Professor Koko Le Snail, a wise
 TiMiNoo craves attention and love, make sure to give it plenty.
 ### Random visits from a friend ![cindy](./assets/icons/cindy.png "Your friend")
 Sometimes, when the cat gets hungry, its friend will come and offer either a nice Matcha tea or a home made Coco cake.
+### Scoring system
+Earn points every time you take action and increase your score.
+#### Feed
+- Strawberry: +30 points
+- Grape, orange, apple: +20 points
+- Milk: +10 points
+#### Play
+- BAR: +500 points
+- Strawberry: +300 points
+- Grape, orange, apple: +200 points
+- Milk: +100 points
+#### Cuddle
+- Give a big kiss and a hug to your cat: +50 points
+#### Educate
+- Get some good wisdom from Koko Le Snail: +100 points
+#### Wash
+- Keep your cat clean: +200 points
+#### Visit from a friend
+- Receive a visit from your friend: +10000 points
+#### Beware of the ghost !
+- Ghost encounter: -1000 points
 
 ## How to play
 ### Starting the game
