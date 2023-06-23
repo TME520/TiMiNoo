@@ -65,7 +65,7 @@ Earn points every time you take action and increase your score.
 #### Visit from a friend
 - Receive a visit from your friend: +10000 points
 #### Beware of the ghost !
-- Ghost encounter: -1000 points
+- Ghost encounter: -666 points
 
 ## How to play
 ### Starting the game
