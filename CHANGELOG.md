@@ -1,3 +1,9 @@
+# 2023-06-23
+- TiMiNoo version 1.2.8
+- Fixed bug in random visit sequence
+- Removed unused variables
+- Adjusted timings for improved pace
+
 # 2023-06-22
 - Added circuit to README file
 

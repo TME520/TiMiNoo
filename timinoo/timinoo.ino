@@ -20,12 +20,12 @@ SIG = 2
 */
 
 int gameMode = 99;
+long score = 0;
+char scoreString[9];
 const char* textToDisplay = "";
 const int buttonPin = 2;
 int buttonState = 0;
 unsigned long frameCounter = 0;
-char frameCounterString[7];
-char animationStepString[1];
 int animationStep = 1;
 int animationStepMax = 4;
 const byte ButtonPin = 2;
@@ -72,14 +72,14 @@ long catEntertainment = random(1, 4);
 
 // Status change timing (decrement status variable every x frames)
 // Production timings
-unsigned long catHungerStep = random(7500, 8500);
+unsigned long catHungerStep = random(5000, 8000);
 // unsigned long catHungerStep = 1;
-unsigned long catHygieneStep = random(15000, 20000);
+unsigned long catHygieneStep = random(10000, 20000);
 // unsigned long catHygieneStep = 1;
 unsigned long catMoraleStep = random(4000, 5000);
-unsigned long catEducationStep = random(800, 1600);
+unsigned long catEducationStep = random(500, 1600);
 // unsigned long catEducationStep = 3;
-unsigned long catEntertainmentStep = random(250, 500);
+unsigned long catEntertainmentStep = random(400, 800);
 
 // Tracking status checks
 unsigned long lastCatHungerCheck = 0;
@@ -159,6 +159,7 @@ static unsigned char super_happy_28x28_bits[] U8G_PROGMEM = {
    0xf0, 0xff, 0xff, 0x00, 0xf0, 0xff, 0xff, 0x00, 0xc0, 0xff, 0x3f, 0x00,
    0xc0, 0xff, 0x3f, 0x00 };
 
+/*
 #define diamond_28x24_width 28
 #define diamond_28x24_height 24
 static unsigned char diamond_28x24_bits[] U8G_PROGMEM = {
@@ -170,6 +171,7 @@ static unsigned char diamond_28x24_bits[] U8G_PROGMEM = {
    0xf0, 0xc0, 0xf3, 0x00, 0xc0, 0xc3, 0x3f, 0x00, 0xc0, 0xc3, 0x3f, 0x00,
    0x00, 0xcf, 0x0f, 0x00, 0x00, 0xcf, 0x0f, 0x00, 0x00, 0xfc, 0x03, 0x00,
    0x00, 0xfc, 0x03, 0x00, 0x00, 0xf0, 0x00, 0x00, 0x00, 0xf0, 0x00, 0x00 };
+*/
 
 #define koko_le_snail_26x22_width 26
 #define koko_le_snail_26x22_height 22
@@ -650,14 +652,51 @@ void checkButton()
         // Game
         if (gameSequence == 0) {
           gamePick = random (0, 7);
+          switch (gamePick) {
+            case 0:
+              if (score>666) {
+                score -= 666;
+              }
+              break;
+            case 1:
+              strawberryFoodStock += 1;
+              appleFoodStock += 1;
+              grapeFoodStock += 1;
+              milkFoodStock += 1;
+              orangeFoodStock += 1;
+              score += 500;
+              break;
+            case 2:
+              strawberryFoodStock += 1;
+              score += 300;
+              break;
+            case 3:
+              appleFoodStock += 1;
+              score += 200;
+              break;
+            case 4:
+              grapeFoodStock += 1;
+              score += 200;
+              break;
+            case 5:
+              milkFoodStock += 1;
+              score += 100;
+              break;
+            case 6:
+              orangeFoodStock += 1;
+              score += 200;
+              break;
+          }
           gameSequence = 1;
           gameCounter = 0;
           randomGameIconXPos = random(0, 3);
           randomFoodType = random(0, 7);
         }
       } else if (gameMode == 7) {
-        randomVisitSequence = 1;
-        randomVisitCounter = 0;
+        if (randomVisitSequence == 0) {
+          randomVisitSequence = 1;
+          randomVisitCounter = 0;
+        }
       }
     }
   }
@@ -692,7 +731,6 @@ void loop(void) {
   if (animationStep>animationStepMax) {
     animationStep=1;
   }
-  // ltoa(animationStep, animationStepString, 10);
 
   // Refresh cat statistics
   // Hunger
@@ -855,18 +893,23 @@ void loop(void) {
             if (strawberryFoodStock > 0) {
               selectedFood = 1;
               strawberryFoodStock -= 1;
+              score += 30;
             } else if (grapeFoodStock > 0) {
               selectedFood = 2;
               grapeFoodStock -= 1;
+              score += 20;
             } else if (milkFoodStock > 0) {
               selectedFood = 3;
               milkFoodStock -= 1;
+              score += 10;
             } else if (orangeFoodStock > 0) {
               selectedFood = 4;
               orangeFoodStock -= 1;
+              score += 20;
             } else if (appleFoodStock > 0) {
               selectedFood = 5;
               appleFoodStock -= 1;
+              score += 20;
             } else {
               selectedFood = 6;
             }
@@ -964,6 +1007,7 @@ void loop(void) {
           u8g.drawStr(70, 40, "I love you too");
         } else if (cuddleCounter==240) {
           superHappyCounter = 100;
+          score += 50;
           catMorale = 3;
           gameMode = 0;
         }
@@ -1072,6 +1116,7 @@ void loop(void) {
             if (snailCounter>300) {
               snailCounter = 0;
               superHappyCounter = 100;
+              score += 100;
               catEducation += 1;
               gameMode = 0;
             }
@@ -1137,7 +1182,7 @@ void loop(void) {
             break;
           case 1:
             u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
-            u8g.drawXBMP(72, 22, diamond_28x24_width, diamond_28x24_height, diamond_28x24_bits);
+            // u8g.drawXBMP(72, 22, diamond_28x24_width, diamond_28x24_height, diamond_28x24_bits);
             u8g.drawXBMP(69, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
             u8g.drawXBMP(81, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
             u8g.drawXBMP(93, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
@@ -1147,6 +1192,7 @@ void loop(void) {
             if (cleanCounter>300) {
               cleanCounter = 0;
               superHappyCounter = 100;
+              score += 200;
               catHygiene = 3;
               gameMode = 0;
             }
@@ -1222,45 +1268,35 @@ void loop(void) {
               // Bar
               u8g.drawXBMP(50, 12, bar_28x28_width, bar_28x28_height, bar_28x28_bits);
               u8g.drawStr(0, 58, "  + 1 of all!   ");
-              strawberryFoodStock += 1;
-              appleFoodStock += 1;
-              grapeFoodStock += 1;
-              milkFoodStock += 1;
-              orangeFoodStock += 1;
               break;
             case 2:
               // Strawberry
               u8g.drawXBMP(50, 12, strawberry_28x28_width, strawberry_28x28_height, strawberry_28x28_bits);
               u8g.drawStr(0, 58, " + 1 strawberry ");
-              strawberryFoodStock += 1;
               break;
             case 3:
               // Apple
               u8g.drawXBMP(50, 12, apple_28x28_width, apple_28x28_height, apple_28x28_bits);
               u8g.drawStr(0, 58, "   + 1 apple    ");
-              appleFoodStock += 1;
               break;
             case 4:
               // Grape
               u8g.drawXBMP(50, 12, grape_28x28_width, grape_28x28_height, grape_28x28_bits);
               u8g.drawStr(0, 58, "   + 1 grape    ");
-              grapeFoodStock += 1;
               break;
             case 5:
               // Milk
               u8g.drawXBMP(50, 12, milk_28x28_width, milk_28x28_height, milk_28x28_bits);
               u8g.drawStr(0, 58, "    + 1 milk    ");
-              milkFoodStock += 1;
               break;
             case 6:
               // Orange
               u8g.drawXBMP(50, 12, orange_28x28_width, orange_28x28_height, orange_28x28_bits);
               u8g.drawStr(0, 58, "   + 1 orange   ");
-              orangeFoodStock += 1;
               break;
           }
           gameCounter += 1;
-          if (gameCounter>400) {
+          if (gameCounter>300) {
             gameCounter = 0;
             if (gamePick > 0) {
               superHappyCounter = 100;
@@ -1344,6 +1380,7 @@ void loop(void) {
               randomVisitSequence = 0;
               randomVisitCounter = 0;
               superHappyCounter = 100;
+              score += 10000;
               catHunger = 3;
               gameMode = 0;
             }
@@ -1353,19 +1390,19 @@ void loop(void) {
       case 99:
         // Show version
         u8g.setFont(u8g_font_unifont);
-        u8g.drawStr(0, 50, " TiMiNoo v1.2.7 ");
+        u8g.drawStr(0, 50, " TiMiNoo v1.2.8 ");
         versionCounter += 1;
-        if (versionCounter>600) {
+        if (versionCounter>400) {
           gameMode = 0;
         }
         break;
     }
-    /*
-    // Frame counter
-    u8g.setFont(u8g_font_unifont);
-    u8g.drawStr(8, 50, frameCounterString);
-    u8g.drawStr(8, 10, animationStepString);
-    */
+    if (gameMode < 2) {
+      // Score
+      u8g.setFont(u8g_font_baby);
+      ltoa(score, scoreString, 10);
+      u8g.drawStr(81, 60, scoreString);
+    }
     delay(10);
   } while( u8g.nextPage() );
 }
