@@ -1,3 +1,7 @@
+# 2023-07-02
+- TiMiNoo version 1.2.9
+- Catsino: Reduced chances of getting the ghost several times in a row
+
 # 2023-06-23
 - TiMiNoo version 1.2.8
 - Fixed bug in random visit sequence
