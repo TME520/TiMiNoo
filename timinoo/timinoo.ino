@@ -159,20 +159,6 @@ static unsigned char super_happy_28x28_bits[] U8G_PROGMEM = {
    0xf0, 0xff, 0xff, 0x00, 0xf0, 0xff, 0xff, 0x00, 0xc0, 0xff, 0x3f, 0x00,
    0xc0, 0xff, 0x3f, 0x00 };
 
-/*
-#define diamond_28x24_width 28
-#define diamond_28x24_height 24
-static unsigned char diamond_28x24_bits[] U8G_PROGMEM = {
-   0xc0, 0xcc, 0x3c, 0x00, 0xc0, 0xcc, 0x3c, 0x00, 0x30, 0xc3, 0xf3, 0x00,
-   0x30, 0xc3, 0xf3, 0x00, 0x0c, 0xc3, 0xf3, 0x03, 0x0c, 0xc3, 0xf3, 0x03,
-   0xff, 0x3f, 0x00, 0x00, 0xff, 0x3f, 0x00, 0x00, 0xc3, 0xc0, 0xcf, 0x0f,
-   0xc3, 0xc0, 0xcf, 0x0f, 0xc3, 0xc0, 0xcf, 0x0f, 0xc3, 0xc0, 0xcf, 0x0f,
-   0xcc, 0xc0, 0xcf, 0x03, 0xcc, 0xc0, 0xcf, 0x03, 0xf0, 0xc0, 0xf3, 0x00,
-   0xf0, 0xc0, 0xf3, 0x00, 0xc0, 0xc3, 0x3f, 0x00, 0xc0, 0xc3, 0x3f, 0x00,
-   0x00, 0xcf, 0x0f, 0x00, 0x00, 0xcf, 0x0f, 0x00, 0x00, 0xfc, 0x03, 0x00,
-   0x00, 0xfc, 0x03, 0x00, 0x00, 0xf0, 0x00, 0x00, 0x00, 0xf0, 0x00, 0x00 };
-*/
-
 #define koko_le_snail_26x22_width 26
 #define koko_le_snail_26x22_height 22
 static unsigned char koko_le_snail_26x22_bits[] U8G_PROGMEM = {
@@ -602,11 +588,7 @@ void checkButton()
     ButtonStateChangeTime = currentTime;
 
 
-    if (ButtonWasPressed)
-    {
-      // Button was just pressed
-    }
-    else
+    if (!ButtonWasPressed)
     {
       // Button was just released
       if (gameMode == 1) {
@@ -654,8 +636,10 @@ void checkButton()
           gamePick = random (0, 7);
           switch (gamePick) {
             case 0:
-              if (score>666) {
+              if (score>666 && frameCounter % 2 == 0) {
                 score -= 666;
+              } else {
+                gamePick = 1;
               }
               break;
             case 1:
@@ -700,12 +684,6 @@ void checkButton()
       }
     }
   }
-
-
-  if (ButtonWasPressed)
-  {
-    // Button is being held down
-  }
 }
 
 void setup(void) {
@@ -726,7 +704,6 @@ void loop(void) {
     lastCatEducationCheck = 0;
     lastCatEntertainmentCheck = 0;
   }
-  // ltoa(frameCounter, frameCounterString, 10);
   animationStep += 1;
   if (animationStep>animationStepMax) {
     animationStep=1;
@@ -1182,7 +1159,6 @@ void loop(void) {
             break;
           case 1:
             u8g.drawXBMP(-24, 13, cat_sitting_upscaled4x_001_width, cat_sitting_upscaled4x_001_height, cat_sitting_upscaled4x_001_bits);
-            // u8g.drawXBMP(72, 22, diamond_28x24_width, diamond_28x24_height, diamond_28x24_bits);
             u8g.drawXBMP(69, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
             u8g.drawXBMP(81, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
             u8g.drawXBMP(93, 50, cuddle_heart_11x10_width, cuddle_heart_11x10_height, cuddle_heart_11x10_bits);
@@ -1390,7 +1366,7 @@ void loop(void) {
       case 99:
         // Show version
         u8g.setFont(u8g_font_unifont);
-        u8g.drawStr(0, 50, " TiMiNoo v1.2.8 ");
+        u8g.drawStr(0, 50, " TiMiNoo v1.2.9 ");
         versionCounter += 1;
         if (versionCounter>400) {
           gameMode = 0;
