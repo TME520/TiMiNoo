@@ -639,7 +639,9 @@ void checkButton()
               if (score>666 && frameCounter % 2 == 0) {
                 score -= 666;
               } else {
-                gamePick = 1;
+                gamePick = 6;
+                orangeFoodStock += 1;
+                score += 200;
               }
               break;
             case 1:
