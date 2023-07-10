@@ -10,6 +10,10 @@ Cute 1 bit VPet for Arduino - Feed, cuddle, clean and educate your own unique ca
 
 ## Presentation
 
+> **Game type**: Virtual Pet
+> **Game Style**: Idle Game
+> **Players**: One 
+
 TiMiNoo ("Tee Me Noo") is a virtual cat providing minimal distraction, fully office-compatible, single button action, no sound, no death.
 The cat is different on each run, its characteristics (appetite, cleanliness, cleverness, playfulness) are randomly picked at startup.
 
