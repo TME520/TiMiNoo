@@ -1,3 +1,6 @@
+# 2023-07-23
+- Updated README (product presentation)
+
 # 2023-07-02
 - TiMiNoo version 1.2.9
 - Catsino: Reduced chances of getting the ghost several times in a row
