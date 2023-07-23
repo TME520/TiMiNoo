@@ -1,5 +1,6 @@
 # TiMiNoo
-Cute 1 bit VPet for Arduino - Feed, cuddle, clean and educate your own unique cat.
+
+**The office virtual pet - Feed, cuddle, clean and educate your own unique cat**
 
 2 mini games, 7 food types, friends visits and presents, one button action, no sound, no death.
 
