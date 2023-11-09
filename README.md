@@ -37,6 +37,8 @@ A single button gameplay is perfect for that.
 #### Catsino ![bar](./assets/icons/bar.png "BAR +1 of all !!!")
 Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home.
 Press the button once to randomly pick a food item. Beware of the ghost though !
+![catsino_request](./assets/catsino_request.png "TiMiNoo wants to play")
+![catsino_in_game](./assets/catsino_in_game.png "TiMiNoo playing")
 #### Cat Wash
 When the fur of your TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub !
 Repeatedly press the button to get a squicky clean kitty.
@@ -55,6 +57,8 @@ Your TiMiNoo will get hungry as time goes by. Feed it a variety of food includin
 
 ### Educate your cat with Professor Koko ![koko](./assets/icons/koko_le_snail.png "Koko Le Snail")
 Your TiMiNoo will want to learn new things. Call Professor Koko Le Snail, a wise teacher that will share his best knowledge with your cuttie.
+![education_request](./assets/education_request.png "TiMiNoo wants to learn")
+![education_lesson](./assets/education_lesson.png "TiMiNoo learning with Koko Le Snail")
 ### Cuddle
 TiMiNoo craves attention and love, make sure to give it plenty.
 ### Random visits from a friend ![cindy](./assets/icons/cindy.png "Your friend")
