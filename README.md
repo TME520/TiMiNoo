@@ -3,6 +3,7 @@
 **The office virtual pet - Feed, cuddle, clean and educate your own unique cat**
 
 2 mini games, 7 food types, friends visits and presents, one button action, no sound, no death.
+Runs on Arduino Leonardo R3. Available for Arduboy and M5 Stick C Plus.
 
 ![TiMiNoo logo](./assets/logo/2.png "TiMiNoo logo")
 
@@ -36,35 +37,51 @@ A single button gameplay is perfect for that.
 #### Catsino ![bar](./assets/icons/bar.png "BAR +1 of all !!!")
 Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home.
 Press the button once to randomly pick a food item. Beware of the ghost though !
+![catsino_request](./assets/catsino_request.png "TiMiNoo wants to play")
+![catsino_in_game](./assets/catsino_in_game.png "TiMiNoo playing")
 #### Cat Wash
 When the fur of your TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub !
 Repeatedly press the button to get a squicky clean kitty.
 ### 7 food items
 Your TiMiNoo will get hungry as time goes by. Feed it a variety of food including:
-- ![grape](./assets/icons/grape.png "Fresh grapes") Grape
-- ![strawberry](./assets/icons/strawberry.png "Yummy strawberry") Strawberry
-- ![apple](./assets/icons/apple.png "Tasty apple") Apple
-- ![orange](./assets/icons/orange.png "Juicy orange") Orange
-- ![milk](./assets/icons/milk.png "Farm milk") Milk
-- ![cake](./assets/icons/coco_cake.png "Homemade coco cake") Coco cake (bonus item)
-- ![matcha](./assets/icons/matcha.png "Matcha tea") Matcha tea (bonus item)
+
+| Icon | Item |
+| ---- | ---- |
+| ![grape](./assets/icons/grape.png "Fresh grapes") | Grape |
+| ![strawberry](./assets/icons/strawberry.png "Yummy strawberry") | Strawberry |
+| ![apple](./assets/icons/apple.png "Tasty apple") | Apple |
+| ![orange](./assets/icons/orange.png "Juicy orange") | Orange |
+| ![milk](./assets/icons/milk.png "Farm milk") | Milk |
+| ![cake](./assets/icons/coco_cake.png "Homemade coco cake") | Coco cake (bonus item) |
+| ![matcha](./assets/icons/matcha.png "Matcha tea") | Matcha tea (bonus item) |
+
 ### Educate your cat with Professor Koko ![koko](./assets/icons/koko_le_snail.png "Koko Le Snail")
-Your TiMiNoo will want to learn new things. Call Professor Koko Le Snail, a wise teacher that will share is best knowledge with your cuttie.
+Your TiMiNoo will want to learn new things. Call Professor Koko Le Snail, a wise teacher that will share his best knowledge with your cuttie.
+![education_request](./assets/education_request.png "TiMiNoo wants to learn")
+![education_lesson](./assets/education_lesson.png "TiMiNoo learning with Koko Le Snail")
 ### Cuddle
 TiMiNoo craves attention and love, make sure to give it plenty.
 ### Random visits from a friend ![cindy](./assets/icons/cindy.png "Your friend")
-Sometimes, when the cat gets hungry, its friend will come and offer either a nice Matcha tea or a home made Coco cake.
+Sometimes, when the cat gets hungry, its friend will come and offer either a nice Matcha tea or home made Coco cake.
 ### Scoring system
 Earn points every time you take action and increase your score.
 #### Feed
-- Strawberry: +30 points
-- Grape, orange, apple: +20 points
-- Milk: +10 points
-#### Play
-- BAR: +500 points
-- Strawberry: +300 points
-- Grape, orange, apple: +200 points
-- Milk: +100 points
+
+| Food type | Bonus |
+| --------- | ----- |
+| Strawberry | +30 points |
+| Grape, orange, apple | +20 points |
+| Milk | +10 points|
+
+#### Play At The Catsino Deluxe
+
+| Item | Bonus |
+| ---- | ----- |
+| BAR | +500 points |
+| Strawberry | +300 points |
+| Grape, orange, apple | +200 points |
+| Milk | +100 points |
+
 #### Cuddle
 - Give a big kiss and a hug to your cat: +50 points
 #### Educate
@@ -79,7 +96,7 @@ Earn points every time you take action and increase your score.
 ## How to play
 ### Starting the game
 Plug your TiMiNoo to a 5V Micro USB charger, a new game will start.
-There is no save feature, no scoring, no experience. Every run is a fresh beginning with new statistics.
+There is no save feature and no experience, but scoring is available. Every run is a fresh beginning with new statistics.
 TiMiNoo cannot die.
 ### Understand what your TiMiNoo wants
 #### Home screen
@@ -120,9 +137,11 @@ Press the button in order to scrub all that dust off its fur.
 - 1x Acrylic enclosure for UNO / Leonardo
 - Enough jumper cables to assemble the circuitry
 ### Assembly
+#### Drawing
+![Circuit](./assets/timinoo_circuit.jpg "TiMiNoo circuit")
+#### Photos
 ![Circuit top](./assets/timinoo_circuit_top.jpg "TiMiNoo circuit top")
 ![Circuit bottom](./assets/timinoo_circuit_bottom.jpg "TiMiNoo circuit bottom")
-![Circuit](./assets/timinoo_circuit.jpg "TiMiNoo circuit")
 #### Screen pinout
 - DC -> D9
 - CS -> D10
