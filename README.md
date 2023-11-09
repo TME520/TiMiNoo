@@ -42,13 +42,17 @@ When the fur of your TiMiNoo gets dirty, it's time for a proper toilet. Scrub sc
 Repeatedly press the button to get a squicky clean kitty.
 ### 7 food items
 Your TiMiNoo will get hungry as time goes by. Feed it a variety of food including:
-- ![grape](./assets/icons/grape.png "Fresh grapes") Grape
-- ![strawberry](./assets/icons/strawberry.png "Yummy strawberry") Strawberry
-- ![apple](./assets/icons/apple.png "Tasty apple") Apple
-- ![orange](./assets/icons/orange.png "Juicy orange") Orange
-- ![milk](./assets/icons/milk.png "Farm milk") Milk
-- ![cake](./assets/icons/coco_cake.png "Homemade coco cake") Coco cake (bonus item)
-- ![matcha](./assets/icons/matcha.png "Matcha tea") Matcha tea (bonus item)
+
+| Icon | Item |
+| ---- | ---- |
+| ![grape](./assets/icons/grape.png "Fresh grapes") | Grape |
+| ![strawberry](./assets/icons/strawberry.png "Yummy strawberry") | Strawberry |
+| ![apple](./assets/icons/apple.png "Tasty apple") | Apple |
+| ![orange](./assets/icons/orange.png "Juicy orange") | Orange |
+| ![milk](./assets/icons/milk.png "Farm milk") | Milk |
+| ![cake](./assets/icons/coco_cake.png "Homemade coco cake") | Coco cake (bonus item) |
+| ![matcha](./assets/icons/matcha.png "Matcha tea") | Matcha tea (bonus item) |
+
 ### Educate your cat with Professor Koko ![koko](./assets/icons/koko_le_snail.png "Koko Le Snail")
 Your TiMiNoo will want to learn new things. Call Professor Koko Le Snail, a wise teacher that will share his best knowledge with your cuttie.
 ### Cuddle
@@ -129,9 +133,11 @@ Press the button in order to scrub all that dust off its fur.
 - 1x Acrylic enclosure for UNO / Leonardo
 - Enough jumper cables to assemble the circuitry
 ### Assembly
+#### Drawing
+![Circuit](./assets/timinoo_circuit.jpg "TiMiNoo circuit")
+#### Photos
 ![Circuit top](./assets/timinoo_circuit_top.jpg "TiMiNoo circuit top")
 ![Circuit bottom](./assets/timinoo_circuit_bottom.jpg "TiMiNoo circuit bottom")
-![Circuit](./assets/timinoo_circuit.jpg "TiMiNoo circuit")
 #### Screen pinout
 - DC -> D9
 - CS -> D10
