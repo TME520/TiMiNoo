@@ -50,22 +50,30 @@ Your TiMiNoo will get hungry as time goes by. Feed it a variety of food includin
 - ![cake](./assets/icons/coco_cake.png "Homemade coco cake") Coco cake (bonus item)
 - ![matcha](./assets/icons/matcha.png "Matcha tea") Matcha tea (bonus item)
 ### Educate your cat with Professor Koko ![koko](./assets/icons/koko_le_snail.png "Koko Le Snail")
-Your TiMiNoo will want to learn new things. Call Professor Koko Le Snail, a wise teacher that will share is best knowledge with your cuttie.
+Your TiMiNoo will want to learn new things. Call Professor Koko Le Snail, a wise teacher that will share his best knowledge with your cuttie.
 ### Cuddle
 TiMiNoo craves attention and love, make sure to give it plenty.
 ### Random visits from a friend ![cindy](./assets/icons/cindy.png "Your friend")
-Sometimes, when the cat gets hungry, its friend will come and offer either a nice Matcha tea or a home made Coco cake.
+Sometimes, when the cat gets hungry, its friend will come and offer either a nice Matcha tea or home made Coco cake.
 ### Scoring system
 Earn points every time you take action and increase your score.
 #### Feed
-- Strawberry: +30 points
-- Grape, orange, apple: +20 points
-- Milk: +10 points
-#### Play
-- BAR: +500 points
-- Strawberry: +300 points
-- Grape, orange, apple: +200 points
-- Milk: +100 points
+
+| Food type | Bonus |
+| --------- | ----- |
+| Strawberry | +30 points |
+| Grape, orange, apple | +20 points |
+| Milk | +10 points|
+
+#### Play At The Catsino Deluxe
+
+| Item | Bonus |
+| ---- | ----- |
+| BAR | +500 points |
+| Strawberry | +300 points |
+| Grape, orange, apple | +200 points |
+| Milk | +100 points |
+
 #### Cuddle
 - Give a big kiss and a hug to your cat: +50 points
 #### Educate
