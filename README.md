@@ -3,6 +3,7 @@
 **The office virtual pet - Feed, cuddle, clean and educate your own unique cat**
 
 2 mini games, 7 food types, friends visits and presents, one button action, no sound, no death.
+Runs on Arduino Leonardo R3. Available for Arduboy and M5 Stick C Plus.
 
 ![TiMiNoo logo](./assets/logo/2.png "TiMiNoo logo")
 
@@ -79,7 +80,7 @@ Earn points every time you take action and increase your score.
 ## How to play
 ### Starting the game
 Plug your TiMiNoo to a 5V Micro USB charger, a new game will start.
-There is no save feature, no scoring, no experience. Every run is a fresh beginning with new statistics.
+There is no save feature and no experience, but scoring is available. Every run is a fresh beginning with new statistics.
 TiMiNoo cannot die.
 ### Understand what your TiMiNoo wants
 #### Home screen
