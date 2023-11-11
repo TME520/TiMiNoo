@@ -2,7 +2,7 @@
 
 # Presentation
 
-**The quiet virtual pet - Feed, cuddle, clean and educate your own unique cat**
+**A quiet virtual pet - Feed, cuddle, clean and educate your own unique cat**
 
 2 mini games, 7 food types, friends visits and presents, one button action, no sound, no death.
 
@@ -16,18 +16,13 @@ Runs on Arduino Leonardo R3. Available for Arduboy and M5 Stick C Plus.
 >
 > **Age range**: 7 to 77 years old
 
-TiMiNoo ("Tee Me Noo") is a virtual cat providing minimal distraction, fully office-compatible, single button action, no sound, no death.
-The cat is different on each run, its characteristics (appetite, cleanliness, cleverness, playfulness) are randomly picked at startup.
+TiMiNoo ("Tee Me Noo") is a virtual cat providing minimal distraction, fully office-compatible, single button action, no sound, no death. The cat is different on each run, its characteristics (appetite, cleanliness, cleverness, playfulness) are randomly picked at startup. It has been created with busy people in mind: The gameplay is very simple and fluid on purpose, as this game is meant to be enjoyed in a work environment.
 
-TiMiNoo has been created with busy people in mind: The gameplay is very simple and fluid on purpose, as this game is meant to be enjoyed in a work environment.
-
-TiMiNoo is a simple yet feature-rich virtual cat, a companion for busy days: Cuddle, Feed, Educate, Wash and Entertain your very own furry companion.
-
-Tamagotchi lovers could compare it to a Nano.
+TiMiNoo is a simple yet feature-rich virtual cat, a companion for busy days: Cuddle, Feed, Educate, Wash and Entertain your very own furry companion. Tamagotchi lovers could compare it to a Nano.
 
 # Features
 ## Single button gameplay
-Wanting a gameplay as simple as can be, a single button solution seemed very appealing. Click once or click repeatedly depending on the action, that's it.'
+Wanting a gameplay as simple as can be, a single button solution seemed very appealing. Click once or click repeatedly depending on the action, that's it.
 ## No sound
 I love having a virtual pet on my desk at work, but I also need to preserve my workflow from distractions. No beeping sounds is what I need.
 ## 2 mini games
@@ -45,8 +40,8 @@ TiMiNoo craves attention and love, make sure to give him plenty.
 Occasionally, when TiMiNoo gets hungry, his friend comes home and offer either a cup of hot Matcha tea or a slice of home made Coco cake.
 ## Gain points
 Earn points every time you take action and increase your score.
-## How to play
-### Starting the game
+# How to play
+## Starting the game
 Plug your TiMiNoo to a 5V Micro USB power supply to start a new game. There is no save feature and no experience, but scoring is available.
 
 Every run is a fresh beginning with new statistics:
@@ -58,28 +53,28 @@ Every run is a fresh beginning with new statistics:
 - Entertainment: How often your TiMiNoo will want to play.
 
 TiMiNoo cannot die.
-### Understand what your TiMiNoo wants
-#### Home screen
+## Understand what your TiMiNoo wants
+### Home screen
 TiMiNoo looks straight at you, waving his tail. He is happy, simply enjoying the moment.
 ![play](./assets/icons/play.png "Play")
-#### TiMiNoo wants to play
+### TiMiNoo wants to play
 TiMiNoo looks at a gamepad icon. Press the button once to play Catsino Deluxe.
 ![play](./assets/icons/play.png "Play")
-#### TiMiNoo wants to go to school
+### TiMiNoo wants to go to school
 TiMiNoo looks at a book icon. Press the button once to call Professor Koko Le Snail, a wise and knowledgeable teacher.
 ![educate](./assets/icons/study.png "Study")
-#### TiMiNoo is hungry
+### TiMiNoo is hungry
 TiMiNoo looks at a pizza slice icon. Press the button to feed your TiMiNoo with the food stashed in the pantry.
 ![feed](./assets/icons/pizza.png "Feed")
-#### TiMiNoo wants to cuddle with you
+### TiMiNoo wants to cuddle with you
 TiMiNoo looks at a half-empty heart icon. Press the button to kiss your furry cuttie.
 ![cuddle](./assets/icons/cuddle.png "Cuddle")
-#### TiMiNoo needs a bath
+### TiMiNoo needs a bath
 TiMiNoo looks at a bubble icon. Press the button in order to scrub all that dust off his fur.
 ![clean](./assets/icons/bubbles.png "Clean")
 # Build your own
 ![Prototype board](./assets/proto5.jpg "TiMiNoo")
-### Items
+## Items
 - 1x Arduino Leonardo R3
 - 1x Button
 - 1x 128*64 OLED screen
@@ -87,13 +82,13 @@ TiMiNoo looks at a bubble icon. Press the button in order to scrub all that dust
 - 1x breadboard or prototyping board
 - 1x Acrylic enclosure for UNO / Leonardo
 - Enough jumper cables to assemble the circuitry
-### Assembly
-#### Drawing
+## Assembly
+### Drawing
 ![Circuit](./assets/timinoo_circuit.jpg "TiMiNoo circuit")
-#### Photos
+### Photos
 ![Circuit top](./assets/timinoo_circuit_top.jpg "TiMiNoo circuit top")
 ![Circuit bottom](./assets/timinoo_circuit_bottom.jpg "TiMiNoo circuit bottom")
-#### Screen pinout
+### Screen pinout
 - DC -> D9
 - CS -> D10
 - MOSI -> D11
@@ -101,10 +96,10 @@ TiMiNoo looks at a bubble icon. Press the button in order to scrub all that dust
 - RES -> RST
 - VCC -> 5V
 - GND -> GND
-#### Button
+### Button
 - GND -> GND
 - VCC -> 3V
 - SIG -> D2
-### Installation instructions
+## Installation instructions
 Use [Arduino IDE](https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE) to upload `timinoo.ino` to your Arduino Leonardo.
 Make sure you use a Micro USB cable that supports data transfer, as some cables do not have data lines wired and only provide charging capability.
