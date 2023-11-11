@@ -16,9 +16,9 @@ Runs on Arduino Leonardo R3. Available for Arduboy and M5 Stick C Plus.
 >
 > **Age range**: 7 to 77 years old
 
-TiMiNoo ("Tee Me Noo") is a virtual cat providing minimal distraction, fully office-compatible, single button action, no sound, no death. The cat is different on each run, its characteristics (appetite, cleanliness, cleverness, playfulness) are randomly picked at startup. It has been created with busy people in mind: The gameplay is very simple and fluid on purpose, as this game is meant to be enjoyed in a work environment.
+TiMiNoo ("Tee Me Noo") is a virtual cat providing minimal distraction, fully office-compatible, single button action, no sound, no death. The cat is different on each run, his characteristics are randomly picked at startup. It has been created with busy people in mind: The gameplay is simple enough for this game to be enjoyed in a work environment.
 
-TiMiNoo is a simple yet feature-rich virtual cat, a companion for busy days: Cuddle, Feed, Educate, Wash and Entertain your very own furry companion. Tamagotchi lovers could compare it to a Nano.
+TiMiNoo is a feature-rich virtual cat, a companion for busy days: Cuddle, Feed, Educate, Wash and Entertain your very own furry companion. Tamagotchi lovers could compare it to a Nano.
 
 # Features
 ## Single button gameplay
