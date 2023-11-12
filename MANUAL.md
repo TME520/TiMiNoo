@@ -55,7 +55,11 @@ TiMiNoo cannot die.
 ### Home screen
 TiMiNoo looks straight at you, waving his tail. He is happy, simply enjoying the moment.
 
-![homescreen](./assets/icons/play.png "Play")
+![home_screen](./assets/manual/500px/home_screen-500px.png "Home Screen")
+
+TiMiNoo will express his joy right after you take action on his needs:
+
+![timinoo_happy](./assets/manual/500px/timinoo_happy-500px.png "Happy TiMiNoo")
 ### TiMiNoo wants to play
 TiMiNoo looks at a gamepad icon. Press the button once to play Catsino Deluxe.
 ![play](./assets/icons/play.png "Play")
