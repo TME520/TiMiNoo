@@ -62,19 +62,27 @@ TiMiNoo will express his joy right after you take action on his needs:
 ![timinoo_happy](./assets/manual/500px/timinoo_happy-500px.png "Happy TiMiNoo")
 ### TiMiNoo wants to play
 TiMiNoo looks at a gamepad icon. Press the button once to play Catsino Deluxe.
-![play](./assets/icons/play.png "Play")
+
+![need_play](./assets/manual/500px/need_play-500px.png "Need Play")
 ### TiMiNoo wants to go to school
 TiMiNoo looks at a book icon. Press the button once to call Professor Koko Le Snail, a wise and knowledgeable teacher.
-![educate](./assets/icons/study.png "Study")
+
+![need_education](./assets/manual/500px/need_education-500px.png "Need Education")
 ### TiMiNoo is hungry
 TiMiNoo looks at a pizza slice icon. Press the button to feed your TiMiNoo with the food stashed in the pantry.
-![feed](./assets/icons/pizza.png "Feed")
+
+![need_food](./assets/manual/500px/need_food-500px.png "Need Food")
 ### TiMiNoo wants to cuddle with you
 TiMiNoo looks at a half-empty heart icon. Press the button to kiss your furry cuttie.
-![cuddle](./assets/icons/cuddle.png "Cuddle")
+
+![need_cuddle](./assets/manual/500px/need_cuddle-500px.png "Need Cuddle")
 ### TiMiNoo needs a bath
 TiMiNoo looks at a bubble icon. Press the button in order to scrub all that dust off his fur.
-![clean](./assets/icons/bubbles.png "Clean")
+## How to play Catsino Deluxe
+## How to get a lesson with Professor Koko Le Snail
+## How to feed TiMiNoo
+## How to cuddle with TiMiNoo
+## How to play Catwash Station
 # Build your own
 ![Prototype board](./assets/proto5.jpg "TiMiNoo")
 ## Items
