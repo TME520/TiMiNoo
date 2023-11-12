@@ -79,15 +79,16 @@ TiMiNoo looks at a half-empty heart icon. Press the button to kiss your furry cu
 ### TiMiNoo needs a bath
 TiMiNoo looks at a bubble icon. Press the button in order to scrub all that dust off his fur.
 ## How to play Catsino Deluxe
-1. TiMiNoo wants to play. Press the button once.
+1. TiMiNoo wants to play. *Press the button once*.
 
 ![need_play](./assets/manual/500px/need_play-500px.png "Need Play")
 
-2. Items are moving across the screen. Press the button once.
+2. Items are moving across the screen. *Press the button once*.
 
 ![catsino_01](./assets/manual/500px/catsino_01-500px.png "Catsino Deluxe 1")
 
 3. Time to loot!
+
 ![catsino_02](./assets/manual/500px/catsino_02-500px.png "Catsino Deluxe 2")
 ## How to get a lesson with Professor Koko Le Snail
 ## How to feed TiMiNoo
