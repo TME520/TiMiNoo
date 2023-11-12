@@ -25,18 +25,16 @@ TiMiNoo is a feature-rich virtual cat, a companion for busy days: Cuddle, Feed, 
 Wanting a gameplay as simple as can be, a single button solution seemed very appealing. Click once or click repeatedly depending on the action, that's it.
 ## No sound
 I love having a virtual pet on my desk at work, but I also need to preserve my workflow from distractions. No beeping sounds is what I need.
-## 2 mini games
-### Catsino Deluxe ![bar](./assets/icons/bar.png "BAR +1 of all !!!")
-Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home. Beware of the ghost though!
-### Catwash Station
-When the fur of your TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub!
+## 2 mini games: Catsino Deluxe and Catwash Station
+- *Catsino Deluxe*: Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home. Beware of the ghost though!
+- *Catwash Station*: When the fur of your TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub!
 ## 7 food items
 Feed your TiMiNoo whenever he gets hungry. TiMiNoo doesn't die if you don't feed him, but he will give you that big eyes stare.
-## Lessons with Professor Koko ![koko](./assets/icons/koko_le_snail.png "Koko Le Snail")
+## Lessons with Professor Koko
 Your TiMiNoo wants to become a cultured cat. Call Professor Koko Le Snail, a wise teacher that will share his best knowledge with him.
 ## Cuddle time
 TiMiNoo craves attention and love, make sure to give him plenty.
-## Random visits from a friend ![cindy](./assets/icons/cindy.png "Your friend")
+## Random visits from a friend
 Occasionally, when TiMiNoo gets hungry, his friend comes home and offer either a cup of hot Matcha tea or a slice of home made Coco cake.
 ## Gain points
 Earn points every time you take action and increase your score.
@@ -46,17 +44,18 @@ Plug your TiMiNoo to a 5V Micro USB power supply to start a new game. There is n
 
 Every run is a fresh beginning with new statistics:
 
-- Appetite: How often your TiMiNoo will ask for food,
-- Hygiene: How quickly your TiMiNoo gets dirty,
-- Morale: How happy your TiMiNoo feels,
-- Education: How well trained your TiMiNoo is,
-- Entertainment: How often your TiMiNoo will want to play.
+- **Appetite**: How often your TiMiNoo will ask for food,
+- **Hygiene**: How quickly your TiMiNoo gets dirty,
+- **Morale**: How happy your TiMiNoo feels,
+- **Education**: How well trained your TiMiNoo is,
+- **Entertainment**: How often your TiMiNoo will want to play.
 
 TiMiNoo cannot die.
 ## Understand what your TiMiNoo wants
 ### Home screen
 TiMiNoo looks straight at you, waving his tail. He is happy, simply enjoying the moment.
-![play](./assets/icons/play.png "Play")
+
+![homescreen](./assets/icons/play.png "Play")
 ### TiMiNoo wants to play
 TiMiNoo looks at a gamepad icon. Press the button once to play Catsino Deluxe.
 ![play](./assets/icons/play.png "Play")
