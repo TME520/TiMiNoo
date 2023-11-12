@@ -4,7 +4,7 @@
 1. [Presentation](#presentation)
 2. [Features](#features)
 
-# Presentation [](#){name=presentation}
+# Presentation <div id="presentation"/>
 
 **A quiet virtual pet - Feed, cuddle, clean and educate your own unique cat**
 
@@ -24,7 +24,7 @@ TiMiNoo ("Tee Me Noo") is a virtual cat providing minimal distraction, fully off
 
 TiMiNoo is a feature-rich virtual cat, a companion for busy days: Cuddle, Feed, Educate, Wash and Entertain your very own furry companion. Tamagotchi lovers could compare it to a Nano.
 
-# Features [](#){name=features}
+# Features <div id="features"/>
 ## Single button gameplay
 Wanting a gameplay as simple as can be, a single button solution seemed very appealing. Click once or click repeatedly depending on the action, that's it.
 ## No sound
