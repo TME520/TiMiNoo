@@ -100,26 +100,27 @@ TiMiNoo will express his joy right after you take action on his needs:
 
 ![timinoo_happy](./assets/manual/500px/timinoo_happy-500px.png "Happy TiMiNoo")
 ### TiMiNoo wants to play
-TiMiNoo looks at a gamepad icon. Press the button once to play Catsino Deluxe.
+TiMiNoo looks at a gamepad icon.
 
 ![need_play](./assets/manual/500px/need_play-500px.png "Need Play")
 ### TiMiNoo wants to go to school
-TiMiNoo looks at a book icon. Press the button once to call Professor Koko Le Snail, a wise and knowledgeable teacher.
+TiMiNoo looks at a book icon.
 
 ![need_education](./assets/manual/500px/need_education-500px.png "Need Education")
 ### TiMiNoo is hungry
-TiMiNoo looks at a pizza slice icon. Press the button to feed your TiMiNoo with the food stashed in the pantry.
+TiMiNoo looks at a pizza slice icon.
 
 ![need_food](./assets/manual/500px/need_food-500px.png "Need Food")
 ### TiMiNoo wants to cuddle with you
-TiMiNoo looks at a half-empty heart icon. Press the button to kiss your furry cuttie.
+TiMiNoo looks at a half-empty heart icon.
 
 ![need_cuddle](./assets/manual/500px/need_cuddle-500px.png "Need Cuddle")
 ### TiMiNoo needs a bath
-TiMiNoo looks at a bubble icon. Press the button in order to scrub all that dust off his fur.
+TiMiNoo looks at a bubble icon.
 
 ![need_wash](./assets/manual/500px/need_wash-500px.png "Need Wash")
-## How to play Catsino Deluxe
+## Play the games, interact with your TiMiNoo
+### How to play Catsino Deluxe
 Earn random items and points at the Catsino!
 
 | Item | Bonus |
@@ -140,8 +141,8 @@ Earn random items and points at the Catsino!
 3. Time to loot!
 
 ![catsino_02](./assets/manual/500px/catsino_02-500px.png "Catsino Deluxe 2")
-## How to get a lesson with Professor Koko Le Snail
-1. TiMiNoo want to learn. *Press the button once*.
+### How to get a lesson with Professor Koko Le Snail
+1. TiMiNoo wants to learn, it's time to call Professor Koko Le Snail, a wise and knowledgeable teacher. *Press the button once*.
 
 ![need_education](./assets/manual/500px/need_education-500px.png "Need Education")
 
@@ -156,14 +157,14 @@ Earn random items and points at the Catsino!
 4. Professor Koko Le Snail shares his wisdom.
 
 ![education_03](./assets/manual/500px/education_03-500px.png "Education 3")
-## How to feed TiMiNoo
+### How to feed TiMiNoo
  Food type | Bonus |
 | --------- | ----- |
 | Strawberry | +30 points |
 | Grape, orange, apple | +20 points |
 | Milk | +10 points|
 
-1. TiMiNoo is hungry. *Press the button once*.
+1. TiMiNoo is hungry, feed him with the food stashed in the pantry. *Press the button once*.
 
 ![need_food](./assets/manual/500px/need_food-500px.png "Need Food")
 
@@ -174,7 +175,7 @@ Earn random items and points at the Catsino!
 3. TiMiNoo is having a feast!
 
 ![feed_02](./assets/manual/500px/feed_02-500px.png "Feed 2")
-## How to cuddle with TiMiNoo
+### How to cuddle with TiMiNoo
 1. TiMiNoo calls for attention, he wants you to pet him. *Press the button once*.
 
 ![need_cuddle](./assets/manual/500px/need_cuddle-500px.png "Need Cuddle")
@@ -182,8 +183,8 @@ Earn random items and points at the Catsino!
 2. TiMiNoo shares the love with you.
 
 ![cuddle_01](./assets/manual/500px/cuddle_01-500px.png "Cuddle 1")
-## How to play Catwash Station
-1. TiMiNoo is dirty and needs a good wash. *Press the button once*.
+### How to play Catwash Station
+1. TiMiNoo is dirty and needs a good wash, scrub all that dust off his fur! *Press the button once*.
 
 ![need_wash](./assets/manual/500px/need_wash-500px.png "Need Wash")
 
