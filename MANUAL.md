@@ -29,15 +29,54 @@ I love having a virtual pet on my desk at work, but I also need to preserve my w
 - *Catsino Deluxe*: Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home. Beware of the ghost though!
 - *Catwash Station*: When the fur of your TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub!
 ## 7 food items
-Feed your TiMiNoo whenever he gets hungry. TiMiNoo doesn't die if you don't feed him, but he will give you that big eyes stare.
+Feed your TiMiNoo whenever he gets hungry. TiMiNoo doesn't die if you don't feed him, but he will give you that big eyes stare. Feed him a variety of food including:
+
+| Icon | Item |
+| ---- | ---- |
+| ![grape](./assets/icons/grape.png "Fresh grapes") | Grape |
+| ![strawberry](./assets/icons/strawberry.png "Yummy strawberry") | Strawberry |
+| ![apple](./assets/icons/apple.png "Tasty apple") | Apple |
+| ![orange](./assets/icons/orange.png "Juicy orange") | Orange |
+| ![milk](./assets/icons/milk.png "Farm milk") | Milk |
+| ![cake](./assets/icons/coco_cake.png "Homemade coco cake") | Coco cake (bonus item) |
+| ![matcha](./assets/icons/matcha.png "Matcha tea") | Matcha tea (bonus item) |
 ## Lessons with Professor Koko
 Your TiMiNoo wants to become a cultured cat. Call Professor Koko Le Snail, a wise teacher that will share his best knowledge with him.
 ## Cuddle time
 TiMiNoo craves attention and love, make sure to give him plenty.
-## Random visits from a friend
+## Visits from a friend
 Occasionally, when TiMiNoo gets hungry, his friend comes home and offer either a cup of hot Matcha tea or a slice of home made Coco cake.
+
+![friend_visit](./assets/manual/500px/friend_visit_01-500px.png "Friend visit 1")
 ## Gain points
 Earn points every time you take action and increase your score.
+### Feed
+
+| Food type | Bonus |
+| --------- | ----- |
+| Strawberry | +30 points |
+| Grape, orange, apple | +20 points |
+| Milk | +10 points|
+
+### Play At The Catsino Deluxe
+
+| Item | Bonus |
+| ---- | ----- |
+| BAR | +500 points |
+| Strawberry | +300 points |
+| Grape, orange, apple | +200 points |
+| Milk | +100 points |
+
+### Cuddle
+- Give a big kiss and a hug to your cat: +50 points
+### Educate
+- Get some good wisdom from Koko Le Snail: +100 points
+### Wash your TiMiNoo at the Catwash Station
+- Keep your cat clean: +200 points
+### Visit from a friend
+- Receive a visit from your friend: +10000 points
+### Beware of the ghost !
+- Ghost encounter: -666 points
 # How to play
 ## Starting the game
 Plug your TiMiNoo to a 5V Micro USB power supply to start a new game. There is no save feature and no experience, but scoring is available.
@@ -78,7 +117,18 @@ TiMiNoo looks at a half-empty heart icon. Press the button to kiss your furry cu
 ![need_cuddle](./assets/manual/500px/need_cuddle-500px.png "Need Cuddle")
 ### TiMiNoo needs a bath
 TiMiNoo looks at a bubble icon. Press the button in order to scrub all that dust off his fur.
+
+![need_wash](./assets/manual/500px/need_wash-500px.png "Need Wash")
 ## How to play Catsino Deluxe
+Earn random items and points at the Catsino!
+
+| Item | Bonus |
+| ---- | ----- |
+| BAR | +500 points |
+| Strawberry | +300 points |
+| Grape, orange, apple | +200 points |
+| Milk | +100 points |
+
 1. TiMiNoo wants to play. *Press the button once*.
 
 ![need_play](./assets/manual/500px/need_play-500px.png "Need Play")
@@ -91,9 +141,59 @@ TiMiNoo looks at a bubble icon. Press the button in order to scrub all that dust
 
 ![catsino_02](./assets/manual/500px/catsino_02-500px.png "Catsino Deluxe 2")
 ## How to get a lesson with Professor Koko Le Snail
+1. TiMiNoo want to learn. *Press the button once*.
+
+![need_education](./assets/manual/500px/need_education-500px.png "Need Education")
+
+2. Professor Koko Le Snail arrives.
+
+![education_01](./assets/manual/500px/education_01-500px.png "Education 1")
+
+3. Professor Koko Le Snail introduces himself.
+
+![education_02](./assets/manual/500px/education_02-500px.png "Education 2")
+
+4. Professor Koko Le Snail shares his wisdom.
+
+![education_03](./assets/manual/500px/education_03-500px.png "Education 3")
 ## How to feed TiMiNoo
+ Food type | Bonus |
+| --------- | ----- |
+| Strawberry | +30 points |
+| Grape, orange, apple | +20 points |
+| Milk | +10 points|
+
+1. TiMiNoo is hungry. *Press the button once*.
+
+![need_food](./assets/manual/500px/need_food-500px.png "Need Food")
+
+2. A random food item is removed from the pantry.
+
+![feed_01](./assets/manual/500px/feed_01-500px.png "Feed 1")
+
+3. TiMiNoo is having a feast!
+
+![feed_02](./assets/manual/500px/feed_02-500px.png "Feed 2")
 ## How to cuddle with TiMiNoo
+1. TiMiNoo calls for attention, he wants you to pet him. *Press the button once*.
+
+![need_cuddle](./assets/manual/500px/need_cuddle-500px.png "Need Cuddle")
+
+2. TiMiNoo shares the love with you.
+
+![cuddle_01](./assets/manual/500px/cuddle_01-500px.png "Cuddle 1")
 ## How to play Catwash Station
+1. TiMiNoo is dirty and needs a good wash. *Press the button once*.
+
+![need_wash](./assets/manual/500px/need_wash-500px.png "Need Wash")
+
+2. Get some soap and scrub! *Press the button repeatedly until bubbles fill the whole screen*.
+
+![clean_01](./assets/manual/500px/clean_01-500px.png "Clean 1")
+
+3. TiMiNoo is all clean now!
+
+![clean_02](./assets/manual/500px/clean_02-500px.png "Clean 2")
 # Build your own
 ![Prototype board](./assets/proto5.jpg "TiMiNoo")
 ## Items
