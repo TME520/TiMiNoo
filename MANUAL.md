@@ -24,7 +24,7 @@ TiMiNoo is a feature-rich virtual cat, a companion for busy days: Cuddle, Feed, 
 ## Single button gameplay
 Wanting a gameplay as simple as can be, a single button solution seemed very appealing. Click once or click repeatedly depending on the action, that's it.
 ## No sound
-I love having a virtual pet on my desk at work, but I also need to preserve my workflow from distractions. No beeping sounds is what I need.
+Having a virtual pet on my desk at work is lovely, but I also need to preserve my workflow from distractions. No beeping sounds is what I want.
 ## 2 mini games: Catsino Deluxe and Catwash Station
 - *Catsino Deluxe*: Go to the casino with your TiMiNoo and do your best to win some yummy food to bring home. Beware of the ghost though!
 - *Catwash Station*: When the fur of your TiMiNoo gets dirty, it's time for a proper toilet. Scrub scrub!
@@ -48,7 +48,7 @@ TiMiNoo craves attention and love, make sure to give him plenty.
 Occasionally, when TiMiNoo gets hungry, his friend comes home and offer either a cup of hot Matcha tea or a slice of home made Coco cake.
 
 ![friend_visit](./assets/manual/500px/friend_visit_01-500px.png "Friend visit 1")
-## Gain points
+## Gain points: scoring system
 Earn points every time you take action and increase your score.
 ### Feed
 
